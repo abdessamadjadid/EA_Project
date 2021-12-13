@@ -9,25 +9,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-        cache: maven
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          cache: maven
 
-    - name: Build with maven
-      run: mvn clean install
+      - name: Build with maven
+        run: mvn clean install
 
-    - name: Build & Push Docker image
-      uses: mr-smithers-execllent/docker-build-push@v5
-      with:
-        image: devminphone/ea_final_project
-        tages: v1
-        registry: docker.io
-        dockerfile: Dockerfile
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build & Push Docker image
+        uses: mr-smithers-execllent/docker-build-push@v5
+        with:
+          image: devminphone/ea_final_project
+          tages: v1
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}

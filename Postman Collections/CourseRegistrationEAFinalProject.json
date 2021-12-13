@@ -4,5 +4,11 @@
     "name": "Course Management EA Final Project",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
-  "item": []
+  "item": [
+    {
+      "name": "New Folder",
+      "item": [],
+      "id": "47d7424c-d2c7-4595-904a-b24266574285"
+    }
+  ]
 }

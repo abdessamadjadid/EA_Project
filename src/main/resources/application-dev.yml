@@ -5,5 +5,5 @@ spring:
     name: EA Final Project (Dev)
   datasource:
     url: jdbc:mysql://localhost:3306/cs544
-    username: root
-    password: r@ymond100
+    username: ray
+    password:

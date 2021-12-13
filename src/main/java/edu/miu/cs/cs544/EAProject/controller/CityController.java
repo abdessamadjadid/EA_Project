@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/city")
+@RequestMapping("/cities")
 public class CityController {
 
     @Autowired
     private CityRepository repository;
 
-    @GetMapping(params = {"page"})
+    @GetMapping
     public Page<City> findAll(Pageable pageable) {
         return repository.findAll(pageable);
     }
 
     @GetMapping("/{id}")
-    public City findById(@PathVariable(name = "id") String id) {
+    public City findById(@PathVariable(name = "id") Integer id) {
         return repository.findById(id).orElse(new City());
     }
 

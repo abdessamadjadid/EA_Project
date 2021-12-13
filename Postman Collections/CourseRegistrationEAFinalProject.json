@@ -1,0 +1,28 @@
+{
+  "info": {
+    "_postman_id": "3357568d-c2c8-47d9-b699-944d0226b6e6",
+    "name": "Course Management EA Final Project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Country API",
+      "item": [
+        {
+          "name": "New Request",
+          "id": "d6a6b48c-7064-4be9-8393-7466f9fd5d87",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": null
+          },
+          "response": []
+        }
+      ],
+      "id": "47d7424c-d2c7-4595-904a-b24266574285"
+    }
+  ]
+}

@@ -1,12 +1,10 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -27,7 +25,7 @@ public class CountryRegion {
     private String code;
 
     @Embedded
-    private CreatedModifiedDate createdModifiedDate;
+    private Audit audit;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "stateId")

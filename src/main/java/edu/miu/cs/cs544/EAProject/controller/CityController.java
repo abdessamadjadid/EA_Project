@@ -14,7 +14,7 @@ import java.util.List;
 public class CityController {
 
     @Autowired
-    private CityRepository repository;
+    private CityRepository repository; //FIXME: controller should not call repository, that's the responsibility of the service layer
 
     @GetMapping
     public Page<City> findAll(Pageable pageable) {

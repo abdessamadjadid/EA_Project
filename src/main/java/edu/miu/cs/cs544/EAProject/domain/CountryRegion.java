@@ -1,17 +1,16 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "CountryRegion")
 @NoArgsConstructor
-@Getter
+@Data
 public class CountryRegion {
 
     @Id
@@ -26,7 +25,7 @@ public class CountryRegion {
     private String code;
 
     @Embedded
-    private CreatedModifiedDate createdModifiedDate;
+    private Audit audit;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "stateId")
@@ -37,25 +36,5 @@ public class CountryRegion {
         this.name = name;
         this.code = code;
         this.stateProvinces = stateProvinces;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void addStateProvince(StateProvince state) {
-        this.stateProvinces.add(state);
-    }
-
-    public void setCreatedDate(LocalDateTime date) {
-        this.createdModifiedDate.setCreatedDate(date);
-    }
-
-    public void setModifiedDate(LocalDateTime date) {
-        this.createdModifiedDate.setModifiedDate(date);
     }
 }

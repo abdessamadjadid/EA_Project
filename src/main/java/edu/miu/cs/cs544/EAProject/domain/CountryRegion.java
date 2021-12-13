@@ -1,5 +1,6 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "CountryRegion")
 @NoArgsConstructor
-@Getter
+@Data
 public class CountryRegion {
 
     @Id
@@ -37,25 +38,5 @@ public class CountryRegion {
         this.name = name;
         this.code = code;
         this.stateProvinces = stateProvinces;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void addStateProvince(StateProvince state) {
-        this.stateProvinces.add(state);
-    }
-
-    public void setCreatedDate(LocalDateTime date) {
-        this.createdModifiedDate.setCreatedDate(date);
-    }
-
-    public void setModifiedDate(LocalDateTime date) {
-        this.createdModifiedDate.setModifiedDate(date);
     }
 }

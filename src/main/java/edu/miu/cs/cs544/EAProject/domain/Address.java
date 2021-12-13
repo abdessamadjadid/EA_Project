@@ -1,5 +1,6 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "Address")
 @NoArgsConstructor
-@Getter
+@Data
 public class Address {
 
     @Id
@@ -29,21 +30,4 @@ public class Address {
         this.street = street;
         this.postalCode = postalCode;
     }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public void setCreatedDate(LocalDateTime date) {
-        this.createdModifiedDate.setCreatedDate(date);
-    }
-
-    public void setModifiedDate(LocalDateTime date) {
-        this.createdModifiedDate.setModifiedDate(date);
-    }
-
 }

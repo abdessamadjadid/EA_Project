@@ -1,0 +1,9 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: EA Final Project (Dev)
+  datasource:
+    url: jdbc:mysql://localhost:3306/cs544
+    username: root
+    password: P@ssw0rd

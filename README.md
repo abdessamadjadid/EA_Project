@@ -1,16 +1,18 @@
 # Course Registration System (Enterprise Architecture Final Project)
 ___
 
-### Project Description
-
-___
-
 ### Team Members
 - Abdessamad Jadid
 - Mengting Yao
 - Min Phone Nyunt Win
 - Raymond Doirin Jean
 - Wendessen Tigabu Aberha
+
+___
+
+### Project Overall Features
+- Used different `application.yml` files for **Production and Development Environment**
+- By using `GitHub Action`, every `Push` code into `main` branch will automatically deploy into `Heroku` server
 
 ___
 

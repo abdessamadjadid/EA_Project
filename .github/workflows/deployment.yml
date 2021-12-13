@@ -3,7 +3,11 @@ name: Main Branch Deployment
 on:
   push:
     branches:
-      - 'min_branch'
+      - 'main'
+
+  pull_request:
+    branches:
+      - 'main'
 
 jobs:
   build:

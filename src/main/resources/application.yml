@@ -1,6 +1,8 @@
 server:
   port: 8011
 spring:
+  profiles:
+    active: prod
   application:
     name: EA Final Project
   datasource:

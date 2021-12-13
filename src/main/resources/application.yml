@@ -5,9 +5,9 @@ spring:
     name: EA Final Project
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cs544
-    username: root
-    password: P@ssw0rd
+    url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_16699266ca49cba
+    username: bdec61cbf0420f
+    password: d13dd415
     hikari:
       maximumPoolSize: 10
   jpa:

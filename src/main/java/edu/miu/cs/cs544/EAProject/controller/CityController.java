@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/city")
+@RequestMapping("/cities")
 public class CityController {
 
     @Autowired
-    private CityRepository repository;
+    private CityRepository repository; //FIXME: controller should not call repository, that's the responsibility of the service layer
 
     @GetMapping(params = {"page"})
     public Page<City> findAll(Pageable pageable) {

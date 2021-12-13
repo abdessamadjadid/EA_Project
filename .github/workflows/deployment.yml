@@ -23,7 +23,7 @@ jobs:
         run: mvn clean install
 
       - name: Build & Push Docker image
-        uses: mr-smithers-execllent/docker-build-push@v5
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: devminphone/ea_final_project
           tages: v1

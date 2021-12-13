@@ -1,5 +1,7 @@
 server:
   port: 8011
+countrystatecity:
+  forceUpdate: false
 spring:
   profiles:
     active: prod
@@ -13,7 +15,7 @@ spring:
     hikari:
       maximumPoolSize: 10
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate:
       ddl-auto: create
       naming:

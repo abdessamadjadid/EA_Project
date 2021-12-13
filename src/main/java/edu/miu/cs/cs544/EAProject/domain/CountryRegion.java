@@ -4,37 +4,51 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name = "CountryRegion")
 @NoArgsConstructor
 @Getter
-@Table(name = "City")
-public class City {
+public class CountryRegion {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "code", nullable = false)
+    @Size(max = 2, min = 2)
+    private String code;
 
     @Embedded
     private CreatedModifiedDate createdModifiedDate;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId")
-    @OrderBy("postalCode")
-    private List<Address> addresses;
+    @JoinColumn(name = "stateId")
+    @OrderBy("name")
+    private List<StateProvince> stateProvinces;
 
-    public City(String name, List<Address> addresses) {
+    public CountryRegion(String name, String code, List<StateProvince> stateProvinces) {
         this.name = name;
-        this.addresses = addresses;
+        this.code = code;
+        this.stateProvinces = stateProvinces;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void addStateProvince(StateProvince state) {
+        this.stateProvinces.add(state);
     }
 
     public void setCreatedDate(LocalDateTime date) {
@@ -44,9 +58,4 @@ public class City {
     public void setModifiedDate(LocalDateTime date) {
         this.createdModifiedDate.setModifiedDate(date);
     }
-
-    public void addAddress(Address address) {
-        this.addresses.add(address);
-    }
-
 }

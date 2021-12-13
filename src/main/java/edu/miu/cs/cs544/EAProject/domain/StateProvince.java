@@ -8,29 +8,37 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name = "StateProvince")
 @NoArgsConstructor
 @Getter
-@Table(name = "City")
-public class City {
+public class StateProvince {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "code", nullable = false)
+    private String code;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cityId")
+    @OrderBy("name")
+    private List<City> cities;
 
     @Embedded
     private CreatedModifiedDate createdModifiedDate;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId")
-    @OrderBy("postalCode")
-    private List<Address> addresses;
-
-    public City(String name, List<Address> addresses) {
+    public StateProvince(String name, String code, List<City> cities) {
         this.name = name;
-        this.addresses = addresses;
+        this.code = code;
+        this.cities = cities;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public void setName(String name) {
@@ -45,8 +53,8 @@ public class City {
         this.createdModifiedDate.setModifiedDate(date);
     }
 
-    public void addAddress(Address address) {
-        this.addresses.add(address);
+    public void addCity(City city) {
+        this.cities.add(city);
     }
 
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
 @Entity
 @Data
@@ -28,15 +28,29 @@ public class CourseOffering {
     private int capacity;
 
     @Embedded
-    private Audit createdModifiedDate;
+    private Audit audit;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "facultyId")
+    private Faculty faculty;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "courseId")
+    private Collection<Course> course;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "academicBlockId")
     private AcademicBlock academicBlock;
 
 
-    public CourseOffering(String name, String code, String facultyInitials, int capacity, AcademicBlock academicBlock) {
+    public CourseOffering(String name, String code, String facultyInitials, int capacity,
+                          AcademicBlock academicBlock, Faculty faculty, Collection<Course> course) {
+        this.facultyInitials = facultyInitials;
+        this.capacity = capacity;
         this.academicBlock = academicBlock;
+        this.faculty = faculty;
+        this.course = course;
+
     }
 
     public int getAvailableSeats() {

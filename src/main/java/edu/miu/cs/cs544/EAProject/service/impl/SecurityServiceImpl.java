@@ -3,11 +3,13 @@ package edu.miu.cs.cs544.EAProject.service.impl;
 import edu.miu.cs.cs544.EAProject.domain.User;
 import edu.miu.cs.cs544.EAProject.dto.TokenDto;
 import edu.miu.cs.cs544.EAProject.dto.UserDto;
+import edu.miu.cs.cs544.EAProject.i18n.DefaultMessageSource;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
 import edu.miu.cs.cs544.EAProject.service.SecurityService;
 import edu.miu.cs.cs544.EAProject.utils.SecurityUtils;
 import edu.miu.cs.cs544.EAProject.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,7 @@ public class SecurityServiceImpl implements SecurityService {
     private final UserRepository userRepository;
     private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
+    private final MessageSourceAccessor messages = DefaultMessageSource.getAccessor();
 
     @Override
     public TokenDto issueToken(String username, String password) {
@@ -35,7 +38,7 @@ public class SecurityServiceImpl implements SecurityService {
     public void signup(UserDto userDto) {
 
         if (userRepository.findByUsername(userDto.getUsername()).isPresent()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username is already taken");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.getMessage("error.username.taken"));
         }
 
         User user = new User(userDto.getUsername(), passwordEncoder.encode(userDto.getPassword()), null, true);

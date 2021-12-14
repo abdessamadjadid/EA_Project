@@ -10,18 +10,17 @@ import javax.persistence.*;
 @Data
 @Table(name = "RegistrationRequest")
 @NoArgsConstructor
-public class RegistrationRequest
-{
+public class RegistrationRequest {
 
     @Id
     @GeneratedValue
     private int id;
 
     @Column(name = "priority", nullable = false)
-    private  int priority;
+    private int priority;
 
     @Embedded
-    private Audit createdModifiedDate;
+    private Audit audit;
 
     //@ManyToOne(cascade = CascadeType.ALL)
     //@JoinColumn(name = "studentId")

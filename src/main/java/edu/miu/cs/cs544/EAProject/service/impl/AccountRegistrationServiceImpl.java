@@ -5,10 +5,12 @@ import edu.miu.cs.cs544.EAProject.domain.Faculty;
 import edu.miu.cs.cs544.EAProject.domain.Student;
 import edu.miu.cs.cs544.EAProject.domain.User;
 import edu.miu.cs.cs544.EAProject.dto.*;
+import edu.miu.cs.cs544.EAProject.i18n.DefaultMessageSource;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
 import edu.miu.cs.cs544.EAProject.service.AccountRegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -22,12 +24,13 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
 
     private final ModelMapper modelMapper;
     private final UserRepository userRepository;
+    private final MessageSourceAccessor messages = DefaultMessageSource.getAccessor();
 
     @Override
     public UserDetailsDto registerStudent(int userId, String studentId, String name, String email) {
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unknown user"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.getMessage("error.user.notFound")));
 
         boolean isAlreadyStudent = user.getRoles().stream().anyMatch(role -> role instanceof Student);
 
@@ -43,7 +46,7 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
     public UserDetailsDto registerFaculty(int userId, String name, String email, String title) {
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unknown user"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.getMessage("error.user.notFound")));
 
         boolean isAlreadyFaculty = user.getRoles().stream().anyMatch(role -> role instanceof Faculty);
 
@@ -59,7 +62,7 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
     public UserDetailsDto registerAdmin(int userId) {
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unknown user"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.getMessage("error.user.notFound")));
 
         boolean isAlreadyAdmin = user.getRoles().stream().anyMatch(role -> role instanceof Admin);
 
@@ -90,7 +93,7 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
                     if (role instanceof Student) roleDto =  modelMapper.map(role, StudentDto.class);
                     else if (role instanceof Faculty) roleDto = modelMapper.map(role, FacultyDto.class);
                     else if (role instanceof Admin) roleDto =  modelMapper.map(role, AdminDto.class);
-                    else throw new RuntimeException("Unknown role");
+                    else throw new RuntimeException(messages.getMessage("error.user.notFound"));
 
                     roleDto.setUserId(user.getId());
                     return roleDto;

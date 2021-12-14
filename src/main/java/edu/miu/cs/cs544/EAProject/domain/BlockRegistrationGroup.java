@@ -17,5 +17,19 @@ public class BlockRegistrationGroup {
     private int id;
 
     @Embedded
+<<<<<<< HEAD
     private Audit createdModifiedDate;
+=======
+    private Audit audit;
+
+    //@ManyToMany(cascade = CascadeType.ALL, mappedBy = "")
+   /* @JoinColumn(name = "blockregistrationgroupId")
+    private List<RegistrationGroup> registrationGroup;*/
+
+    /*public BlockRegistrationGroup(RegistrationGroup registrationGroup) {
+        this.registrationGroup = (List<RegistrationGroup>) registrationGroup;
+    }*/
+
+
+>>>>>>> main
 }

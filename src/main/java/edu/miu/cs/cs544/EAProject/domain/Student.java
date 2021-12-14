@@ -4,13 +4,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Data @NoArgsConstructor
 @Entity
 public class Student extends Role {
+
+
 
     @Column(nullable = false, unique = true)
     private String studentId;
@@ -20,6 +21,15 @@ public class Student extends Role {
 
     @Column(nullable = false)
     private String email;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "homeAddressId")
+    private Address homeAddress;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "mailAddressId")
+    private Address mailingAddress;
+
 
     public Student(String studentId, String name, String email) {
         this.studentId = studentId;

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
@@ -16,6 +17,7 @@ import java.util.List;
 
 @EnableJpaAuditing
 @SpringBootApplication
+//@ComponentScan(basePackages = "edu.miu.cs.cs544.EAProject")
 public class EAProjectApplication {
 
     @Value("${countrystatecity.forceUpdate}")

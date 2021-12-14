@@ -1,4 +1,4 @@
-package edu.miu.cs.cs544.EAProject.service;
+package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.Admin;
 import edu.miu.cs.cs544.EAProject.domain.Faculty;
@@ -6,6 +6,7 @@ import edu.miu.cs.cs544.EAProject.domain.Student;
 import edu.miu.cs.cs544.EAProject.domain.User;
 import edu.miu.cs.cs544.EAProject.dto.*;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
+import edu.miu.cs.cs544.EAProject.service.AccountRegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;

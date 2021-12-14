@@ -1,9 +1,10 @@
-package edu.miu.cs.cs544.EAProject.service;
+package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.User;
 import edu.miu.cs.cs544.EAProject.dto.TokenDto;
 import edu.miu.cs.cs544.EAProject.dto.UserDto;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
+import edu.miu.cs.cs544.EAProject.service.SecurityService;
 import edu.miu.cs.cs544.EAProject.utils.SecurityUtils;
 import edu.miu.cs.cs544.EAProject.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,5 @@
 package edu.miu.cs.cs544.EAProject.dto;
 
-import edu.miu.cs.cs544.EAProject.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

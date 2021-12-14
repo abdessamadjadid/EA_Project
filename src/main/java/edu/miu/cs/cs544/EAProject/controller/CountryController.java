@@ -1,7 +1,7 @@
 package edu.miu.cs.cs544.EAProject.controller;
 
 import edu.miu.cs.cs544.EAProject.domain.CountryRegion;
-import edu.miu.cs.cs544.EAProject.repository.CountryRepository;
+import edu.miu.cs.cs544.EAProject.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,25 +14,25 @@ import java.util.List;
 public class CountryController {
 
     @Autowired
-    private CountryRepository repository;
+    private CountryService countryService;
 
     @GetMapping(params = {"page"})
     public Page<CountryRegion> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+        return countryService.getCountries(pageable);
     }
 
     @GetMapping("/{id}")
-    public CountryRegion findById(@PathVariable(name = "id") String id) {
-        return repository.findById(id).orElse(new CountryRegion());
+    public CountryRegion findById(@PathVariable(name = "id") Integer id) {
+        return countryService.getCountryById(id);
     }
 
     @PostMapping
     public CountryRegion saveCountry(@RequestBody CountryRegion country) {
-        return repository.save(country);
+        return countryService.saveCountry(country);
     }
 
     public List<CountryRegion> saveCountries(List<CountryRegion> countries) {
-        return repository.saveAll(countries);
+        return countryService.saveCountries(countries);
     }
 
 }

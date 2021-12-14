@@ -1,5 +1,8 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +21,8 @@ import java.util.stream.Collectors;
 @Data
 @Entity @NoArgsConstructor
 @Table(name = "`User`")
-public class User implements UserDetails {
+@EntityListeners(AuditListener.class)
+public class User implements UserDetails, Auditable {
 
     @Id
     @GeneratedValue
@@ -32,7 +36,7 @@ public class User implements UserDetails {
     private String password;
 
     @JoinTable(name = "user_role")
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Collection<Role> roles = new ArrayList<>();
 
     private boolean isActive = true;

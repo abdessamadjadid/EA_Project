@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 @RequiredArgsConstructor
-@RestController("/admin/faculties")
+@RestController("/admins/faculties")
 public class AdminFacultyController {
 
     private final AccountRegistrationService accountRegistrationService;

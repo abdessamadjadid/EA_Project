@@ -84,10 +84,15 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
         List<RoleDto> roles = user.getRoles().stream()
                 .map(role -> {
 
-                    if (role instanceof Student) return modelMapper.map(role, StudentDto.class);
-                    else if (role instanceof Faculty) return modelMapper.map(role, FacultyDto.class);
-                    else if (role instanceof Admin) return modelMapper.map(role, AdminDto.class);
-                    throw new RuntimeException("Unknown role");
+                    RoleDto roleDto;
+
+                    if (role instanceof Student) roleDto =  modelMapper.map(role, StudentDto.class);
+                    else if (role instanceof Faculty) roleDto = modelMapper.map(role, FacultyDto.class);
+                    else if (role instanceof Admin) roleDto =  modelMapper.map(role, AdminDto.class);
+                    else throw new RuntimeException("Unknown role");
+
+                    roleDto.setUserId(user.getId());
+                    return roleDto;
                 })
                 .collect(Collectors.toList());
 

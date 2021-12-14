@@ -62,10 +62,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .apply(jwtFilterConfigurer()).and()
                     .authorizeRequests()
                     .antMatchers("/signup/**").permitAll()
-                    .antMatchers("/**").authenticated()
-                    .antMatchers("/admins/**").hasRole(SecurityUtils.ROLE_ADMIN)
-                    .antMatchers("/students/**").hasAnyRole(SecurityUtils.ROLE_STUDENT, SecurityUtils.ROLE_ADMIN)
-                    .antMatchers("/faculties/**").hasAnyRole(SecurityUtils.ROLE_FACULTY, SecurityUtils.ROLE_ADMIN);
+                    .antMatchers("/admins/**", "/students/**", "/faculties/**").authenticated()
+                    .mvcMatchers("/admins/*").hasAuthority(SecurityUtils.ROLE_ADMIN)
+                    .mvcMatchers("/students/*").hasAnyAuthority(SecurityUtils.ROLE_STUDENT, SecurityUtils.ROLE_ADMIN)
+                    .mvcMatchers("/faculties/*").hasAnyAuthority(SecurityUtils.ROLE_FACULTY, SecurityUtils.ROLE_ADMIN)
+                    .antMatchers("/**").authenticated();
         }
 
         private SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> jwtFilterConfigurer() {

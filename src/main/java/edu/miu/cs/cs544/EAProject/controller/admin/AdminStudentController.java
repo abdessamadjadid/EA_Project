@@ -12,7 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
  * Set of endpoints for admins to manage students
  */
 @RequiredArgsConstructor
-@RequestMapping("/admin/students")
+@RequestMapping("/admins/students")
 @RestController
 public class AdminStudentController {
 

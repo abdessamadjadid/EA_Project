@@ -4,7 +4,7 @@ countrystatecity:
   forceUpdate: false
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: EA Final Project
   datasource:
@@ -18,6 +18,8 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: update
+  main:
+    allow-bean-definition-overriding: true
 
 security:
   jwt:

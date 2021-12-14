@@ -5,12 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
+@Data
 @Table(name = "StateProvince")
 @NoArgsConstructor
-@Data
 public class StateProvince {
 
     @Id
@@ -23,17 +22,16 @@ public class StateProvince {
     @Column(name = "code", nullable = false)
     private String code;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cityId")
-    @OrderBy("name")
-    private List<City> cities;
-
     @Embedded
     private Audit audit;
 
-    public StateProvince(String name, String code, List<City> cities) {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "countryId")
+    private Country country;
+
+    public StateProvince(String name, String code, Country country) {
         this.name = name;
         this.code = code;
-        this.cities = cities;
+        this.country = country;
     }
 }

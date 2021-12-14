@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "Address")
 @NoArgsConstructor
-@Data
 public class Address {
 
     @Id
@@ -25,8 +25,13 @@ public class Address {
     @Embedded
     private Audit audit;
 
-    public Address(String street, String postalCode) {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cityId")
+    private City city;
+
+    public Address(String street, String postalCode, City city) {
         this.street = street;
         this.postalCode = postalCode;
+        this.city = city;
     }
 }

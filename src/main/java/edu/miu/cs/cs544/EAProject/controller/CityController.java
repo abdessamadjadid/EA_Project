@@ -34,5 +34,4 @@ public class CityController {
     private List<City> saveCities(List<City> cityList) {
         return repository.saveAll(cityList);
     }
-
 }

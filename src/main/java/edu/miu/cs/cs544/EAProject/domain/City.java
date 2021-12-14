@@ -1,15 +1,13 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
 
+
+@Data
 @Entity
 @NoArgsConstructor
-@Getter
 @Table(name = "City")
 public class City {
 
@@ -17,36 +15,19 @@ public class City {
     @GeneratedValue
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name",length = 255, nullable = false)
     private String name;
 
     @Embedded
     private CreatedModifiedDate createdModifiedDate;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId")
-    @OrderBy("postalCode")
-    private List<Address> addresses;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "stateprovinceId")
+    private StateProvince stateprovince;
 
-    public City(String name, List<Address> addresses) {
+    public City(String name, StateProvince stateprovince) {
         this.name = name;
-        this.addresses = addresses;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCreatedDate(LocalDateTime date) {
-        this.createdModifiedDate.setCreatedDate(date);
-    }
-
-    public void setModifiedDate(LocalDateTime date) {
-        this.createdModifiedDate.setModifiedDate(date);
-    }
-
-    public void addAddress(Address address) {
-        this.addresses.add(address);
+        this.stateprovince = stateprovince;
     }
 
 }

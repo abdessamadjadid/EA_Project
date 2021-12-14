@@ -1,60 +1,36 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
+@Data
 @Table(name = "StateProvince")
 @NoArgsConstructor
-@Getter
 public class StateProvince {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name",length = 255, nullable = false)
     private String name;
 
-    @Column(name = "code", nullable = false)
+    @Column(name = "code", length = 255, nullable = false)
     private String code;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cityId")
-    @OrderBy("name")
-    private List<City> cities;
 
     @Embedded
     private CreatedModifiedDate createdModifiedDate;
 
-    public StateProvince(String name, String code, List<City> cities) {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "countryId")
+    private Country country;
+
+    public StateProvince(String name, String code, Country country) {
         this.name = name;
         this.code = code;
-        this.cities = cities;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCreatedDate(LocalDateTime date) {
-        this.createdModifiedDate.setCreatedDate(date);
-    }
-
-    public void setModifiedDate(LocalDateTime date) {
-        this.createdModifiedDate.setModifiedDate(date);
-    }
-
-    public void addCity(City city) {
-        this.cities.add(city);
+        this.country = country;
     }
 
 }

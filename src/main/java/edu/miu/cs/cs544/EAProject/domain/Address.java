@@ -1,12 +1,13 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
+@Data
 @Table(name = "Address")
 @NoArgsConstructor
 @Getter
@@ -25,25 +26,14 @@ public class Address {
     @Embedded
     private CreatedModifiedDate createdModifiedDate;
 
-    public Address(String street, String postalCode) {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cityId")
+    private City city;
+
+    public Address(String street, String postalCode ,City city) {
         this.street = street;
         this.postalCode = postalCode;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public void setCreatedDate(LocalDateTime date) {
-        this.createdModifiedDate.setCreatedDate(date);
-    }
-
-    public void setModifiedDate(LocalDateTime date) {
-        this.createdModifiedDate.setModifiedDate(date);
+        this.city = city;
     }
 
 }

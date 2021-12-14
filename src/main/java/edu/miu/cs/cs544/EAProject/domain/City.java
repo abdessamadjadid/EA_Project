@@ -1,11 +1,9 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -22,7 +20,7 @@ public class City {
     private String name;
 
     @Embedded
-    private CreatedModifiedDate createdModifiedDate;
+    private Audit audit;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "addressId")

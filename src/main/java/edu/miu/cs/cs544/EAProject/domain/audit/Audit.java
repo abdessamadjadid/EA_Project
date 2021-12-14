@@ -1,9 +1,12 @@
-package edu.miu.cs.cs544.EAProject.domain;
+package edu.miu.cs.cs544.EAProject.domain.audit;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import lombok.*;
+
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.time.LocalDateTime;
 
@@ -13,9 +16,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Audit {
 
+    @Column(nullable = false, updatable = false)
     @CreatedDate
-    private LocalDateTime createdDate;
+    private LocalDateTime createdDate = LocalDateTime.now();
 
     @LastModifiedDate
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modifiedDate = LocalDateTime.now();
 }

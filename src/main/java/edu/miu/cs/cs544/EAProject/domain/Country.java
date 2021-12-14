@@ -1,4 +1,5 @@
 package edu.miu.cs.cs544.EAProject.domain;
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

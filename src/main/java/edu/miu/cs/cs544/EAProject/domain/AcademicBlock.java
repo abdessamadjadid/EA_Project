@@ -1,6 +1,7 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -30,7 +31,7 @@ public class AcademicBlock {
     private StartEndDate startEndDate;
 
     @Embedded
-    private  Audit audit;
+    private Audit audit;
 
     /*//@ManyToMany(cascade = CascadeType.ALL, mappedBy = "")
     @JoinColumn(name = "blockregistrationgroupId")

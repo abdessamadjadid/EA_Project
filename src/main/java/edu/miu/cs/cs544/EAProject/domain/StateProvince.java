@@ -2,37 +2,45 @@ package edu.miu.cs.cs544.EAProject.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 @Table(name = "StateProvince")
 @NoArgsConstructor
-@Data
+
 public class StateProvince {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name",length = 255, nullable = false)
     private String name;
 
-    @Column(name = "code", nullable = false)
+    @Column(name = "code", length = 255, nullable = false)
     private String code;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cityId")
-    @OrderBy("name")
-    private List<City> cities;
 
     @Embedded
     private Audit audit;
 
-    public StateProvince(String name, String code, List<City> cities) {
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cityId")
+    private List<City> city;
+
+    public StateProvince(String name, String code, List<City> city) {
         this.name = name;
         this.code = code;
-        this.cities = cities;
+        this.city = city;
+    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "countryId")
+    private Country country;
+
+    public StateProvince(String name, String code, Country country) {
+        this.name = name;
+        this.code = code;
+        this.country = country;
     }
 }

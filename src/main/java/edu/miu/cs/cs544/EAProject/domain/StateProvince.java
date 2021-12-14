@@ -1,11 +1,9 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -30,7 +28,7 @@ public class StateProvince {
     private List<City> cities;
 
     @Embedded
-    private CreatedModifiedDate createdModifiedDate;
+    private Audit audit;
 
     public StateProvince(String name, String code, List<City> cities) {
         this.name = name;

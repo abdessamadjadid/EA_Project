@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.time.LocalDateTime;
 
@@ -14,11 +15,11 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreatedModifiedDate {
+public class Audit {
 
-    @Column(name = "CreatedDate")
+    @CreatedDate
     private LocalDateTime createdDate;
 
-    @Column(name = "ModifiedDate")
+    @LastModifiedDate
     private LocalDateTime modifiedDate;
 }

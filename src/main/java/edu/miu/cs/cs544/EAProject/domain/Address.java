@@ -1,15 +1,15 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.Getter;
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Address")
 @NoArgsConstructor
-@Getter
+@Data
 public class Address {
 
     @Id
@@ -23,27 +23,10 @@ public class Address {
     private String postalCode;
 
     @Embedded
-    private CreatedModifiedDate createdModifiedDate;
+    private Audit audit;
 
     public Address(String street, String postalCode) {
         this.street = street;
         this.postalCode = postalCode;
     }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public void setCreatedDate(LocalDateTime date) {
-        this.createdModifiedDate.setCreatedDate(date);
-    }
-
-    public void setModifiedDate(LocalDateTime date) {
-        this.createdModifiedDate.setModifiedDate(date);
-    }
-
 }

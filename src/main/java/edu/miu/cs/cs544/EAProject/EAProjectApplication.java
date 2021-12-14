@@ -6,12 +6,16 @@ import edu.miu.cs.cs544.EAProject.domain.CountryRegion;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+<<<<<<< HEAD
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+=======
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+>>>>>>> main
 
 @SpringBootApplication
 public class EAProjectApplication {

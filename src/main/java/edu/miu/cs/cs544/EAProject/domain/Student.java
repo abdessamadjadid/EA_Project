@@ -36,7 +36,7 @@ public class Student extends Role {
     @ManyToMany
     @JoinTable(name = "Registration",
             joinColumns = @JoinColumn(name = "studentId"),
-            inverseJoinColumns = @JoinColumn(name = "courseOffering"))
+            inverseJoinColumns = @JoinColumn(name = "courseOfferingId"))
     private Collection<CourseOffering> courseOfferings;
 
     @ManyToMany
@@ -70,5 +70,13 @@ public class Student extends Role {
         this.registrationRequests = registrationRequests;
         this.courseOfferings = courseOfferings;
         this.registrationGroups = registrationGroups;
+    }
+
+    public Boolean addCourse(CourseOffering courseOffering){
+        if(!this.courseOfferings.contains(courseOffering)){
+            this.courseOfferings.add(courseOffering);
+            return true;
+        }
+        return false;
     }
 }

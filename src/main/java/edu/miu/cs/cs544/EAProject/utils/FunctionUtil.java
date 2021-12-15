@@ -22,6 +22,11 @@ public abstract class FunctionUtil {
                     .collect(Collectors.toList());
 
 
+    public static Function<RegistrationEvent,  List<AcademicBlock>> getEventAcademicBlock = (event) ->
+           event.getRegistrationGroups()
+                   .stream().flatMap(group -> group.getAcademicBlocks().stream())
+                   .collect(Collectors.toList());
+
     public static Function<RegistrationEvent, Map<AcademicBlock, List<CourseOffering>>> getCourseOfferingPerBlock = (event) ->
             getAllCourseOffering.apply(event).stream()
                     .collect(groupingBy(CourseOffering::getAcademicBlock));
@@ -33,9 +38,9 @@ public abstract class FunctionUtil {
                     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
 
-    public static BiFunction<AcademicBlock, Integer, List<CourseOffering>> getCourseOfferingMoreCapacity = (block, capacity) ->
+    public static Function<AcademicBlock, List<CourseOffering>> getCourseOfferingMoreCapacity = (block) ->
                 getCourseOfferingCountPerBlock.apply(block).entrySet().stream()
-                        .filter(c -> c.getValue() > capacity )
+                        .filter(c -> c.getValue() > c.getKey().getCapacity() )
                         .map(k -> k.getKey())
                     .collect(Collectors.toList());
 

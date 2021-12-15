@@ -362,7 +362,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}",
+                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 1,\n    \"homeAddressId\": 1\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -658,78 +658,7 @@
                 },
                 "url": "http://{{baseURL}}:{{port}}/addresses"
               },
-              "response": [
-                {
-                  "id": "f3bcaa8c-c843-4c2a-9cfa-a85b6dc9c51b",
-                  "name": "Success",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\"\n}",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": "http://{{baseURL}}:{{port}}/addresses"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "X-Content-Type-Options",
-                      "value": "nosniff"
-                    },
-                    {
-                      "key": "X-XSS-Protection",
-                      "value": "1; mode=block"
-                    },
-                    {
-                      "key": "Cache-Control",
-                      "value": "no-cache, no-store, max-age=0, must-revalidate"
-                    },
-                    {
-                      "key": "Pragma",
-                      "value": "no-cache"
-                    },
-                    {
-                      "key": "Expires",
-                      "value": "0"
-                    },
-                    {
-                      "key": "X-Frame-Options",
-                      "value": "DENY"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "Transfer-Encoding",
-                      "value": "chunked"
-                    },
-                    {
-                      "key": "Date",
-                      "value": "Wed, 15 Dec 2021 08:08:47 GMT"
-                    },
-                    {
-                      "key": "Keep-Alive",
-                      "value": "timeout=60"
-                    },
-                    {
-                      "key": "Connection",
-                      "value": "keep-alive"
-                    }
-                  ],
-                  "cookie": [],
-                  "responseTime": null,
-                  "body": "{\n    \"id\": 9,\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\",\n    \"city\": null,\n    \"audit\": {\n        \"createdDate\": \"2021-12-15T02:08:47.730357\",\n        \"modifiedDate\": \"2021-12-15T02:08:47.730345\"\n    }\n}"
-                }
-              ]
+              "response": []
             }
           ],
           "id": "23007f36-cd57-4c5c-b4c6-db0ed59669f5"
@@ -769,12 +698,12 @@
   ],
   "variable": [
     {
-      "id": "d18af12a-6435-46b4-8c61-233cb4d27c8b",
+      "id": "18baa054-b4d6-4942-ab60-51177f9edc73",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "a1e89728-ffc3-445d-a835-fbc96737c482",
+      "id": "912131ec-e6cc-4358-aa7e-b824eff10326",
       "key": "port",
       "value": "8010"
     }

@@ -266,9 +266,9 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
-                "url": null
+                "url": "http://{{baseURL}}:{{port}}/signup"
               },
               "response": []
             }
@@ -347,12 +347,12 @@
   ],
   "variable": [
     {
-      "id": "d195ae93-aac5-4f91-8318-ddb19c4815e7",
+      "id": "81703301-4802-423d-82b4-4e57ce95c38d",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "e5346063-970a-4d92-aa34-9f958766cb9a",
+      "id": "58e44772-38a0-4f31-b46f-c51bf5009361",
       "key": "port",
       "value": "8010"
     }

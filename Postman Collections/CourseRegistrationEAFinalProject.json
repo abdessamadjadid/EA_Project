@@ -240,7 +240,74 @@
                 },
                 "url": "http://{{baseURL}}:{{port}}/signup"
               },
-              "response": []
+              "response": [
+                {
+                  "id": "6366a1d7-bde2-468d-86b3-89cc9683b1dc",
+                  "name": "Sign Up",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"username\": \"mwin@miu.edu\",\n    \"password\": \"P@ssw0rd\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/signup"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "plain",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 04:11:26 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null
+                }
+              ]
             }
           ],
           "id": "2316bb9c-053d-451e-b232-a6b918268488",
@@ -344,12 +411,12 @@
   ],
   "variable": [
     {
-      "id": "06369436-5ff1-4b04-adff-8babe72de724",
+      "id": "94d2618a-bd01-4a6e-bbe3-7a10eba60f58",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "43089412-ebb3-4429-ac1a-2db12e179f33",
+      "id": "429b1a28-619b-4685-91da-0fac032b5194",
       "key": "port",
       "value": "8010"
     }

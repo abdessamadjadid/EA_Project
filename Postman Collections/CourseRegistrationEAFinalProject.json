@@ -24,12 +24,12 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{baseURL}}:8010/countries?page=1",
+                  "raw": "http://{{baseURL}}:{{port}}/countries?page=1",
                   "protocol": "http",
                   "host": [
                     "{{baseURL}}"
                   ],
-                  "port": "8010",
+                  "port": "{{port}}",
                   "path": [
                     "countries"
                   ],
@@ -114,12 +114,12 @@
   ],
   "variable": [
     {
-      "id": "83291fe1-6074-4db9-9f7e-0cc4d175c4b3",
+      "id": "8784d2a1-adb8-4750-8c83-07a6eab48a2c",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "cf93a80d-ba1f-49f6-b454-eb8c82e437ed",
+      "id": "16f6151a-1833-4bff-a2c4-62efc2b421a2",
       "key": "port",
       "value": "8010"
     }

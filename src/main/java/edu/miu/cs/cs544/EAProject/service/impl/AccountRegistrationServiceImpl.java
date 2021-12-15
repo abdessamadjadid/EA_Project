@@ -1,15 +1,15 @@
 package edu.miu.cs.cs544.EAProject.service.impl;
 
-import edu.miu.cs.cs544.EAProject.domain.Admin;
-import edu.miu.cs.cs544.EAProject.domain.Faculty;
-import edu.miu.cs.cs544.EAProject.domain.Student;
-import edu.miu.cs.cs544.EAProject.domain.User;
+import edu.miu.cs.cs544.EAProject.domain.*;
 import edu.miu.cs.cs544.EAProject.dto.*;
+import edu.miu.cs.cs544.EAProject.error.ClientException;
 import edu.miu.cs.cs544.EAProject.i18n.DefaultMessageSource;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
 import edu.miu.cs.cs544.EAProject.service.AccountRegistrationService;
+import edu.miu.cs.cs544.EAProject.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -26,20 +26,32 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
     private final UserRepository userRepository;
     private final MessageSourceAccessor messages = DefaultMessageSource.getAccessor();
 
+    @Autowired
+    private AddressService addressService;
+
     @Override
-    public UserDetailsDto registerStudent(int userId, String studentId, String name, String email) {
+    public UserDetailsDto registerStudent(int userId, String studentId, String name, String email,
+                                          Integer mailingAddressId, Integer homeAddressId) {
+        try {
+            Address mailingAddress = addressService.getAddressId(mailingAddressId);
+            Address homeAddress = addressService.getAddressId(homeAddressId);
+            if (mailingAddress.getPostalCode() == null || homeAddress.getPostalCode() == null)
+                throw new ClientException(messages.getMessage("error.generic.message"));
+            User user = userRepository.findById(userId)
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.getMessage("error.user.notFound")));
 
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.getMessage("error.user.notFound")));
+            boolean isAlreadyStudent = user.getRoles().stream().anyMatch(role -> role instanceof Student);
 
-        boolean isAlreadyStudent = user.getRoles().stream().anyMatch(role -> role instanceof Student);
-
-        if (!isAlreadyStudent) {
-            Student student = new Student(studentId, name, email);
-            user.addRole(student);
-            user = userRepository.save(user);
+            if (!isAlreadyStudent) {
+                Student student = new Student(studentId, name, email, mailingAddress, homeAddress);
+                user.addRole(student);
+                user = userRepository.save(user);
+            }
+            return toUserDetailsDto(user);
+        } catch (Exception e) {
+            throw new ClientException(messages.getMessage("error.generic.message"));
         }
-        return toUserDetailsDto(user);
+
     }
 
     @Override

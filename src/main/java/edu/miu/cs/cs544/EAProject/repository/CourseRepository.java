@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Integer> {
 
-    @Query(value = "Select * from Course Where code = :code", nativeQuery = true)
+    @Query(value = "Select c from Course c Where c.code = :code")
     List<Course> findByCode(String code);
 
 }

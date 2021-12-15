@@ -8,7 +8,8 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @EqualsAndHashCode(callSuper = true)
-@Data @NoArgsConstructor
+@Data
+@NoArgsConstructor
 @Entity
 public class Student extends Role {
 
@@ -48,6 +49,14 @@ public class Student extends Role {
         this.studentId = studentId;
         this.name = name;
         this.email = email;
+    }
+
+    public Student(String studentId, String name, String email, Address mailingAddress, Address homeAddress) {
+        this.studentId = studentId;
+        this.name = name;
+        this.email = email;
+        this.mailingAddress = mailingAddress;
+        this.homeAddress = homeAddress;
     }
 
     public Student(String studentId, String name, String email, Address homeAddress, Address mailingAddress,

@@ -215,9 +215,10 @@
               },
               "request": {
                 "auth": {
-                  "type": "oauth2",
-                  "oauth2": {
-                    "addTokenTo": "header"
+                  "type": "basic",
+                  "basic": {
+                    "username": "{{username}}",
+                    "password": "P@ssw0rd"
                   }
                 },
                 "method": "POST",
@@ -225,7 +226,8 @@
                   {
                     "key": "Authorization",
                     "value": "mwin@miu.edu:P@ssw0rd",
-                    "type": "text"
+                    "type": "text",
+                    "disabled": true
                   }
                 ],
                 "url": "http://{{baseURL}}:{{port}}/login"
@@ -864,12 +866,12 @@
   ],
   "variable": [
     {
-      "id": "538672c2-ab22-4028-b584-1b9463cc9f3d",
+      "id": "851c7ab5-b83f-42f3-91e9-0bd1630ee759",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "014f7fa3-1648-471e-8ee9-83e546ef014d",
+      "id": "f07961c0-ccba-4ba4-9096-64a203cb8172",
       "key": "port",
       "value": "8010"
     }

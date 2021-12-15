@@ -362,7 +362,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645522\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
+                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 1,\n    \"homeAddressId\": 1\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -670,12 +670,12 @@
   ],
   "variable": [
     {
-      "id": "abe4438a-793c-4d10-8200-287b32a58022",
+      "id": "8b01050b-4de4-4379-896b-bb6ba10a7f8e",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "f635bdae-7888-4c65-b4a1-981b75a7ac6e",
+      "id": "d28e8a2a-bfa6-4cda-af42-4b1d83a95818",
       "key": "port",
       "value": "8010"
     }

@@ -47,7 +47,7 @@ public class CourseServiceImpl implements CourseService {
                 if (data.getCode().equals(course.getCode())) isFound = true;
             }
             if (!isFound) return repository.save(course);
-            else throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User is already Created");
+            else throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Course is already Created");
         }
     }
 

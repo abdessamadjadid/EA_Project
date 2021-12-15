@@ -286,9 +286,26 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "DELETE",
                 "header": [],
-                "url": "http://{{baseURL}}:{{port}}/courseOfferings"
+                "url": {
+                  "raw": "http://{{baseURL}}:{{port}}/courseOfferings?id=1",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "port": "{{port}}",
+                  "path": [
+                    "courseOfferings"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
               },
               "response": []
             }
@@ -330,12 +347,12 @@
   ],
   "variable": [
     {
-      "id": "5f2db80a-f68a-4ac6-93d6-08a7bf55ef5e",
+      "id": "d195ae93-aac5-4f91-8318-ddb19c4815e7",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "4256a79d-a96e-413f-88de-6a85575e5337",
+      "id": "e5346063-970a-4d92-aa34-9f958766cb9a",
       "key": "port",
       "value": "8010"
     }

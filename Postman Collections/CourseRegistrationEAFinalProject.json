@@ -542,7 +542,21 @@
         },
         {
           "name": "Academic Block",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "091f8087-6b6b-4b9b-b8b3-d6095229fabd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "e9a60b65-a4c4-423d-978f-88cd55faf4f5"
         }
       ],
@@ -580,12 +594,12 @@
   ],
   "variable": [
     {
-      "id": "3409aa47-02c8-441d-a737-b765a7855009",
+      "id": "aff7d19d-0a4f-4868-8e44-77260b35e35a",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "ae4b3648-ad40-4a6b-becf-02fdb2c4c9a0",
+      "id": "c6da9711-b01c-4e7f-9b45-856bf2233460",
       "key": "port",
       "value": "8010"
     }

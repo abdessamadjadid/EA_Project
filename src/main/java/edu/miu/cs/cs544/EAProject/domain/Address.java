@@ -4,7 +4,6 @@ import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
-
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;

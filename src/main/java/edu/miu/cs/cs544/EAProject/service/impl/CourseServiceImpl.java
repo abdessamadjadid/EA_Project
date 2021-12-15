@@ -2,6 +2,7 @@ package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.Course;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.error.ClientException;
 import edu.miu.cs.cs544.EAProject.repository.CourseRepository;
 import edu.miu.cs.cs544.EAProject.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,7 @@ public class CourseServiceImpl implements CourseService {
                 if (data.getCode().equals(course.getCode())) isFound = true;
             }
             if (!isFound) return repository.save(course);
-            else throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Course is already Created");
+            else throw new ClientException("error.course.created");
         }
     }
 

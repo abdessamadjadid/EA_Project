@@ -1,13 +1,13 @@
 package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.CourseOffering;
+import edu.miu.cs.cs544.EAProject.error.ClientException;
 import edu.miu.cs.cs544.EAProject.repository.CourseOfferingRepository;
 import edu.miu.cs.cs544.EAProject.service.CourseOfferingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
@@ -36,13 +36,12 @@ public class CourseOfferingServiceImpl implements CourseOfferingService {
         try {
             CourseOffering courseOffering = getCourseOfferingById(id);
             if (courseOffering == null) {
-                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There is course offering of" + id);
+                throw new ClientException("error.courseOfferingId.noRecord");
             } else {
                 repository.delete(courseOffering);
-                throw new ResponseStatusException(HttpStatus.OK, "CourseOffering is successfully deleted.");
             }
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There is course offering of " + id);
+        } catch (EntityNotFoundException e) {
+            throw new ClientException("error.courseOfferingId.noRecord");
         }
     }
 }

@@ -22,9 +22,8 @@ public class AdminStudentController {
 
     @PostMapping
     public StudentDto registerStudent(@Valid @RequestBody StudentDto student) {
-
-        UserDetailsDto userDetails = accountRegistrationService.registerStudent(
-                student.getUserId(), student.getStudentId(), student.getName(), student.getEmail());
+        UserDetailsDto userDetails = accountRegistrationService.registerStudent(student.getUserId(), student.getStudentId(),
+                student.getName(), student.getEmail(), student.getMailingAddressId(), student.getHomeAddressId());
         return extractStudentDto(userDetails);
     }
 

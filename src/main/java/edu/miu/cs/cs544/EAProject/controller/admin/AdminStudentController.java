@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+
 /**
  * Set of endpoints for admins to manage students
  */
@@ -19,7 +21,7 @@ public class AdminStudentController {
     private final AccountRegistrationService accountRegistrationService;
 
     @PostMapping
-    public StudentDto registerStudent(@RequestBody StudentDto student) {
+    public StudentDto registerStudent(@Valid @RequestBody StudentDto student) {
 
         UserDetailsDto userDetails = accountRegistrationService.registerStudent(
                 student.getUserId(), student.getStudentId(), student.getName(), student.getEmail());

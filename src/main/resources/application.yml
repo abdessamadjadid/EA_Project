@@ -1,12 +1,22 @@
 server:
   port: 8011
+<<<<<<< HEAD
 countrystatecity:
   forceUpdate: false
+=======
+
+  error:
+    include-message: always
+    include-binding-errors: on_param
+    include-stacktrace: never
+    include-exception: false
+
+>>>>>>> main
 spring:
   profiles:
     active: prod
   application:
-    name: EA Final Project
+    name: ea-course-registration
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_16699266ca49cba

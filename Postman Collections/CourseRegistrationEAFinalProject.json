@@ -364,9 +364,9 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
-                "url": null
+                "url": "http://{{baseURL}}:{{port}}/course-offerings"
               },
               "response": []
             }
@@ -864,12 +864,12 @@
   ],
   "variable": [
     {
-      "id": "18acd45a-3ea6-45f4-81db-e8a89cd1adae",
+      "id": "538672c2-ab22-4028-b584-1b9463cc9f3d",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "41d1acc5-79f0-4af7-a23c-2f201b34d7b7",
+      "id": "014f7fa3-1648-471e-8ee9-83e546ef014d",
       "key": "port",
       "value": "8010"
     }

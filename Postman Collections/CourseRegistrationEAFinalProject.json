@@ -440,7 +440,7 @@
                 },
                 {
                   "id": "d91ecc79-374f-4db4-857c-ff2c781b3ca1",
-                  "name": "Student Registration",
+                  "name": "Success",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -839,12 +839,12 @@
   ],
   "variable": [
     {
-      "id": "f9a39059-7ff0-4687-a9f9-0103b73567ba",
+      "id": "282c35b0-40cf-4a8f-9e87-15c0225c88e5",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "9ed3b1ff-9e7f-4ab0-80cb-63824f508d75",
+      "id": "95faa84d-806e-4864-ac88-b611c4ab7d52",
       "key": "port",
       "value": "8010"
     }

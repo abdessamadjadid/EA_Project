@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "3357568d-c2c8-47d9-b699-944d0226b6e6",
-    "name": "Course Management EA Final Project",
+    "name": "Course Registration EA Final Project",
     "description": "API Collection for MIU Enterprise Final Project API Collection",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
@@ -956,27 +956,27 @@
   ],
   "variable": [
     {
-      "id": "2fce6d56-210c-4d10-931a-9fb224619bcd",
+      "id": "102038ff-236a-48ff-a3a7-4951f501f19d",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "5dd94dae-72fe-4830-9fe5-bb6af29a06f4",
+      "id": "6ee617a1-cd5f-4c8c-b79b-947af769401f",
       "key": "port",
       "value": "8010"
     },
     {
-      "id": "cc46c19c-6ec2-4708-83ed-aa4373f22fcb",
+      "id": "c02fc074-97c8-40c3-964a-8cf66d8e0fcd",
       "key": "username",
       "value": "mwin@miu.edu"
     },
     {
-      "id": "65e935e9-ab49-4d2b-bf66-91631d7c2454",
+      "id": "ef3ec4a9-44f4-43d6-8809-306182b19cab",
       "key": "password",
       "value": "P@ssword"
     },
     {
-      "id": "f400f703-4093-4f11-88fa-be90af7e3199",
+      "id": "b5a512b9-7d62-427c-85e3-d58e73f6ba68",
       "key": "token",
       "value": ""
     }

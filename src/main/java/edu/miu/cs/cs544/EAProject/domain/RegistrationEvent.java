@@ -33,37 +33,38 @@ public class RegistrationEvent implements Auditable {
     @Embedded
     private Audit audit;
 
-   @OneToMany(cascade = CascadeType.ALL)
-   @JoinColumn(name="group_id")
-   private Collection<RegistrationGroup> registrationGroups;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "group_id")
+    private Collection<RegistrationGroup> registrationGroups;
 
-   @OneToMany(cascade = CascadeType.ALL)
-   @JoinColumn(name="request_id")
-   private Collection<RegistrationRequest> registrationRequests;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "request_id")
+    private Collection<RegistrationRequest> registrationRequests;
 
-   @Transient
-   EventStatus status = EventStatus.CLOSED;
+    @Transient
+    EventStatus status = EventStatus.CLOSED;
 
-   public void addGroup(RegistrationGroup group){
-       if(group != null){
-           registrationGroups.add(group);
-       }
-   }
+    public void addGroup(RegistrationGroup group) {
+        if (group != null) {
+            registrationGroups.add(group);
+        }
+    }
 
-   public void addRequest(RegistrationRequest request){
-       if(request != null){
-           registrationRequests.add(request);
-       }
-   }
+    public void addRequest(RegistrationRequest request) {
+        if (request != null) {
+            registrationRequests.add(request);
+        }
+    }
 
-   public EventStatus getStatus(){
-      return this.status = switch(isEventOpen()){
-           case 1 -> EventStatus.OPEN;
-           default -> EventStatus.CLOSED;
-       };
-   }
+    public EventStatus getStatus() {
+//      return this.status = switch(isEventOpen()){
+//           case 1 -> EventStatus.OPEN;
+//           default -> EventStatus.CLOSED;
+//       };
+        return EventStatus.CLOSED;
+    }
 
-   public int isEventOpen(){
-       return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) == -1 ? 1: 0;
-   }
+    public int isEventOpen() {
+        return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) == -1 ? 1 : 0;
+    }
 }

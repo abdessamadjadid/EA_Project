@@ -20,7 +20,24 @@
             },
             "method": "GET",
             "header": [],
-            "url": "http://localhost:8010/countries"
+            "url": {
+              "raw": "http://localhost:8010/countries?page=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8010",
+              "path": [
+                "countries"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         }

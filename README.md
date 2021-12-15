@@ -12,7 +12,7 @@ ___
 
 ### Postman Collection
 
-[API Collection](https://go.postman.co/workspace/Team-Workspace~f4e1610e-b4fd-4240-8c01-8c3eb7c8f95d/collection/9739530-3357568d-c2c8-47d9-b699-944d0226b6e6)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9739530-3357568d-c2c8-47d9-b699-944d0226b6e6?action=collection%2Ffork&collection-url=entityId%3D9739530-3357568d-c2c8-47d9-b699-944d0226b6e6%26entityType%3Dcollection%26workspaceId%3D9c4d787f-6c17-4371-98fb-9e4c4c4924be)
 
 ---
 

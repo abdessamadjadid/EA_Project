@@ -4,18 +4,23 @@ import edu.miu.cs.cs544.EAProject.advice.EventNotFoundException;
 import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
 import edu.miu.cs.cs544.EAProject.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Comparator;
-import java.util.List;
 
+@Transactional
+@Service
 public class EventServiceImpl implements EventService{
 
     @Autowired
     EventRepository repository;
 
     @Override
-    public List<RegistrationEvent> getAllEvents() {
-        return repository.findAll();
+    public Page<RegistrationEvent> getAllEvents(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     @Override
@@ -29,8 +34,13 @@ public class EventServiceImpl implements EventService{
     }
 
     @Override
-    public RegistrationEvent updateEvent(RegistrationEvent event, Integer id) {
-       RegistrationEvent registrationEvent = getEventById(id);
+    public RegistrationEvent updateEvent(RegistrationEvent event) {
+       RegistrationEvent registrationEvent = getEventById(event.getId());
+       registrationEvent.setRegistrationRequests(event.getRegistrationRequests());
+       registrationEvent.setRegistrationGroups(event.getRegistrationGroups());
+       registrationEvent.setName(event.getName());
+       registrationEvent.setStartEndDate(event.getStartEndDate());
+
        return  repository.save(registrationEvent);
     }
 

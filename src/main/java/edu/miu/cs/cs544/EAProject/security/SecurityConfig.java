@@ -57,16 +57,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
 
-            http.antMatcher("/**")
-                    .csrf().disable()
-                    .apply(jwtFilterConfigurer()).and()
-                    .authorizeRequests()
-                    .antMatchers("/signup/**").permitAll()
-                    .antMatchers("/admins/**", "/students/**", "/faculties/**").authenticated()
-                    .mvcMatchers("/admins/*").hasAuthority(SecurityUtils.ROLE_ADMIN)
-                    .mvcMatchers("/students/*").hasAnyAuthority(SecurityUtils.ROLE_STUDENT, SecurityUtils.ROLE_ADMIN)
-                    .mvcMatchers("/faculties/*").hasAnyAuthority(SecurityUtils.ROLE_FACULTY, SecurityUtils.ROLE_ADMIN)
-                    .antMatchers("/**").authenticated();
+//            http.antMatcher("/**")
+//                    .csrf().disable()
+//                    .apply(jwtFilterConfigurer()).and()
+//                    .authorizeRequests()
+//                    .antMatchers("/signup/**").permitAll()
+//                    .antMatchers("/admins/**", "/students/**", "/faculties/**").authenticated()
+//                    .mvcMatchers("/admins/*").hasAuthority(SecurityUtils.ROLE_ADMIN)
+//                    .mvcMatchers("/students/*").hasAnyAuthority(SecurityUtils.ROLE_STUDENT, SecurityUtils.ROLE_ADMIN)
+//                    .mvcMatchers("/faculties/*").hasAnyAuthority(SecurityUtils.ROLE_FACULTY, SecurityUtils.ROLE_ADMIN)
+//                    .antMatchers("/**").authenticated();
         }
 
         private SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> jwtFilterConfigurer() {

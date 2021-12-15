@@ -552,7 +552,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": null
+                "url": "http://{{baseURL}}:{{port}}/academic-blocks"
               },
               "response": []
             }
@@ -594,12 +594,12 @@
   ],
   "variable": [
     {
-      "id": "bf2acb65-0f3b-4fa6-bde0-3b2e958fa3ef",
+      "id": "1fb4d77a-d4e1-400e-a6aa-f6c3242a932c",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "56ffedaf-d37a-4139-84fe-7ed4ac9501a5",
+      "id": "87442463-35d5-415a-a830-a135aae73268",
       "key": "port",
       "value": "8010"
     }

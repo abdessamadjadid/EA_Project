@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Data
@@ -31,10 +32,4 @@ public class RegistrationRequest implements Auditable {
 
     @Embedded
     private Audit audit;
-
-    public RegistrationRequest(Student student, CourseOffering courseOffering, int priority) {
-        this.student = student;
-        this.courseOffering = courseOffering;
-        this.priority = priority;
-    }
 }

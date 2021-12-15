@@ -24,10 +24,10 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://localhost:8010/countries?page=1",
+                  "raw": "http://{{baseURL}}:8010/countries?page=1",
                   "protocol": "http",
                   "host": [
-                    "localhost"
+                    "{{baseURL}}"
                   ],
                   "port": "8010",
                   "path": [
@@ -36,8 +36,7 @@
                   "query": [
                     {
                       "key": "page",
-                      "value": "1",
-                      "type": "text"
+                      "value": "1"
                     }
                   ]
                 }
@@ -116,7 +115,7 @@
   ],
   "variable": [
     {
-      "id": "884b0d27-846a-4069-a2bd-1c052c777bc3",
+      "id": "179960c6-5478-4bb3-bd66-21aabb58158c",
       "key": "baseURL",
       "value": "localhost"
     }

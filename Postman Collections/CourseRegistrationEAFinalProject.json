@@ -277,7 +277,7 @@
           "description": "Sign In/Up API"
         },
         {
-          "name": "New Folder",
+          "name": "Course Offering",
           "item": [],
           "id": "c0ed9843-bf9f-4517-b119-3433167ac55b"
         }
@@ -316,12 +316,12 @@
   ],
   "variable": [
     {
-      "id": "44d90a7c-acaa-476c-97cd-04ba53dc2a35",
+      "id": "a4bb0703-289e-4ff6-9378-4621af27e6d2",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "2fa308be-fd97-4e77-9994-6cdc9cee8c25",
+      "id": "37a6e41b-8fa5-49ea-a80b-53e24c8e4d35",
       "key": "port",
       "value": "8010"
     }

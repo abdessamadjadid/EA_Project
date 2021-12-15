@@ -246,7 +246,8 @@
         {
           "name": "Sign In/Up",
           "item": [],
-          "id": "2316bb9c-053d-451e-b232-a6b918268488"
+          "id": "2316bb9c-053d-451e-b232-a6b918268488",
+          "description": "Sign In/Up API"
         }
       ],
       "id": "4fe13d3f-00fe-4ef8-a3a8-2ab339b66c47",
@@ -283,12 +284,12 @@
   ],
   "variable": [
     {
-      "id": "04d2718e-d460-4922-a842-f761223e4a03",
+      "id": "39fc36dd-0848-4ad1-8894-0fe4d2db63b3",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "8cb8706a-68f9-48fb-96f3-091b71d90cfc",
+      "id": "a79a0ca6-7e27-41c2-b625-bc03c5b322ee",
       "key": "port",
       "value": "8010"
     }

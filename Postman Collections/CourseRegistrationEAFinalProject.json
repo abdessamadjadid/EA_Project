@@ -94,7 +94,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "1956318e-41db-412e-9639-6eb1a99fc370",
+        "id": "42a9cd5f-a4b8-4dab-a824-3ff5622e698f",
         "type": "text/javascript",
         "exec": [
           ""
@@ -104,7 +104,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "204249a6-1123-43a2-8f8f-b8ab697f910f",
+        "id": "7ae0782c-28a4-47a2-b3d7-2704319522d1",
         "type": "text/javascript",
         "exec": [
           ""
@@ -114,9 +114,14 @@
   ],
   "variable": [
     {
-      "id": "80d0faff-d38a-40e7-a05e-cd2fdd427b99",
+      "id": "83291fe1-6074-4db9-9f7e-0cc4d175c4b3",
       "key": "baseURL",
       "value": "localhost"
+    },
+    {
+      "id": "cf93a80d-ba1f-49f6-b454-eb8c82e437ed",
+      "key": "port",
+      "value": "8010"
     }
   ]
 }

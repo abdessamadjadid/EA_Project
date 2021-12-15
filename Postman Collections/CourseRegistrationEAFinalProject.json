@@ -647,9 +647,89 @@
               "request": {
                 "method": "POST",
                 "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
                 "url": "http://{{baseURL}}:{{port}}/addresses"
               },
-              "response": []
+              "response": [
+                {
+                  "id": "f3bcaa8c-c843-4c2a-9cfa-a85b6dc9c51b",
+                  "name": "Save Address",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/addresses"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 08:08:47 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 9,\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\",\n    \"city\": null,\n    \"audit\": {\n        \"createdDate\": \"2021-12-15T02:08:47.730357\",\n        \"modifiedDate\": \"2021-12-15T02:08:47.730345\"\n    }\n}"
+                }
+              ]
             }
           ],
           "id": "23007f36-cd57-4c5c-b4c6-db0ed59669f5"
@@ -689,12 +769,12 @@
   ],
   "variable": [
     {
-      "id": "64e8ef28-81e8-413a-a6a1-649fa339d99a",
+      "id": "9f1f0e69-73de-40c3-9743-5e452bdf2624",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "afd017d0-8485-47bc-bf0a-1fa8452d4594",
+      "id": "8d72624e-af87-4144-a1f7-3511053d246c",
       "key": "port",
       "value": "8010"
     }

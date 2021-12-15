@@ -10,45 +10,6 @@
       "name": "Admin",
       "item": [
         {
-          "name": "Country",
-          "item": [
-            {
-              "name": "Get Country With Paging",
-              "id": "d6a6b48c-7064-4be9-8393-7466f9fd5d87",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://{{baseURL}}:{{port}}/countries?page=1",
-                  "protocol": "http",
-                  "host": [
-                    "{{baseURL}}"
-                  ],
-                  "port": "{{port}}",
-                  "path": [
-                    "countries"
-                  ],
-                  "query": [
-                    {
-                      "key": "page",
-                      "value": "1"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            }
-          ],
-          "id": "47d7424c-d2c7-4595-904a-b24266574285",
-          "description": "API collection which is related with Country."
-        },
-        {
           "name": "Course",
           "item": [
             {
@@ -374,12 +335,12 @@
   ],
   "variable": [
     {
-      "id": "c5d7e30e-f70c-45df-a9a5-3b5917e8a35a",
+      "id": "0b81a46a-1741-450b-b23b-fc812ba9e1ee",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "4701747b-95ff-409e-b336-c13cbb7ad41a",
+      "id": "96aa35a5-9a76-4943-9f92-41cff9fb4626",
       "key": "port",
       "value": "8010"
     }

@@ -288,7 +288,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": null
+                "url": "http://{{baseURL}}:{{port}}/courseOfferings"
               },
               "response": []
             }
@@ -330,12 +330,12 @@
   ],
   "variable": [
     {
-      "id": "00504f6d-05fa-4d5e-8cdc-412e7b991b0c",
+      "id": "d9851feb-a977-4603-9a60-3260b929a1ec",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "dd0d79e0-116c-4288-8b15-cc4b3f26a40b",
+      "id": "f00eac67-93f6-486e-a5f6-db9819503fe5",
       "key": "port",
       "value": "8010"
     }

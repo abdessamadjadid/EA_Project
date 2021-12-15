@@ -91,5 +91,34 @@
       "item": [],
       "id": "dcdfa125-372c-481b-8c7b-f5f5b169d66f"
     }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "535164c1-8f59-4c44-bfac-e6763773fd54",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "4ca27bd1-5d45-4a9b-adf0-203adb564375",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "88c76b4b-8765-4938-9da4-eca3eaaa9eef",
+      "key": "baseURL",
+      "value": "localhost"
+    }
   ]
 }

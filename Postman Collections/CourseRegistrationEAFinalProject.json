@@ -846,7 +846,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "13258418-c792-4b5d-90e9-ee8283ce0c8e",
+        "id": "59529801-702f-45b1-94e5-ed57064ebe7f",
         "type": "text/javascript",
         "exec": [
           ""
@@ -856,7 +856,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "d59c631f-bcca-4a33-b7b6-3f70d63131e3",
+        "id": "b5426b12-ffdf-4e06-b93b-4f6226cf38c3",
         "type": "text/javascript",
         "exec": [
           ""
@@ -866,24 +866,29 @@
   ],
   "variable": [
     {
-      "id": "62d4fb20-677d-44f0-a956-a3a91f332550",
+      "id": "8ffef722-a50a-43bf-8fa4-b8fd5169b6df",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "3659814b-4e6c-4a89-be2c-4bee5ed783b8",
+      "id": "ef96f061-40b6-4442-8c55-800afaae64b3",
       "key": "port",
       "value": "8010"
     },
     {
-      "id": "49e5b7a1-6d87-4cee-bf16-486f1fb32bf9",
+      "id": "b0829276-95c2-47bb-97ba-c465135349e9",
       "key": "username",
       "value": "mwin@miu.edu"
     },
     {
-      "id": "ca62e9c7-8e6f-49bc-b386-f13a8c260083",
+      "id": "f5995661-ae1d-442d-9888-9ad525691c93",
       "key": "password",
       "value": "P@ssword"
+    },
+    {
+      "id": "fe66cae5-3178-4d21-930e-495ea88b708d",
+      "key": "token",
+      "value": ""
     }
   ]
 }

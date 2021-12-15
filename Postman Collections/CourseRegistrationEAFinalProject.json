@@ -322,7 +322,21 @@
         },
         {
           "name": "Registration",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "94eb2a25-cdd5-497c-b05f-3e04699af97b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "6b87a4b7-5a91-4018-92e3-9e08f8fcd918"
         }
       ],
@@ -360,12 +374,12 @@
   ],
   "variable": [
     {
-      "id": "f5a8222b-d912-490e-abc5-4c8cd79cc8d7",
+      "id": "3e100fa4-89f5-46bd-b734-a9ca4501efd1",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "a7d19aa2-2afb-48c0-81e4-7eb5c6fc6d2d",
+      "id": "c5073119-0016-4503-95d8-16d67c2e21e1",
       "key": "port",
       "value": "8010"
     }

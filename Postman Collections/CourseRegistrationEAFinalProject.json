@@ -373,78 +373,8 @@
               },
               "response": [
                 {
-                  "id": "8d5be7c4-e799-45d0-9695-86bb2a87b137",
-                  "name": "Success",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": "http://{{baseURL}}:{{port}}/admins/students"
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "X-Content-Type-Options",
-                      "value": "nosniff"
-                    },
-                    {
-                      "key": "X-XSS-Protection",
-                      "value": "1; mode=block"
-                    },
-                    {
-                      "key": "Cache-Control",
-                      "value": "no-cache, no-store, max-age=0, must-revalidate"
-                    },
-                    {
-                      "key": "Pragma",
-                      "value": "no-cache"
-                    },
-                    {
-                      "key": "Expires",
-                      "value": "0"
-                    },
-                    {
-                      "key": "X-Frame-Options",
-                      "value": "DENY"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "Transfer-Encoding",
-                      "value": "chunked"
-                    },
-                    {
-                      "key": "Date",
-                      "value": "Wed, 15 Dec 2021 04:12:06 GMT"
-                    },
-                    {
-                      "key": "Keep-Alive",
-                      "value": "timeout=60"
-                    },
-                    {
-                      "key": "Connection",
-                      "value": "keep-alive"
-                    }
-                  ],
-                  "cookie": [],
-                  "responseTime": null,
-                  "body": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}"
-                },
-                {
                   "id": "bc5c2827-fb89-44d6-aebf-4e98a9f0b7b1",
-                  "name": "Student Registration",
+                  "name": "Something is wrong",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -740,12 +670,12 @@
   ],
   "variable": [
     {
-      "id": "1217dae9-9c68-4514-9960-7692671a3ea7",
+      "id": "c30ffcd7-b915-4211-a8e0-a9c67e389277",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "cdb79936-39ef-4099-bb8e-a1d458cc877e",
+      "id": "dec3fc3a-7449-4c41-8bce-325938fe6f1e",
       "key": "port",
       "value": "8010"
     }

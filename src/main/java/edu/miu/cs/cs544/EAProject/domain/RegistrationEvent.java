@@ -1,6 +1,8 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,14 +13,14 @@ import java.util.Collection;
 
 @Entity
 @Data
-@Table(name = "RegistrationEvent")
 @NoArgsConstructor
-public class RegistrationEvent {
+@EntityListeners(AuditListener.class)
+public class RegistrationEvent implements Auditable {
+
     @Id
     @GeneratedValue
     private Integer id;
 
-    @Column(name = "name", nullable = false)
     private String name;
 
     @Embedded
@@ -27,6 +29,9 @@ public class RegistrationEvent {
             @AttributeOverride(name = "modifiedDate", column = @Column(name = "endDate"))
     })
     private Audit startEndDate;
+
+    @Embedded
+    private Audit audit;
 
    @OneToMany(cascade = CascadeType.ALL)
    @JoinColumn(name="group_id")
@@ -61,8 +66,4 @@ public class RegistrationEvent {
    public int isEventOpen(){
        return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) == -1 ? 1: 0;
    }
-
-
-
-
 }

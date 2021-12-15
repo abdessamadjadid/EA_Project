@@ -30,7 +30,7 @@ public class SecurityServiceImpl implements SecurityService {
     public TokenDto issueToken(String username, String password) {
 
         User user = SecurityUtils.getCurrentUser();
-        String token =  jwtTokenProvider.createToken(username, Objects.requireNonNull(user).getRoles());
+        String token = jwtTokenProvider.createToken(username, Objects.requireNonNull(user).getRoles());
         return new TokenDto(token, jwtTokenProvider.getTokenType(), jwtTokenProvider.getExpirySeconds());
     }
 

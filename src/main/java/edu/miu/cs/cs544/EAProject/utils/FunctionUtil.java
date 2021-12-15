@@ -17,7 +17,7 @@ public abstract class FunctionUtil {
 
     public static Function<RegistrationEvent, List<CourseOffering> > getAllCourseOffering = (event) ->
             event.getRegistrationRequests().stream()
-                    .flatMap(request -> request.getCourseOffering().stream())
+                    .map(request -> request.getCourseOffering())
                     .distinct()
                     .collect(Collectors.toList());
 

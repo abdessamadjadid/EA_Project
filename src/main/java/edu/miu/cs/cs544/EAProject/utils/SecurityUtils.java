@@ -29,9 +29,9 @@ public final class SecurityUtils {
 
     public static Pair<String, String> extractUsernamePassword(String authentication) {
         try {
-            String pair=new String(Base64.decodeBase64(authentication.substring(6)));
-            String username=pair.split(":")[0];
-            String password=pair.split(":")[1];
+            String pair = new String(Base64.decodeBase64(authentication.substring(6)));
+            String username = pair.split(":")[0];
+            String password = pair.split(":")[1];
             return new Pair<>(username, password);
         } catch (Exception ex) {
             log.warn("Failed to extract username & password");

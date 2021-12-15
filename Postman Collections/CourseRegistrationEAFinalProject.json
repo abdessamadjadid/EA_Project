@@ -96,7 +96,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "535164c1-8f59-4c44-bfac-e6763773fd54",
+        "id": "1956318e-41db-412e-9639-6eb1a99fc370",
         "type": "text/javascript",
         "exec": [
           ""
@@ -106,7 +106,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "4ca27bd1-5d45-4a9b-adf0-203adb564375",
+        "id": "204249a6-1123-43a2-8f8f-b8ab697f910f",
         "type": "text/javascript",
         "exec": [
           ""
@@ -116,7 +116,7 @@
   ],
   "variable": [
     {
-      "id": "88c76b4b-8765-4938-9da4-eca3eaaa9eef",
+      "id": "884b0d27-846a-4069-a2bd-1c052c777bc3",
       "key": "baseURL",
       "value": "localhost"
     }

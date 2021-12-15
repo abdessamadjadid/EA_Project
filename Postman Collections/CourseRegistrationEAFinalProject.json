@@ -544,7 +544,7 @@
           "name": "Academic Block",
           "item": [
             {
-              "name": "New Request",
+              "name": "Save Academic Block",
               "id": "091f8087-6b6b-4b9b-b8b3-d6095229fabd",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -594,12 +594,12 @@
   ],
   "variable": [
     {
-      "id": "4f912673-8b97-4e6b-8aa5-ae46d1fd27b5",
+      "id": "bf2acb65-0f3b-4fa6-bde0-3b2e958fa3ef",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "6c3057ff-0d04-4d2d-b10e-0bea07f0d5e3",
+      "id": "56ffedaf-d37a-4139-84fe-7ed4ac9501a5",
       "key": "port",
       "value": "8010"
     }

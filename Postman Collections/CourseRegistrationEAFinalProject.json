@@ -298,20 +298,19 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                  "raw": "http://{{baseURL}}:{{port}}/courseOfferings?id=1",
+                  "raw": "http://{{baseURL}}:{{port}}/course-offerings?id=1",
                   "protocol": "http",
                   "host": [
                     "{{baseURL}}"
                   ],
                   "port": "{{port}}",
                   "path": [
-                    "courseOfferings"
+                    "course-offerings"
                   ],
                   "query": [
                     {
                       "key": "id",
-                      "value": "1",
-                      "type": "text"
+                      "value": "1"
                     }
                   ]
                 }
@@ -356,12 +355,12 @@
   ],
   "variable": [
     {
-      "id": "e2fcac1c-65a6-4410-9612-fa09d1a41f15",
+      "id": "0a2e40c2-f5bc-4a3e-815f-8effb2fb23b0",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "273b824c-97c3-4279-9100-93dd763e45dc",
+      "id": "c25b3fc5-f9f5-4516-af72-eb33761c422d",
       "key": "port",
       "value": "8010"
     }

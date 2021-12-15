@@ -1,53 +1,61 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
+
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
-@Entity
-@Data
-@Table(name = "AcademicBlock")
+@EntityListeners(AuditListener.class)
 @NoArgsConstructor
-public class AcademicBlock {
-
-    public enum Semester {
-        SPRING, SUMMER, WINTER
-    }
+@Data
+@Entity
+public class AcademicBlock implements Auditable {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "code", nullable = false)
+    @Column(nullable = false)
     private String code;
 
-    @Column(name = "name", length = 255, nullable = false)
+    @Column(nullable = false)
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    private Semester semester;
 
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "createdDate", column = @Column(name = "startDate")),
             @AttributeOverride(name = "modifiedDate", column = @Column(name = "endDate"))
     })
-    private Audit startEndDate;
+    private Audit timespan;
 
     @Embedded
     private Audit audit;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "blockRegistrationGroupId")
-    private List<BlockRegistrationGroup> blockRegistrationGroups;
+    @ManyToMany
+    @JoinTable(name = "BlockRegistrationGroup",
+            joinColumns = @JoinColumn(name = "academicBlock"),
+            inverseJoinColumns = @JoinColumn(name = "registrationGroup"))
+    private Collection<RegistrationGroup> registrationGroups;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "academicBlock")
-    private List<CourseOffering> courseOfferings;
+    @OneToMany(mappedBy = "academicBlock", cascade = CascadeType.ALL)
+    private Collection<CourseOffering> courseOfferings;
 
 
-    public AcademicBlock(BlockRegistrationGroup blockRegistrationGroup, CourseOffering courseOffering) {
-        this.blockRegistrationGroups.add(blockRegistrationGroup);
-        this.courseOfferings.add(courseOffering);
+    public AcademicBlock(String code, String name, Semester semester, Audit timespan,
+                         Collection<RegistrationGroup> registrationGroups, Collection<CourseOffering> courseOfferings) {
+        this.code = code;
+        this.name = name;
+        this.semester = semester;
+        this.timespan = timespan;
+        this.registrationGroups = registrationGroups;
+        this.courseOfferings = courseOfferings;
     }
-
 }

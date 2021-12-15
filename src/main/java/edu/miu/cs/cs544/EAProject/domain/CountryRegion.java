@@ -7,12 +7,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 
-@Entity
 @Data
+@Entity
 @NoArgsConstructor
 @EntityListeners(AuditListener.class)
-public class StateProvince implements Auditable {
+public class CountryRegion implements Auditable {
 
     @Id
     @GeneratedValue
@@ -21,19 +23,10 @@ public class StateProvince implements Auditable {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String code;
-
     @Embedded
     private Audit audit;
 
-    @ManyToOne
-    @JoinColumn
-    private CountryRegion countryRegion;
-
-    public StateProvince(String name, String code, CountryRegion countryRegion) {
+    public CountryRegion(String name) {
         this.name = name;
-        this.code = code;
-        this.countryRegion = countryRegion;
     }
 }

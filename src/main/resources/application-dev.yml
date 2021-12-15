@@ -1,13 +1,22 @@
 server:
   port: 8010
-countrystatecity:
-  forceUpdate: false
+
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+    include-exception: false
+
 spring:
-  application:
-    name: EA Final Project (Dev)
   datasource:
-    url: jdbc:mysql://localhost:3306/cs544
-    username: root
-    password: P@ssw0rd
+    url: 'jdbc:postgresql://localhost:5432/cs544'
+    username: 'root'
+    password: 'CS544-EA'
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: create-drop

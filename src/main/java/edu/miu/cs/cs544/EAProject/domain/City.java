@@ -5,11 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-<<<<<<< HEAD
-
-=======
 import java.util.List;
->>>>>>> main
 
 @Data
 @Entity
@@ -27,8 +23,6 @@ public class City {
     @Embedded
     private Audit audit;
 
-<<<<<<< HEAD
-=======
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "addressId")
     @OrderBy("postalCode")
@@ -38,7 +32,7 @@ public class City {
         this.name = name;
         this.addresses = addresses;
     }
->>>>>>> main
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "stateprovinceId")
     private StateProvince stateprovince;

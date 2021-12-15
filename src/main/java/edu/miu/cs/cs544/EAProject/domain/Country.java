@@ -1,8 +1,5 @@
 package edu.miu.cs.cs544.EAProject.domain;
-<<<<<<< HEAD
 
-=======
->>>>>>> main
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,11 +21,7 @@ public class Country {
     private String name;
 
     @Embedded
-<<<<<<< HEAD
-    private Audit createdModifiedDate;
-=======
     private Audit audit;
->>>>>>> main
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "stateProvinceId")
@@ -38,9 +31,4 @@ public class Country {
         this.name = name;
         this.stateProvinces = stateProvince;
     }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 }

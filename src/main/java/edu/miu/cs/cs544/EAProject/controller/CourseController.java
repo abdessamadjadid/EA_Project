@@ -1,7 +1,6 @@
 package edu.miu.cs.cs544.EAProject.controller;
 
 import edu.miu.cs.cs544.EAProject.domain.Course;
-import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityListeners;
 import javax.validation.Valid;
-import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/courses")
@@ -33,10 +31,6 @@ public class CourseController {
 
     @PostMapping
     public Course saveCourse(@RequestBody Course course) {
-        Audit audit = new Audit();
-        audit.setCreatedDate(LocalDateTime.now());
-        audit.setModifiedDate(LocalDateTime.now());
-        course.setAudit(audit);
         return service.saveCourse(course);
     }
 

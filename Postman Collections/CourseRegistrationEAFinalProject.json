@@ -451,7 +451,7 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
                 "url": null
               },
@@ -495,12 +495,12 @@
   ],
   "variable": [
     {
-      "id": "88e5e717-940e-42b0-a835-545ccbf054fa",
+      "id": "0f2024c5-a60c-4553-8ae7-976633e1ee3f",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "4adb4d2e-1156-4aa4-853f-607a84fd4da4",
+      "id": "cd4047a0-d407-4e1c-b9dd-460dd90d3852",
       "key": "port",
       "value": "8010"
     }

@@ -13,6 +13,7 @@ import java.util.StringJoiner;
 @Entity
 @Data
 @NoArgsConstructor
+
 @EntityListeners(AuditListener.class)
 public class CourseOffering implements Auditable {
 

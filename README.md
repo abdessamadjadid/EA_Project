@@ -36,6 +36,3 @@ ___
 - GitHub
 - GitHub Action for CI/CD
 - Docker
-
-
-

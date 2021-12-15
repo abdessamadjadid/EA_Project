@@ -59,7 +59,24 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": null
+                "url": {
+                  "raw": "http://localhost:8010/courses?page=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8010",
+                  "path": [
+                    "courses"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
               },
               "response": []
             }

@@ -280,7 +280,7 @@
           "name": "Course Offering",
           "item": [
             {
-              "name": "New Request",
+              "name": "Delete Course Offering",
               "id": "cc35b0b1-e003-423d-8fa1-17784513149b",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -330,12 +330,12 @@
   ],
   "variable": [
     {
-      "id": "d9851feb-a977-4603-9a60-3260b929a1ec",
+      "id": "5f2db80a-f68a-4ac6-93d6-08a7bf55ef5e",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "f00eac67-93f6-486e-a5f6-db9819503fe5",
+      "id": "4256a79d-a96e-413f-88de-6a85575e5337",
       "key": "port",
       "value": "8010"
     }

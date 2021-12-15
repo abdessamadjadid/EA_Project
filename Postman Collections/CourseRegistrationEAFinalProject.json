@@ -100,7 +100,78 @@
                 },
                 "url": "http://{{baseURL}}:{{port}}/courses"
               },
-              "response": []
+              "response": [
+                {
+                  "id": "6f27432c-0d6c-4cfd-b56a-0b5c5e2e42aa",
+                  "name": "Save Course",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/courses"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 01:45:39 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 6,\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\",\n    \"audit\": {\n        \"createdDate\": \"2021-12-14T19:45:39.35681\",\n        \"modifiedDate\": \"2021-12-14T19:45:39.356824\"\n    }\n}"
+                }
+              ]
             }
           ],
           "id": "f4137316-f73a-4ff7-912f-a338e0097d04",
@@ -141,12 +212,12 @@
   ],
   "variable": [
     {
-      "id": "769d7854-1b97-4400-bea9-0230358012b1",
+      "id": "b2a1cf04-8bf8-4272-8450-2d0aba63fa48",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "77b1a17c-2307-482c-b8a9-2638e74eec23",
+      "id": "c77a3b9f-e8e9-471b-afa8-e8c7b96765b1",
       "key": "port",
       "value": "8010"
     }

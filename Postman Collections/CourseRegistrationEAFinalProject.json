@@ -464,7 +464,78 @@
                 },
                 "url": "http://{{baseURL}}:{{port}}/admins/faculties"
               },
-              "response": []
+              "response": [
+                {
+                  "id": "82efb2ef-5637-4344-a8d7-9fae27e4dd2e",
+                  "name": "Faculty Registration",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"userId\": 3,\n    \"name\": \"Payman Slek\",\n    \"email\": \"pslek@miu.edu\",\n    \"title\": \"Software Architect Lead\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/admins/faculties"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 04:20:29 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"userId\": 3,\n    \"name\": \"Payman Slek\",\n    \"email\": \"pslek@miu.edu\",\n    \"title\": \"Software Architect Lead\"\n}"
+                }
+              ]
             }
           ],
           "id": "6b87a4b7-5a91-4018-92e3-9e08f8fcd918"
@@ -504,12 +575,12 @@
   ],
   "variable": [
     {
-      "id": "9ed731f8-9523-4b42-bff5-34dbbe6e768b",
+      "id": "e8cb1c27-7189-4608-b373-7d5a810fc847",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "e27dd359-acd0-4a02-89f8-ce38de6a301a",
+      "id": "d63a507f-318c-436e-b844-6ca1c432b2b1",
       "key": "port",
       "value": "8010"
     }

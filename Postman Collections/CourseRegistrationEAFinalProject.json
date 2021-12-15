@@ -7,47 +7,48 @@
   "item": [
     {
       "name": "Admin",
-      "item": [],
-      "id": "4fe13d3f-00fe-4ef8-a3a8-2ab339b66c47"
-    },
-    {
-      "name": "Country API",
       "item": [
         {
-          "name": "Get Country With Paging",
-          "id": "d6a6b48c-7064-4be9-8393-7466f9fd5d87",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "auth": {
-              "type": "noauth"
-            },
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:8010/countries?page=1",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "8010",
-              "path": [
-                "countries"
-              ],
-              "query": [
-                {
-                  "key": "page",
-                  "value": "1",
-                  "type": "text"
+          "name": "Country API",
+          "item": [
+            {
+              "name": "Get Country With Paging",
+              "id": "d6a6b48c-7064-4be9-8393-7466f9fd5d87",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8010/countries?page=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8010",
+                  "path": [
+                    "countries"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
                 }
-              ]
+              },
+              "response": []
             }
-          },
-          "response": []
+          ],
+          "id": "47d7424c-d2c7-4595-904a-b24266574285"
         }
       ],
-      "id": "47d7424c-d2c7-4595-904a-b24266574285"
+      "id": "4fe13d3f-00fe-4ef8-a3a8-2ab339b66c47"
     },
     {
       "name": "Student",

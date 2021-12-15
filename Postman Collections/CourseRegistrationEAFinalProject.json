@@ -91,7 +91,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs. These topics are of particular importance as a prerequisite for the courses in the graduate program in Computer Science. Topics include: elements of Java programming, object-oriented design and implementation, data structures (including lists, stacks, queues, binary search trees, hash tables, and sets), the exception hierarchy, file i/o and streams, and JDBC. (4 credits) Prerequisite: For undergraduate students: CS 221; for graduate students: consent of the department faculty (4 units)\"\n}",
+                  "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -141,12 +141,12 @@
   ],
   "variable": [
     {
-      "id": "b1f8c8e9-82f0-4a2c-abf6-d067aa39a01b",
+      "id": "769d7854-1b97-4400-bea9-0230358012b1",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "942d77b6-c623-4fb9-8758-52177217b050",
+      "id": "77b1a17c-2307-482c-b8a9-2638e74eec23",
       "key": "port",
       "value": "8010"
     }

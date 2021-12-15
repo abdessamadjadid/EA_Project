@@ -453,6 +453,15 @@
               "request": {
                 "method": "POST",
                 "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userId\": 3,\n    \"name\": \"Payman Slek\",\n    \"email\": \"pslek@miu.edu\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
                 "url": "http://{{lbaseURL}}:{{port}}/admins/faculties"
               },
               "response": []
@@ -495,12 +504,12 @@
   ],
   "variable": [
     {
-      "id": "f84782d5-1723-43df-8314-9641780c020d",
+      "id": "82b65d2e-2d9f-4adc-bab0-801c10a08f01",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "f1d0ba3f-abd5-4446-b67a-f07d3c1192a6",
+      "id": "c3d65ad2-1eb9-4b00-8f89-793602baed50",
       "key": "port",
       "value": "8010"
     }

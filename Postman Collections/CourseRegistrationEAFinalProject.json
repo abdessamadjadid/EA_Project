@@ -217,8 +217,8 @@
                 "auth": {
                   "type": "basic",
                   "basic": {
-                    "username": "{{username}}",
-                    "password": "P@ssw0rd"
+                    "password": "{{password}}",
+                    "username": "{{username}}"
                   }
                 },
                 "method": "POST",
@@ -866,12 +866,12 @@
   ],
   "variable": [
     {
-      "id": "851c7ab5-b83f-42f3-91e9-0bd1630ee759",
+      "id": "5b12aa1a-e552-4dc9-b005-83392afb8abe",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "f07961c0-ccba-4ba4-9096-64a203cb8172",
+      "id": "116f600a-d63b-42c6-9d45-70a971188b0b",
       "key": "port",
       "value": "8010"
     }

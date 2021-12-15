@@ -98,7 +98,7 @@
                     }
                   }
                 },
-                "url": "http://{{baseURL}}:{{port}}/course"
+                "url": "http://{{baseURL}}:{{port}}/courses"
               },
               "response": []
             }
@@ -141,12 +141,12 @@
   ],
   "variable": [
     {
-      "id": "2b60e925-086a-490b-a131-c2614007b7f1",
+      "id": "b1f8c8e9-82f0-4a2c-abf6-d067aa39a01b",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "2c4ab861-e749-4d8b-95a1-f5385d6eb977",
+      "id": "942d77b6-c623-4fb9-8758-52177217b050",
       "key": "port",
       "value": "8010"
     }

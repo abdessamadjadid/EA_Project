@@ -324,7 +324,7 @@
           "name": "Registration",
           "item": [
             {
-              "name": "New Request",
+              "name": "Student Registration",
               "id": "94eb2a25-cdd5-497c-b05f-3e04699af97b",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -374,12 +374,12 @@
   ],
   "variable": [
     {
-      "id": "7a9a89f3-4fa2-4380-92e4-d5acf278a64f",
+      "id": "c8b8e927-4871-48cb-aa99-a2d05d39cbe6",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "f506221b-260d-4707-9f8d-898482319f77",
+      "id": "0ab94af5-3582-4cd2-9581-e217ee0500e5",
       "key": "port",
       "value": "8010"
     }

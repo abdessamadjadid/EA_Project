@@ -232,7 +232,76 @@
                 ],
                 "url": "http://{{baseURL}}:{{port}}/login"
               },
-              "response": []
+              "response": [
+                {
+                  "id": "a16a0d42-e77b-4580-a48d-1c3cc52ce3b9",
+                  "name": "Sign In",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Authorization",
+                        "value": "mwin@miu.edu:P@ssw0rd",
+                        "type": "text",
+                        "disabled": true
+                      }
+                    ],
+                    "url": "http://{{baseURL}}:{{port}}/login"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 15:31:56 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtd2luQG1pdS5lZHUiLCJhdXRoIjpbeyJhdXRob3JpdHkiOiJzdHVkZW50In1dLCJpYXQiOjE2Mzk1ODIzMTYsImV4cCI6MTYzOTU4NTkxNn0.lzbnNbFovL2Ds11D2z4SdhsMP6-2_0hMi7fUS0Ut5wc\",\n    \"type\": \"jwt\",\n    \"expirySeconds\": 3600\n}"
+                }
+              ]
             },
             {
               "name": "Sign Up",
@@ -866,27 +935,27 @@
   ],
   "variable": [
     {
-      "id": "8ffef722-a50a-43bf-8fa4-b8fd5169b6df",
+      "id": "e1ec48bc-0a20-4e03-8d91-10a482dd7e3f",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "ef96f061-40b6-4442-8c55-800afaae64b3",
+      "id": "4c33f699-7c5e-4e2e-afc2-7c50eea097a9",
       "key": "port",
       "value": "8010"
     },
     {
-      "id": "b0829276-95c2-47bb-97ba-c465135349e9",
+      "id": "8ff0dc75-a898-4045-bfba-ab74227cdaf2",
       "key": "username",
       "value": "mwin@miu.edu"
     },
     {
-      "id": "f5995661-ae1d-442d-9888-9ad525691c93",
+      "id": "92599fe5-c308-4654-bffd-07280e328677",
       "key": "password",
       "value": "P@ssword"
     },
     {
-      "id": "fe66cae5-3178-4d21-930e-495ea88b708d",
+      "id": "26020106-8cb6-4ab3-b0a3-47f753f818a8",
       "key": "token",
       "value": ""
     }

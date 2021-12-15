@@ -42,4 +42,4 @@ security:
 
 java:
   runtime:
-    version: 11
+    version: 11.0.13

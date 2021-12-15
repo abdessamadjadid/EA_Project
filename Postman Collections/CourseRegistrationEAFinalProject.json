@@ -637,7 +637,21 @@
         },
         {
           "name": "Address",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "1e0a4930-241c-4ae0-a877-74ff072988dc",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "23007f36-cd57-4c5c-b4c6-db0ed59669f5"
         }
       ],
@@ -675,12 +689,12 @@
   ],
   "variable": [
     {
-      "id": "77b7550d-9225-4822-b2d5-e9b7eda81a12",
+      "id": "2e40910f-f066-4c1e-bb15-c8b1e7819bf4",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "515878c9-02ad-4cbf-a5f8-2fa75447f2fa",
+      "id": "96d5419f-413a-48b0-9932-9ded298f7504",
       "key": "port",
       "value": "8010"
     }

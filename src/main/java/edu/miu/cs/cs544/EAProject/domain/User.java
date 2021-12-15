@@ -19,7 +19,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
-@Entity @NoArgsConstructor
+@Entity
+@NoArgsConstructor
 @Table(name = "`User`")
 @EntityListeners(AuditListener.class)
 public class User implements UserDetails, Auditable {
@@ -35,7 +36,7 @@ public class User implements UserDetails, Auditable {
     @Column(nullable = false)
     private String password;
 
-    @JoinTable(name = "user_role")
+    @JoinTable(name = "UseRole")
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Collection<Role> roles = new ArrayList<>();
 

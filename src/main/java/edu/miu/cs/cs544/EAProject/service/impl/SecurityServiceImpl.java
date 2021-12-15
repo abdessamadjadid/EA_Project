@@ -1,10 +1,11 @@
-package edu.miu.cs.cs544.EAProject.service;
+package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.User;
 import edu.miu.cs.cs544.EAProject.dto.TokenDto;
 import edu.miu.cs.cs544.EAProject.dto.UserDto;
 import edu.miu.cs.cs544.EAProject.i18n.DefaultMessageSource;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
+import edu.miu.cs.cs544.EAProject.service.SecurityService;
 import edu.miu.cs.cs544.EAProject.utils.SecurityUtils;
 import edu.miu.cs.cs544.EAProject.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +30,7 @@ public class SecurityServiceImpl implements SecurityService {
     public TokenDto issueToken(String username, String password) {
 
         User user = SecurityUtils.getCurrentUser();
-        String token =  jwtTokenProvider.createToken(username, Objects.requireNonNull(user).getRoles());
+        String token = jwtTokenProvider.createToken(username, Objects.requireNonNull(user).getRoles());
         return new TokenDto(token, jwtTokenProvider.getTokenType(), jwtTokenProvider.getExpirySeconds());
     }
 

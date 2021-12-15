@@ -1,7 +1,7 @@
 server:
   port: 8011
 countrystatecity:
-  forceUpdate: true
+  forceUpdate: false
 spring:
   application:
     name: EA Final Project
@@ -9,12 +9,21 @@ spring:
     url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_16699266ca49cba
     username: bdec61cbf0420f
     password: d13dd415
+    hikari:
+      maximumPoolSize: 100
   jpa:
     show-sql: false
     hibernate:
+<<<<<<< HEAD
       ddl-auto: create-drop
+=======
+      ddl-auto: update
+>>>>>>> main
 
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+<<<<<<< HEAD
 
+=======
+>>>>>>> main

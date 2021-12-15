@@ -1,33 +1,34 @@
 server:
   port: 8011
-<<<<<<< HEAD
-countrystatecity:
-  forceUpdate: false
-=======
-
   error:
     include-message: always
     include-binding-errors: on_param
     include-stacktrace: never
     include-exception: false
-
->>>>>>> main
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: ea-course-registration
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_16699266ca49cba
-    username: bdec61cbf0420f
-    password: d13dd415
+    url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_1ca686ea640d958
+    username: be4721dffdca39
+    password: b31cad21
     hikari:
-      maximumPoolSize: 10
+      maximumPoolSize: 1000
   jpa:
     show-sql: false
     hibernate:
       ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.MySQL8Dialect
+  main:
+    allow-bean-definition-overriding: true
 
 security:
   jwt:

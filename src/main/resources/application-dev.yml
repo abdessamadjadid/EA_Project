@@ -1,0 +1,13 @@
+server:
+  port: 8010
+countrystatecity:
+  forceUpdate: false
+spring:
+  application:
+    name: EA Final Project (Dev)
+  datasource:
+    url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_1ca686ea640d958
+    username: be4721dffdca39
+    password: b31cad21
+  jpa:
+    show-sql: true

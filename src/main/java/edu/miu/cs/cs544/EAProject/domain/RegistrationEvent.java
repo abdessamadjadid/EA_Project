@@ -1,33 +1,70 @@
 package edu.miu.cs.cs544.EAProject.domain;
+
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Collection;
 
 @Entity
 @Data
-@Table(name = "RegistrationEvent")
 @NoArgsConstructor
-public class RegistrationEvent
-{
+@EntityListeners(AuditListener.class)
+public class RegistrationEvent implements Auditable {
+
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
-    @Column(name = "name",length = 255, nullable = false)
     private String name;
 
     @Embedded
-    private StartEndDate startEndDate;
+    @AttributeOverrides({
+            @AttributeOverride(name = "createdDate", column = @Column(name = "startDate")),
+            @AttributeOverride(name = "modifiedDate", column = @Column(name = "endDate"))
+    })
+    private Audit startEndDate;
 
-    /*@OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "registrationgroupId")
-    private RegistrationGroup registrationgroup;
+    @Embedded
+    private Audit audit;
 
-    public RegistrationEvent(String name , RegistrationGroup registrationgroup) {
-        this.name = name;
-        this.registrationgroup = registrationgroup;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "group_id")
+    private Collection<RegistrationGroup> registrationGroups;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "request_id")
+    private Collection<RegistrationRequest> registrationRequests;
+
+    @Transient
+    EventStatus status = EventStatus.CLOSED;
+
+    public void addGroup(RegistrationGroup group) {
+        if (group != null) {
+            registrationGroups.add(group);
+        }
     }
-    */
 
+    public void addRequest(RegistrationRequest request) {
+        if (request != null) {
+            registrationRequests.add(request);
+        }
+    }
+
+    public EventStatus getStatus() {
+//      return this.status = switch(isEventOpen()){
+//           case 1 -> EventStatus.OPEN;
+//           default -> EventStatus.CLOSED;
+//       };
+        return EventStatus.CLOSED;
+    }
+
+    public int isEventOpen() {
+        return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) == -1 ? 1 : 0;
+    }
 }

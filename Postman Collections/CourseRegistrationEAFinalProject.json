@@ -1,28 +1,984 @@
 {
   "info": {
     "_postman_id": "3357568d-c2c8-47d9-b699-944d0226b6e6",
-    "name": "Course Management EA Final Project",
+    "name": "Course Registration EA Final Project",
+    "description": "API Collection for MIU Enterprise Final Project API Collection",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
     {
-      "name": "Country API",
+      "name": "Admin",
       "item": [
         {
-          "name": "New Request",
-          "id": "d6a6b48c-7064-4be9-8393-7466f9fd5d87",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": null
-          },
-          "response": []
+          "name": "Course",
+          "item": [
+            {
+              "name": "Get All Course",
+              "id": "2737c3d9-f1c5-4655-b588-d4e6c52b8e63",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseURL}}:{{port}}/courses?page=1",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "port": "{{port}}",
+                  "path": [
+                    "courses"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Save Course",
+              "id": "59fafacf-53c0-4ee0-adc7-676e56c9a5fd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/courses"
+              },
+              "response": [
+                {
+                  "id": "6f27432c-0d6c-4cfd-b56a-0b5c5e2e42aa",
+                  "name": "Success Response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/courses"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 01:45:39 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 6,\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\",\n    \"audit\": {\n        \"createdDate\": \"2021-12-14T19:45:39.35681\",\n        \"modifiedDate\": \"2021-12-14T19:45:39.356824\"\n    }\n}"
+                },
+                {
+                  "id": "b2181d26-d997-4092-96c1-69efb0f904cb",
+                  "name": "Course Already Created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/courses"
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 02:47:07 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-14T20:47:07.972505\",\n    \"message\": \"400 BAD_REQUEST \\\"Course is already Created\\\"\"\n}"
+                }
+              ]
+            }
+          ],
+          "id": "f4137316-f73a-4ff7-912f-a338e0097d04",
+          "description": "API Collection which is related with Course."
+        },
+        {
+          "name": "Sign In/Up",
+          "item": [
+            {
+              "name": "Sign In",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "7486ee34-710b-4f81-9163-7a1a84bf5471",
+                    "exec": [
+                      "pm.collectionVariables.set(\"token\" ,pm.response.json().token)"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "12fac1e8-a621-483c-9521-7902f24ace7e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": {
+                    "password": "{{password}}",
+                    "username": "{{username}}"
+                  }
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "mwin@miu.edu:P@ssw0rd",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "url": "http://{{baseURL}}:{{port}}/login"
+              },
+              "response": [
+                {
+                  "id": "a16a0d42-e77b-4580-a48d-1c3cc52ce3b9",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Authorization",
+                        "value": "mwin@miu.edu:P@ssw0rd",
+                        "type": "text",
+                        "disabled": true
+                      }
+                    ],
+                    "url": "http://{{baseURL}}:{{port}}/login"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 15:31:56 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtd2luQG1pdS5lZHUiLCJhdXRoIjpbeyJhdXRob3JpdHkiOiJzdHVkZW50In1dLCJpYXQiOjE2Mzk1ODIzMTYsImV4cCI6MTYzOTU4NTkxNn0.lzbnNbFovL2Ds11D2z4SdhsMP6-2_0hMi7fUS0Ut5wc\",\n    \"type\": \"jwt\",\n    \"expirySeconds\": 3600\n}"
+                }
+              ]
+            },
+            {
+              "name": "Sign Up",
+              "id": "2e081c8d-9cb5-4f13-bbc1-bbeb29662332",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"mwin@miu.edu\",\n    \"password\": \"P@ssw0rd\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/signup"
+              },
+              "response": [
+                {
+                  "id": "6366a1d7-bde2-468d-86b3-89cc9683b1dc",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"username\": \"mwin@miu.edu\",\n    \"password\": \"P@ssw0rd\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/signup"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "plain",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 04:11:26 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "id": "2316bb9c-053d-451e-b232-a6b918268488",
+          "description": "Sign In/Up API"
+        },
+        {
+          "name": "Course Offering",
+          "item": [
+            {
+              "name": "Delete Course Offering",
+              "id": "cc35b0b1-e003-423d-8fa1-17784513149b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseURL}}:{{port}}/course-offerings?id=1",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "port": "{{port}}",
+                  "path": [
+                    "course-offerings"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "id": "f55043d7-5af7-4152-9aeb-2d96f60060bd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": "http://{{baseURL}}:{{port}}/course-offerings"
+              },
+              "response": []
+            }
+          ],
+          "id": "c0ed9843-bf9f-4517-b119-3433167ac55b"
+        },
+        {
+          "name": "Registration",
+          "item": [
+            {
+              "name": "Student Registration",
+              "id": "94eb2a25-cdd5-497c-b05f-3e04699af97b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/admins/students"
+              },
+              "response": [
+                {
+                  "id": "bc5c2827-fb89-44d6-aebf-4e98a9f0b7b1",
+                  "name": "Something is wrong",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/admins/students"
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 07:55:07 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-15T01:55:07.48881\",\n    \"message\": \"Something is wrong\"\n}"
+                },
+                {
+                  "id": "d91ecc79-374f-4db4-857c-ff2c781b3ca1",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/admins/students"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 08:10:46 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}"
+                }
+              ]
+            },
+            {
+              "name": "Faculty Registration",
+              "id": "acf970f5-5171-4b2d-9a63-66663cb655be",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userId\": 3,\n    \"name\": \"Payman Slek\",\n    \"email\": \"pslek@miu.edu\",\n    \"title\": \"Software Architect Lead\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/admins/faculties"
+              },
+              "response": [
+                {
+                  "id": "82efb2ef-5637-4344-a8d7-9fae27e4dd2e",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"userId\": 3,\n    \"name\": \"Payman Slek\",\n    \"email\": \"pslek@miu.edu\",\n    \"title\": \"Software Architect Lead\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/admins/faculties"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 04:20:29 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"userId\": 3,\n    \"name\": \"Payman Slek\",\n    \"email\": \"pslek@miu.edu\",\n    \"title\": \"Software Architect Lead\"\n}"
+                }
+              ]
+            }
+          ],
+          "id": "6b87a4b7-5a91-4018-92e3-9e08f8fcd918"
+        },
+        {
+          "name": "Academic Block",
+          "item": [
+            {
+              "name": "Save Academic Block",
+              "id": "091f8087-6b6b-4b9b-b8b3-d6095229fabd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"startDate\": \"2012-12-01\",\n    \"endDate\": \"2012-12-28\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/academic-blocks"
+              },
+              "response": [
+                {
+                  "id": "55620612-18a0-4187-9226-9249fd6d1715",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"startDate\": \"2012-12-01\",\n    \"endDate\": \"2012-12-28\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/academic-blocks"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 06:20:37 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 8,\n    \"code\": \"2012-12A-12D\",\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"timespan\": {\n        \"createdDate\": \"2012-12-01T00:00:00\",\n        \"modifiedDate\": \"2012-12-28T00:00:00\"\n    },\n    \"audit\": {\n        \"createdDate\": \"2021-12-15T00:20:37.532481\",\n        \"modifiedDate\": \"2021-12-15T00:20:37.53247\"\n    },\n    \"registrationGroups\": null,\n    \"courseOfferings\": null\n}"
+                }
+              ]
+            }
+          ],
+          "id": "e9a60b65-a4c4-423d-978f-88cd55faf4f5"
+        },
+        {
+          "name": "Address",
+          "item": [
+            {
+              "name": "Save Address",
+              "id": "1e0a4930-241c-4ae0-a877-74ff072988dc",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/addresses"
+              },
+              "response": [
+                {
+                  "id": "f3bcaa8c-c843-4c2a-9cfa-a85b6dc9c51b",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/addresses"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 08:08:47 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 9,\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\",\n    \"city\": null,\n    \"audit\": {\n        \"createdDate\": \"2021-12-15T02:08:47.730357\",\n        \"modifiedDate\": \"2021-12-15T02:08:47.730345\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "id": "23007f36-cd57-4c5c-b4c6-db0ed59669f5"
         }
       ],
-      "id": "47d7424c-d2c7-4595-904a-b24266574285"
+      "id": "4fe13d3f-00fe-4ef8-a3a8-2ab339b66c47",
+      "description": "API Collection which can only access by **Admin**"
+    },
+    {
+      "name": "Student",
+      "item": [],
+      "id": "dcdfa125-372c-481b-8c7b-f5f5b169d66f",
+      "description": "API Collection which can only access by **Student**"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "{{token}}"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "505d2a88-1376-4e2b-af45-237da4412ea5",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "14b32f2e-b2b4-4e8d-b9c9-16b62484e678",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "102038ff-236a-48ff-a3a7-4951f501f19d",
+      "key": "baseURL",
+      "value": "localhost"
+    },
+    {
+      "id": "6ee617a1-cd5f-4c8c-b79b-947af769401f",
+      "key": "port",
+      "value": "8010"
+    },
+    {
+      "id": "c02fc074-97c8-40c3-964a-8cf66d8e0fcd",
+      "key": "username",
+      "value": "mwin@miu.edu"
+    },
+    {
+      "id": "ef3ec4a9-44f4-43d6-8809-306182b19cab",
+      "key": "password",
+      "value": "P@ssword"
+    },
+    {
+      "id": "b5a512b9-7d62-427c-85e3-d58e73f6ba68",
+      "key": "token",
+      "value": ""
     }
   ]
 }

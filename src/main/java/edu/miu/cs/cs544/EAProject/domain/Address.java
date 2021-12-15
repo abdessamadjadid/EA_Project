@@ -1,17 +1,18 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
-
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
-@Data
-@Table(name = "Address")
+@EntityListeners(AuditListener.class)
 @NoArgsConstructor
-public class Address {
+@Data
+@Entity
+public class Address implements Auditable {
 
     @Id
     @GeneratedValue
@@ -23,20 +24,14 @@ public class Address {
     @Column(name = "postalCode", nullable = false)
     private String postalCode;
 
+    @ManyToOne
+    @JoinColumn
+    private City city;
+
     @Embedded
     private Audit audit;
 
-
-    public Address(String street, String postalCode) {
-        this.street = street;
-        this.postalCode = postalCode;
-    }
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cityId")
-    private City city;
-
-    public Address(String street, String postalCode ,City city) {
+    public Address(String street, String postalCode, City city) {
         this.street = street;
         this.postalCode = postalCode;
         this.city = city;

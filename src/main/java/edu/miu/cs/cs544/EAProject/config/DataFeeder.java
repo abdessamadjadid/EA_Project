@@ -3,7 +3,6 @@ package edu.miu.cs.cs544.EAProject.config;
 import edu.miu.cs.cs544.EAProject.domain.Admin;
 import edu.miu.cs.cs544.EAProject.domain.User;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
-import edu.miu.cs.cs544.EAProject.service.SecurityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -24,7 +23,7 @@ public class DataFeeder implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
 
-        /* if (userRepository.findByUsername("admin").isEmpty()) {
+        if (userRepository.findByUsername("admin").isEmpty()) {
 
             User admin = new User();
             admin.setUsername("admin");
@@ -32,6 +31,6 @@ public class DataFeeder implements ApplicationRunner {
             admin.setRoles(Collections.singletonList(new Admin()));
 
             userRepository.save(admin);
-        }*/
+        }
     }
 }

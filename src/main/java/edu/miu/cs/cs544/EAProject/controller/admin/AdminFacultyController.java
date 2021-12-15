@@ -11,7 +11,8 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 
 @RequiredArgsConstructor
-@RestController("/admins/faculties")
+@RequestMapping("/admins/faculties")
+@RestController
 public class AdminFacultyController {
 
     private final AccountRegistrationService accountRegistrationService;

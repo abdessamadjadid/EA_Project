@@ -20,10 +20,7 @@
               },
               "request": {
                 "auth": {
-                  "type": "bearer",
-                  "bearer": {
-                    "token": "{{token}}"
-                  }
+                  "type": "noauth"
                 },
                 "method": "GET",
                 "header": [],
@@ -953,27 +950,27 @@
   ],
   "variable": [
     {
-      "id": "7711bfcc-b098-4bea-b05f-f2284c3b6b66",
+      "id": "a1836a8a-88bf-4704-bd6b-edc53e8971c4",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "31f428ba-a218-42b8-af16-1fb8f428dbd8",
+      "id": "1e0da156-f26c-48fb-a088-be7d6a37ecff",
       "key": "port",
       "value": "8010"
     },
     {
-      "id": "4a5fc08a-88c5-4cfb-85fc-927a6edd203f",
+      "id": "fbc0f4ed-8b06-4dce-9ccf-f2bbbbf78f74",
       "key": "username",
       "value": "mwin@miu.edu"
     },
     {
-      "id": "c64772a3-87db-4625-aae6-278079adca16",
+      "id": "4560a65b-fa7d-427a-ab6f-357c3f58a46f",
       "key": "password",
       "value": "P@ssword"
     },
     {
-      "id": "a606f88d-8c1d-433c-8682-369fefe3bb36",
+      "id": "cf9e5e76-8661-40fd-bf16-a716b2e6d6e1",
       "key": "token",
       "value": ""
     }

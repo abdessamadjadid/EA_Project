@@ -236,6 +236,72 @@
                   "cookie": [],
                   "responseTime": null,
                   "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-14T20:44:21.225609\",\n    \"message\": \"400 BAD_REQUEST \\\"User is already Created\\\"\"\n}"
+                },
+                {
+                  "id": "b2181d26-d997-4092-96c1-69efb0f904cb",
+                  "name": "Save Course",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/courses"
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 02:47:07 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-14T20:47:07.972505\",\n    \"message\": \"400 BAD_REQUEST \\\"Course is already Created\\\"\"\n}"
                 }
               ]
             }
@@ -278,12 +344,12 @@
   ],
   "variable": [
     {
-      "id": "30372fe3-dfdd-48d9-9878-8becc015bec7",
+      "id": "76f4e260-f1bf-4a52-bb3b-b8b1b6ceadc2",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "287df4ad-462b-41a3-b72a-ea37fb605ed4",
+      "id": "e82605ba-35e3-4669-9b97-b7381d1922b0",
       "key": "port",
       "value": "8010"
     }

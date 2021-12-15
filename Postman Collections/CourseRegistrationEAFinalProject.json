@@ -15,9 +15,12 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "noauth"
+            },
             "method": "GET",
             "header": [],
-            "url": null
+            "url": "http://localhost:8010/countries"
           },
           "response": []
         }

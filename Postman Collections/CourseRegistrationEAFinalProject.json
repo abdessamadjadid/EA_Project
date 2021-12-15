@@ -81,7 +81,8 @@
               "response": []
             }
           ],
-          "id": "f4137316-f73a-4ff7-912f-a338e0097d04"
+          "id": "f4137316-f73a-4ff7-912f-a338e0097d04",
+          "description": "API Collection which is related with Course."
         }
       ],
       "id": "4fe13d3f-00fe-4ef8-a3a8-2ab339b66c47",
@@ -117,12 +118,12 @@
   ],
   "variable": [
     {
-      "id": "4b707e4c-3782-473d-81d9-8c0e8c013008",
+      "id": "80ece9ec-3489-49a2-948d-968d4be57d4c",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "e956315a-9f0b-4ef1-8809-2befe5f8c38c",
+      "id": "b91c2eec-901a-4459-9e90-a3111101a5ba",
       "key": "port",
       "value": "8010"
     }

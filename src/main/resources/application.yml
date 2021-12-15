@@ -39,3 +39,7 @@ security:
   jwt:
     secretkey: secret-key
     timeout-millis: 3600000 #1 hr
+
+java:
+  runtime:
+    version: 11

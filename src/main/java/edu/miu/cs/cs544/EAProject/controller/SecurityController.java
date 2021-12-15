@@ -20,6 +20,7 @@ public class SecurityController {
 
     /**
      * This endpoint is already protected by http basic auth via {@link HttpBasicConfigurer}
+     *
      * @param auth Authorization header
      * @return JWT token
      */

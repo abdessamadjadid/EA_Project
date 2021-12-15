@@ -8,7 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @EqualsAndHashCode(callSuper = true)
-@Data @NoArgsConstructor
+@Data
+@NoArgsConstructor
 @Entity
 public class Faculty extends Role {
 

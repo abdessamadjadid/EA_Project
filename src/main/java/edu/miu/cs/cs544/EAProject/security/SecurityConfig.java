@@ -3,7 +3,6 @@ package edu.miu.cs.cs544.EAProject.security;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
 import edu.miu.cs.cs544.EAProject.security.jwt.JwtTokenFilter;
 import edu.miu.cs.cs544.EAProject.security.jwt.JwtTokenProvider;
-import edu.miu.cs.cs544.EAProject.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -57,16 +56,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
 
+//            http.antMatcher("/**")
+//                    .csrf().disable()
+//                    .apply(jwtFilterConfigurer()).and()
+//                    .authorizeRequests()
+//                    .antMatchers("/signup/**").permitAll()
+//                    .antMatchers("/admins/**", "/students/**", "/faculties/**").authenticated()
+//                    .mvcMatchers("/admins/*").hasAuthority(SecurityUtils.ROLE_ADMIN)
+//                    .mvcMatchers("/students/*").hasAnyAuthority(SecurityUtils.ROLE_STUDENT, SecurityUtils.ROLE_ADMIN)
+//                    .mvcMatchers("/faculties/*").hasAnyAuthority(SecurityUtils.ROLE_FACULTY, SecurityUtils.ROLE_ADMIN)
+//                    .antMatchers("/**").authenticated();
+
             http.antMatcher("/**")
                     .csrf().disable()
-                    .apply(jwtFilterConfigurer()).and()
                     .authorizeRequests()
-                    .antMatchers("/signup/**").permitAll()
-                    .antMatchers("/admins/**", "/students/**", "/faculties/**").authenticated()
-                    .mvcMatchers("/admins/*").hasAuthority(SecurityUtils.ROLE_ADMIN)
-                    .mvcMatchers("/students/*").hasAnyAuthority(SecurityUtils.ROLE_STUDENT, SecurityUtils.ROLE_ADMIN)
-                    .mvcMatchers("/faculties/*").hasAnyAuthority(SecurityUtils.ROLE_FACULTY, SecurityUtils.ROLE_ADMIN)
-                    .antMatchers("/**").authenticated();
+                    .anyRequest().permitAll();
         }
 
         private SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> jwtFilterConfigurer() {

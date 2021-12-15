@@ -11,11 +11,11 @@ public class AuditListener {
     public void setCreatedDate(Auditable auditable) {
 
         Audit audit = Optional.ofNullable(auditable.getAudit())
-                        .orElseGet(() -> {
-                            Audit aud = new Audit();
-                            auditable.setAudit(aud);
-                            return aud;
-                        });
+                .orElseGet(() -> {
+                    Audit aud = new Audit();
+                    auditable.setAudit(aud);
+                    return aud;
+                });
 
         audit.setCreatedDate(LocalDateTime.now());
     }

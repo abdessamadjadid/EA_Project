@@ -1,41 +1,32 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import java.util.Collection;
 import java.util.List;
 
-@Entity
-@Table(name = "CountryRegion")
-@NoArgsConstructor
 @Data
-public class CountryRegion {
+@Entity
+@NoArgsConstructor
+@EntityListeners(AuditListener.class)
+public class CountryRegion implements Auditable {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name", nullable = false)
+    @Column(nullable = false)
     private String name;
-
-    @Column(name = "code", nullable = false)
-    @Size(max = 2, min = 2)
-    private String code;
 
     @Embedded
     private Audit audit;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "stateId")
-    @OrderBy("name")
-    private List<StateProvince> stateProvinces;
-
-    public CountryRegion(String name, String code, List<StateProvince> stateProvinces) {
+    public CountryRegion(String name) {
         this.name = name;
-        this.code = code;
-        this.stateProvinces = stateProvinces;
     }
 }

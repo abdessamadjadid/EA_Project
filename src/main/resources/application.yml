@@ -1,10 +1,20 @@
 server:
   port: 8011
+
+  error:
+    include-message: always
+    include-binding-errors: on_param
+    include-stacktrace: never
+    include-exception: false
+
+countrystatecity:
+  forceUpdate: false
+
 spring:
   profiles:
     active: prod
   application:
-    name: EA Final Project
+    name: ea-course-registration
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_16699266ca49cba
@@ -13,9 +23,17 @@ spring:
     hikari:
       maximumPoolSize: 10
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate:
       ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.MySQL8Dialect
+  main:
+    allow-bean-definition-overriding: true
 
 security:
   jwt:

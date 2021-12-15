@@ -1,44 +1,45 @@
 package edu.miu.cs.cs544.EAProject.domain;
+
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Data
-@Table(name = "RegistrationGroup")
 @NoArgsConstructor
-
-public class RegistrationGroup
-{
+@EntityListeners(AuditListener.class)
+public class RegistrationGroup implements Auditable {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name",length = 255, nullable = false)
+    @Column(nullable = false)
     private String name;
+
+    @ManyToMany(mappedBy = "registrationGroups")
+    private Collection<AcademicBlock> academicBlocks;
+
+    @ManyToMany(mappedBy = "registrationGroups")
+    private Collection<Student> students;
+
+    @ManyToOne
+    @JoinColumn(name = "registrationEventId")
+    private RegistrationEvent registrationEvent;
 
     @Embedded
     private Audit audit;
 
-    /*@ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "registrationeventId")
-    private List<RegistrationEvent> registrationevent;
-
-    //@ManyToMany(cascade = CascadeType.ALL, Mappedby="")
-    @JoinColumn(name = "blockRegistrationgroupid")
-    private List<BlockRegistrationGroup> blockRegistrationGroups;*/
-
-
-
-    public RegistrationGroup(String name , RegistrationEvent registrationevent, BlockRegistrationGroup blockRegistrationGroup) {
+    public RegistrationGroup(String name, Collection<AcademicBlock> academicBlocks, Collection<Student> students, RegistrationEvent registrationEvent) {
         this.name = name;
-        //this.registrationevent = (List<RegistrationEvent>) registrationevent;
-        //this.blockRegistrationGroup = (List<BlockRegistrationGroup>) blockRegistrationGroup;
+        this.academicBlocks = academicBlocks;
+        this.students = students;
+        this.registrationEvent = registrationEvent;
     }
-
-
 }

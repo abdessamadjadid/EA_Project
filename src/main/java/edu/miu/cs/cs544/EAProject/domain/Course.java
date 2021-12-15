@@ -1,6 +1,8 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,24 +10,29 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "Course")
 @NoArgsConstructor
-public class Course
-{
+@EntityListeners(AuditListener.class)
+public class Course implements Auditable {
+
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "code", nullable = false)
+    @Column(nullable = false)
     private String code;
 
-    @Column(name = "name", nullable = false)
+    @Column(nullable = false)
     private String name;
 
-    @Column(name = "description", nullable = false)
+    @Column(nullable = false)
     private String description;
 
     @Embedded
     private Audit audit;
 
+    public Course(String code, String name, String description) {
+        this.code = code;
+        this.name = name;
+        this.description = description;
+    }
 }

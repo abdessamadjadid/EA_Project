@@ -8,14 +8,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+
 @RequiredArgsConstructor
-@RestController("/admins/faculties")
+@RequestMapping("/admins/faculties")
+@RestController
 public class AdminFacultyController {
 
     private final AccountRegistrationService accountRegistrationService;
 
     @PostMapping
-    public FacultyDto registerFaculty(@RequestBody FacultyDto faculty) {
+    public FacultyDto registerFaculty(@Valid @RequestBody FacultyDto faculty) {
 
         UserDetailsDto userDetails = accountRegistrationService.registerFaculty(faculty.getUserId(),
                 faculty.getName(), faculty.getEmail(), faculty.getTitle());

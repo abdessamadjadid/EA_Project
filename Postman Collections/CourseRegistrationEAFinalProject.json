@@ -2,6 +2,7 @@
   "info": {
     "_postman_id": "3357568d-c2c8-47d9-b699-944d0226b6e6",
     "name": "Course Management EA Final Project",
+    "description": "API Collection for MIU Enterprise Final Project API Collection",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -114,12 +115,12 @@
   ],
   "variable": [
     {
-      "id": "76b1d48f-d0b7-4da7-a8e0-ba5032b5b975",
+      "id": "a333f74f-e57b-446e-9b05-804aa87141e4",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "5e9462a3-9a7a-4141-b2d5-2fb4cc74a61c",
+      "id": "d3017e7b-8f99-4b88-94fe-574dc46c3ba8",
       "key": "port",
       "value": "8010"
     }

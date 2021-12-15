@@ -356,6 +356,19 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "New Request",
+              "id": "f55043d7-5af7-4152-9aeb-2d96f60060bd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
             }
           ],
           "id": "c0ed9843-bf9f-4517-b119-3433167ac55b"
@@ -851,12 +864,12 @@
   ],
   "variable": [
     {
-      "id": "618b7290-6ff7-42ef-b013-f634a843f718",
+      "id": "44d74b51-6a32-41a8-8811-4e228c621738",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "4dfe44a2-9911-4b76-86d6-696b299f8dbf",
+      "id": "6edde088-0c6d-4b70-aa88-0251248d5075",
       "key": "port",
       "value": "8010"
     }

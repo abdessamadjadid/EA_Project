@@ -362,7 +362,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 1,\n    \"homeAddressId\": 1\n}",
+                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -661,7 +661,7 @@
               "response": [
                 {
                   "id": "f3bcaa8c-c843-4c2a-9cfa-a85b6dc9c51b",
-                  "name": "Save Address",
+                  "name": "Success",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -769,12 +769,12 @@
   ],
   "variable": [
     {
-      "id": "95c82df0-ef6a-48f7-a80c-9b900145ecfb",
+      "id": "d18af12a-6435-46b4-8c61-233cb4d27c8b",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "8a1bf52c-7224-45c4-9209-3dfbb654a07e",
+      "id": "a1e89728-ffc3-445d-a835-fbc96737c482",
       "key": "port",
       "value": "8010"
     }

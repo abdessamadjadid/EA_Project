@@ -245,7 +245,21 @@
         },
         {
           "name": "Sign In/Up",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "12fac1e8-a621-483c-9521-7902f24ace7e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "2316bb9c-053d-451e-b232-a6b918268488",
           "description": "Sign In/Up API"
         }
@@ -284,12 +298,12 @@
   ],
   "variable": [
     {
-      "id": "39fc36dd-0848-4ad1-8894-0fe4d2db63b3",
+      "id": "4af5b4c4-41d6-4f87-a6e4-40cc4a09273c",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "a79a0ca6-7e27-41c2-b625-bc03c5b322ee",
+      "id": "3445c4a4-757a-47e9-a0d7-055b3747b521",
       "key": "port",
       "value": "8010"
     }

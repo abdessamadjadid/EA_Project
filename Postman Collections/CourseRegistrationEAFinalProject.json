@@ -81,15 +81,24 @@
               "response": []
             },
             {
-              "name": "New Request",
+              "name": "Save Course",
               "id": "59fafacf-53c0-4ee0-adc7-676e56c9a5fd",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
-                "url": null
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs. These topics are of particular importance as a prerequisite for the courses in the graduate program in Computer Science. Topics include: elements of Java programming, object-oriented design and implementation, data structures (including lists, stacks, queues, binary search trees, hash tables, and sets), the exception hierarchy, file i/o and streams, and JDBC. (4 credits) Prerequisite: For undergraduate students: CS 221; for graduate students: consent of the department faculty (4 units)\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/course"
               },
               "response": []
             }
@@ -132,12 +141,12 @@
   ],
   "variable": [
     {
-      "id": "2a2b1e8c-9490-4ae0-8046-b68efe4179d1",
+      "id": "2b60e925-086a-490b-a131-c2614007b7f1",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "4a00b669-c534-434e-8a99-a1c367b9fb5f",
+      "id": "2c4ab861-e749-4d8b-95a1-f5385d6eb977",
       "key": "port",
       "value": "8010"
     }

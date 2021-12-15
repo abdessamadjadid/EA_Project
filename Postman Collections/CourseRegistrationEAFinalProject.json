@@ -214,9 +214,21 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
-                "header": [],
-                "url": null
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": {
+                    "addTokenTo": "header"
+                  }
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "mwin@miu.edu:P@ssw0rd",
+                    "type": "text"
+                  }
+                ],
+                "url": "http://{{baseURL}}:{{port}}/login"
               },
               "response": []
             },
@@ -839,12 +851,12 @@
   ],
   "variable": [
     {
-      "id": "282c35b0-40cf-4a8f-9e87-15c0225c88e5",
+      "id": "618b7290-6ff7-42ef-b013-f634a843f718",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "95faa84d-806e-4864-ac88-b611c4ab7d52",
+      "id": "4dfe44a2-9911-4b76-86d6-696b299f8dbf",
       "key": "port",
       "value": "8010"
     }

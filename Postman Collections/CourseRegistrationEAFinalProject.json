@@ -10,7 +10,7 @@
       "name": "Admin",
       "item": [
         {
-          "name": "Country API",
+          "name": "Country",
           "item": [
             {
               "name": "Get Country With Paging",
@@ -115,12 +115,12 @@
   ],
   "variable": [
     {
-      "id": "a333f74f-e57b-446e-9b05-804aa87141e4",
+      "id": "edcebed8-8f6e-4d7a-a841-ffaab3138e57",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "d3017e7b-8f99-4b88-94fe-574dc46c3ba8",
+      "id": "c4c77980-060e-4245-959a-fb628e9b7153",
       "key": "port",
       "value": "8010"
     }

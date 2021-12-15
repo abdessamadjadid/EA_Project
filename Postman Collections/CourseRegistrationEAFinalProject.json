@@ -260,7 +260,7 @@
               "response": []
             },
             {
-              "name": "New Request",
+              "name": "Sign Up",
               "id": "2e081c8d-9cb5-4f13-bbc1-bbeb29662332",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -311,12 +311,12 @@
   ],
   "variable": [
     {
-      "id": "7028723d-640f-4005-8842-9ab91cdf2b4b",
+      "id": "e491113e-3ad3-42f4-a42e-441caa1a6b3a",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "97aaa6e6-5343-4020-a5fb-ad2f4eed4681",
+      "id": "31b63e89-b767-4caa-86e1-fb6234fb7509",
       "key": "port",
       "value": "8010"
     }

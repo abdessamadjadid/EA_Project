@@ -462,7 +462,7 @@
                     }
                   }
                 },
-                "url": "http://{{lbaseURL}}:{{port}}/admins/faculties"
+                "url": "http://{{baseURL}}:{{port}}/admins/faculties"
               },
               "response": []
             }
@@ -504,12 +504,12 @@
   ],
   "variable": [
     {
-      "id": "82b65d2e-2d9f-4adc-bab0-801c10a08f01",
+      "id": "f00106c6-683a-4112-be06-27c6dc34a8b1",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "c3d65ad2-1eb9-4b00-8f89-793602baed50",
+      "id": "8d4527f8-45b0-4382-a304-9017bf8019e3",
       "key": "port",
       "value": "8010"
     }

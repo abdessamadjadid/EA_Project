@@ -330,9 +330,9 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
-                "url": null
+                "url": "http://{{baseURL}}:{{port}}/admins/students"
               },
               "response": []
             }
@@ -374,12 +374,12 @@
   ],
   "variable": [
     {
-      "id": "c8b8e927-4871-48cb-aa99-a2d05d39cbe6",
+      "id": "c5d7e30e-f70c-45df-a9a5-3b5917e8a35a",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "0ab94af5-3582-4cd2-9581-e217ee0500e5",
+      "id": "4701747b-95ff-409e-b336-c13cbb7ad41a",
       "key": "port",
       "value": "8010"
     }

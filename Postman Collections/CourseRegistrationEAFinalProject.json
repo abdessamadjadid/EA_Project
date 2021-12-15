@@ -645,9 +645,9 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
-                "url": null
+                "url": "http://{{baseURL}}:{{port}}/addresses"
               },
               "response": []
             }
@@ -689,12 +689,12 @@
   ],
   "variable": [
     {
-      "id": "f8d4da70-825c-48c9-91ae-2018bd75791a",
+      "id": "64e8ef28-81e8-413a-a6a1-649fa339d99a",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "bb2fd03f-8445-456a-ae3f-56e86d9f891b",
+      "id": "afd017d0-8485-47bc-bf0a-1fa8452d4594",
       "key": "port",
       "value": "8010"
     }

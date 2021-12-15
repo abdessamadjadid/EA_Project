@@ -243,7 +243,7 @@
               "response": [
                 {
                   "id": "6366a1d7-bde2-468d-86b3-89cc9683b1dc",
-                  "name": "Sign Up",
+                  "name": "Success",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -362,7 +362,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"userId\": 2,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
+                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -411,12 +411,12 @@
   ],
   "variable": [
     {
-      "id": "36636dd5-11c7-44cc-aa69-d786bfc0e09d",
+      "id": "7f5af268-6998-4d99-9cc8-7bb6a3335388",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "11254429-37a8-4993-b53f-b9357bc56cbb",
+      "id": "8059fb6b-4c06-431c-86bf-833c8905b490",
       "key": "port",
       "value": "8010"
     }

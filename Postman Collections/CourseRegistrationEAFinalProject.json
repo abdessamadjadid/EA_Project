@@ -81,7 +81,7 @@
               "response": []
             },
             {
-              "name": "New Request",
+              "name": "Save Course",
               "id": "59fafacf-53c0-4ee0-adc7-676e56c9a5fd",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -132,12 +132,12 @@
   ],
   "variable": [
     {
-      "id": "ce06951b-ded0-4b7f-b0b1-38c3170d5720",
+      "id": "e483c277-7167-4f1a-a41a-5ef8f5c9774f",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "6dad61c2-e451-4976-8932-ae8648524e95",
+      "id": "837a56b5-4819-47a7-afaf-3396cddf183f",
       "key": "port",
       "value": "8010"
     }

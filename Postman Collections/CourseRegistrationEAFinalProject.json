@@ -445,7 +445,7 @@
               ]
             },
             {
-              "name": "New Request",
+              "name": "Faculty Registration",
               "id": "acf970f5-5171-4b2d-9a63-66663cb655be",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -495,12 +495,12 @@
   ],
   "variable": [
     {
-      "id": "e492fe9b-7a90-43cf-abcc-7cf28cdb7861",
+      "id": "88e5e717-940e-42b0-a835-545ccbf054fa",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "a1f1099d-395a-4f7f-bbf1-a427541767ee",
+      "id": "4adb4d2e-1156-4aa4-853f-607a84fd4da4",
       "key": "port",
       "value": "8010"
     }

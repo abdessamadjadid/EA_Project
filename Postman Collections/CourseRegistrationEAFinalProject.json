@@ -59,12 +59,12 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{baseURL}}:8010/courses?page=1",
+                  "raw": "http://{{baseURL}}:{{port}}/courses?page=1",
                   "protocol": "http",
                   "host": [
                     "{{baseURL}}"
                   ],
-                  "port": "8010",
+                  "port": "{{port}}",
                   "path": [
                     "courses"
                   ],
@@ -114,12 +114,12 @@
   ],
   "variable": [
     {
-      "id": "8784d2a1-adb8-4750-8c83-07a6eab48a2c",
+      "id": "76b1d48f-d0b7-4da7-a8e0-ba5032b5b975",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "16f6151a-1833-4bff-a2c4-62efc2b421a2",
+      "id": "5e9462a3-9a7a-4141-b2d5-2fb4cc74a61c",
       "key": "port",
       "value": "8010"
     }

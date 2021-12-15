@@ -374,7 +374,7 @@
               "response": [
                 {
                   "id": "8d5be7c4-e799-45d0-9695-86bb2a87b137",
-                  "name": "Student Registration",
+                  "name": "Success",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -443,6 +443,19 @@
                   "body": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}"
                 }
               ]
+            },
+            {
+              "name": "New Request",
+              "id": "acf970f5-5171-4b2d-9a63-66663cb655be",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
             }
           ],
           "id": "6b87a4b7-5a91-4018-92e3-9e08f8fcd918"
@@ -482,12 +495,12 @@
   ],
   "variable": [
     {
-      "id": "d4a52d51-0ac7-4537-95ad-2f1e24f6aa93",
+      "id": "07f92156-2a46-4f6d-b72b-39e9d8e7b34d",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "aa2885f8-ca1d-422d-be37-ec9783a786c2",
+      "id": "96e65124-993c-4df2-bb4f-959069a5b2d0",
       "key": "port",
       "value": "8010"
     }

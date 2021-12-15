@@ -45,7 +45,8 @@
               "response": []
             }
           ],
-          "id": "47d7424c-d2c7-4595-904a-b24266574285"
+          "id": "47d7424c-d2c7-4595-904a-b24266574285",
+          "description": "API collection which is related with Country."
         },
         {
           "name": "Course",
@@ -116,12 +117,12 @@
   ],
   "variable": [
     {
-      "id": "04afa649-847f-41ee-a027-f01aa6b578e8",
+      "id": "4b707e4c-3782-473d-81d9-8c0e8c013008",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "ba3bf0ae-7019-4b25-bf93-b82eccd0510b",
+      "id": "e956315a-9f0b-4ef1-8809-2befe5f8c38c",
       "key": "port",
       "value": "8010"
     }

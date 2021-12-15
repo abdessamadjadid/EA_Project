@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.List;
+import java.util.StringJoiner;
 
 @Entity
 @Data
@@ -22,6 +22,7 @@ public class CourseOffering implements Auditable {
     private int id;
 
     @Column(nullable = false)
+    @Access(AccessType.PROPERTY)
     private String code;
 
     @Column(nullable = false)
@@ -57,6 +58,24 @@ public class CourseOffering implements Auditable {
         this.course = course;
         this.academicBlock = academicBlock;
         this.registrationRequests = registrationRequests;
+    }
+
+    public CourseOffering(String facultyInitials, int capacity, Faculty faculty, Course course, AcademicBlock academicBlock) {
+        this.facultyInitials = facultyInitials;
+        this.capacity = capacity;
+        this.faculty = faculty;
+        this.course = course;
+        this.academicBlock = academicBlock;
+    }
+
+    public String getCode() {
+        StringJoiner joiner = new StringJoiner("-");
+        joiner.add(course.getCode()).add(academicBlock.getCode()).add(facultyInitials);
+        return joiner.toString();
+    }
+
+    public void setCode(String code) {
+        this.code = getCode();
     }
 
     public int getAvailableSeats() {

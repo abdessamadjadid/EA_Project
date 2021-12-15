@@ -49,7 +49,21 @@
         },
         {
           "name": "Course",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "2737c3d9-f1c5-4655-b588-d4e6c52b8e63",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "f4137316-f73a-4ff7-912f-a338e0097d04"
         }
       ],

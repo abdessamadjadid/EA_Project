@@ -1,7 +1,7 @@
 server:
   port: 8011
 countrystatecity:
-  forceUpdate: true
+  forceUpdate: false
 spring:
   application:
     name: EA Final Project

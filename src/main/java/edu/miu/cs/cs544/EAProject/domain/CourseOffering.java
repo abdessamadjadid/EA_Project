@@ -10,7 +10,6 @@ import java.util.List;
 @Data
 @Table(name = "CourseOffering")
 @NoArgsConstructor
-
 public class CourseOffering {
 
     @Id
@@ -29,14 +28,9 @@ public class CourseOffering {
     @Embedded
     private Audit audit;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "academicblockId")
-    private  List<AcademicBlock> academicBlock;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private  AcademicBlock academicBlock;
 
-
-    public CourseOffering(String name, String code, String facultyInitials, int capacity ,List<AcademicBlock> academicBlock) {
-        this.academicBlock = academicBlock;
-    }
 
     public int getAvailableSeats()
     {

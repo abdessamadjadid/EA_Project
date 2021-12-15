@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -24,10 +25,10 @@ public class RegistrationGroup
     @Embedded
     private Audit audit;
 
-    /*@ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "registrationeventId")
-    private List<RegistrationEvent> registrationevent;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    private Collection<RegistrationEvent> registrationEvent;
 
+    /*
     //@ManyToMany(cascade = CascadeType.ALL, Mappedby="")
     @JoinColumn(name = "blockRegistrationgroupid")
     private List<BlockRegistrationGroup> blockRegistrationGroups;*/

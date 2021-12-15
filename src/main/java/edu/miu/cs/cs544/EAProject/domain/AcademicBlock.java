@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -37,14 +38,9 @@ public class AcademicBlock {
     @JoinColumn(name = "blockregistrationgroupId")
     private List<RegistrationGroup> registrationGroup;*/
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "courseOfferingsId")
-    private  List<CourseOffering> courseOfferings;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "academicBlock")
+    private Collection<CourseOffering> courseOfferings;
 
 
-    public AcademicBlock(RegistrationGroup registrationGroup, CourseOffering courseOffering) {
-        //this.registrationGroup = (List<RegistrationGroup>) registrationGroup;
-        this.courseOfferings = (List<CourseOffering>) courseOffering;
-    }
 
 }

@@ -293,6 +293,15 @@
               "request": {
                 "method": "POST",
                 "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userId\": 2,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
                 "url": "http://{{baseURL}}:{{port}}/admins/students"
               },
               "response": []
@@ -335,12 +344,12 @@
   ],
   "variable": [
     {
-      "id": "1ef33350-c810-44ea-8b3e-b606032a61b5",
+      "id": "c7c03344-5f2f-4d41-bef0-8de420bb2994",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "f3df2d23-cd9c-46d8-ad97-333035927813",
+      "id": "4e20e63c-60d3-409c-bed3-b4b715b271dc",
       "key": "port",
       "value": "8010"
     }

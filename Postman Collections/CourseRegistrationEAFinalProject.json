@@ -321,7 +321,7 @@
           "id": "c0ed9843-bf9f-4517-b119-3433167ac55b"
         },
         {
-          "name": "New Folder",
+          "name": "Registration",
           "item": [],
           "id": "6b87a4b7-5a91-4018-92e3-9e08f8fcd918"
         }
@@ -360,12 +360,12 @@
   ],
   "variable": [
     {
-      "id": "8482d8e9-3eff-4bb7-9ace-b1770c680f58",
+      "id": "f5a8222b-d912-490e-abc5-4c8cd79cc8d7",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "96c28077-5ed5-4744-bf09-516797983bd1",
+      "id": "a7d19aa2-2afb-48c0-81e4-7eb5c6fc6d2d",
       "key": "port",
       "value": "8010"
     }

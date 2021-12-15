@@ -563,7 +563,78 @@
                 },
                 "url": "http://{{baseURL}}:{{port}}/academic-blocks"
               },
-              "response": []
+              "response": [
+                {
+                  "id": "55620612-18a0-4187-9226-9249fd6d1715",
+                  "name": "Save Academic Block",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"startDate\": \"2012-12-01\",\n    \"endDate\": \"2012-12-28\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/academic-blocks"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 06:20:37 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 8,\n    \"code\": \"2012-12A-12D\",\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"timespan\": {\n        \"createdDate\": \"2012-12-01T00:00:00\",\n        \"modifiedDate\": \"2012-12-28T00:00:00\"\n    },\n    \"audit\": {\n        \"createdDate\": \"2021-12-15T00:20:37.532481\",\n        \"modifiedDate\": \"2021-12-15T00:20:37.53247\"\n    },\n    \"registrationGroups\": null,\n    \"courseOfferings\": null\n}"
+                }
+              ]
             }
           ],
           "id": "e9a60b65-a4c4-423d-978f-88cd55faf4f5"
@@ -603,12 +674,12 @@
   ],
   "variable": [
     {
-      "id": "71a8a5e0-5a74-448b-b4d3-2278eb91dcc2",
+      "id": "43d3260f-b6b7-437c-a8bf-d8d350ff2531",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "c6f5ac43-2238-475d-b8dd-bcc312e137b3",
+      "id": "b5025699-7621-4ad7-87e4-b361aebc8a8d",
       "key": "port",
       "value": "8010"
     }

@@ -51,7 +51,7 @@
           "name": "Course",
           "item": [
             {
-              "name": "New Request",
+              "name": "Get All Course",
               "id": "2737c3d9-f1c5-4655-b588-d4e6c52b8e63",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true

@@ -103,7 +103,7 @@
               "response": [
                 {
                   "id": "6f27432c-0d6c-4cfd-b56a-0b5c5e2e42aa",
-                  "name": "Save Course",
+                  "name": "Success Response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -170,6 +170,72 @@
                   "cookie": [],
                   "responseTime": null,
                   "body": "{\n    \"id\": 6,\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\",\n    \"audit\": {\n        \"createdDate\": \"2021-12-14T19:45:39.35681\",\n        \"modifiedDate\": \"2021-12-14T19:45:39.356824\"\n    }\n}"
+                },
+                {
+                  "id": "478e9ad6-fddb-4743-a242-e3556249a84f",
+                  "name": "Save Course",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/courses"
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 02:44:21 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-14T20:44:21.225609\",\n    \"message\": \"400 BAD_REQUEST \\\"User is already Created\\\"\"\n}"
                 }
               ]
             }
@@ -212,12 +278,12 @@
   ],
   "variable": [
     {
-      "id": "f4f5eba2-02ce-40a7-9179-83212e3aa610",
+      "id": "af39042d-a5c0-4af4-8dba-acee39222e62",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "1e2651ea-cb72-44dc-8e51-f6e172d6d921",
+      "id": "a4efd6df-6493-4c2f-ad42-12cfba0b6d9d",
       "key": "port",
       "value": "8010"
     }

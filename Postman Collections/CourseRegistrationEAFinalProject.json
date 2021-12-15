@@ -209,6 +209,18 @@
           "item": [
             {
               "name": "Sign In",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "7486ee34-710b-4f81-9163-7a1a84bf5471",
+                    "exec": [
+                      "pm.collectionVariables.set(\"token\" ,pm.response.json().responseMap.securityCounter)"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "12fac1e8-a621-483c-9521-7902f24ace7e",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -235,7 +247,7 @@
               "response": [
                 {
                   "id": "a16a0d42-e77b-4580-a48d-1c3cc52ce3b9",
-                  "name": "Sign In",
+                  "name": "Success",
                   "originalRequest": {
                     "method": "POST",
                     "header": [
@@ -935,27 +947,27 @@
   ],
   "variable": [
     {
-      "id": "3e62a78b-920d-4e55-88f3-2864de947948",
+      "id": "bfeccc03-4854-4610-85a6-835dd5252854",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "77828b7a-5749-4dc5-8958-7803b88f6fa6",
+      "id": "536cdb19-78ff-4971-b829-aa36c1268cb3",
       "key": "port",
       "value": "8010"
     },
     {
-      "id": "8d80a90b-49f4-42e2-b525-6cc87daaa248",
+      "id": "ef66e2e1-4c98-4178-bcda-ead00b31323c",
       "key": "username",
       "value": "mwin@miu.edu"
     },
     {
-      "id": "281394c7-c85d-45d6-ada8-222f5ebf18f1",
+      "id": "4f1dde13-08f3-441c-bf97-d862e4e2c2c4",
       "key": "password",
       "value": "P@ssword"
     },
     {
-      "id": "ec5f5112-c738-451c-a4a1-fc58086addf5",
+      "id": "fc748cb1-388c-4d1c-a020-67f67c139de7",
       "key": "token",
       "value": ""
     }

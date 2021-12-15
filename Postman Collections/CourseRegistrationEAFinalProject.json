@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "3357568d-c2c8-47d9-b699-944d0226b6e6",
-    "name": "Course Management EA Final Project",
+    "name": "Course Registration EA Final Project",
     "description": "API Collection for MIU Enterprise Final Project API Collection",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
@@ -19,6 +19,9 @@
                 "disableBodyPruning": true
               },
               "request": {
+                "auth": {
+                  "type": "noauth"
+                },
                 "method": "GET",
                 "header": [],
                 "url": {
@@ -209,16 +212,111 @@
           "item": [
             {
               "name": "Sign In",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "7486ee34-710b-4f81-9163-7a1a84bf5471",
+                    "exec": [
+                      "pm.collectionVariables.set(\"token\" ,pm.response.json().token)"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "12fac1e8-a621-483c-9521-7902f24ace7e",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
-                "header": [],
-                "url": null
+                "auth": {
+                  "type": "basic",
+                  "basic": {
+                    "password": "{{password}}",
+                    "username": "{{username}}"
+                  }
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "mwin@miu.edu:P@ssw0rd",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "url": "http://{{baseURL}}:{{port}}/login"
               },
-              "response": []
+              "response": [
+                {
+                  "id": "a16a0d42-e77b-4580-a48d-1c3cc52ce3b9",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Authorization",
+                        "value": "mwin@miu.edu:P@ssw0rd",
+                        "type": "text",
+                        "disabled": true
+                      }
+                    ],
+                    "url": "http://{{baseURL}}:{{port}}/login"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 15:31:56 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtd2luQG1pdS5lZHUiLCJhdXRoIjpbeyJhdXRob3JpdHkiOiJzdHVkZW50In1dLCJpYXQiOjE2Mzk1ODIzMTYsImV4cCI6MTYzOTU4NTkxNn0.lzbnNbFovL2Ds11D2z4SdhsMP6-2_0hMi7fUS0Ut5wc\",\n    \"type\": \"jwt\",\n    \"expirySeconds\": 3600\n}"
+                }
+              ]
             },
             {
               "name": "Sign Up",
@@ -342,6 +440,19 @@
                     }
                   ]
                 }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "id": "f55043d7-5af7-4152-9aeb-2d96f60060bd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": "http://{{baseURL}}:{{port}}/course-offerings"
               },
               "response": []
             }
@@ -815,11 +926,17 @@
       "description": "API Collection which can only access by **Student**"
     }
   ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "{{token}}"
+    }
+  },
   "event": [
     {
       "listen": "prerequest",
       "script": {
-        "id": "42a9cd5f-a4b8-4dab-a824-3ff5622e698f",
+        "id": "505d2a88-1376-4e2b-af45-237da4412ea5",
         "type": "text/javascript",
         "exec": [
           ""
@@ -829,7 +946,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "7ae0782c-28a4-47a2-b3d7-2704319522d1",
+        "id": "14b32f2e-b2b4-4e8d-b9c9-16b62484e678",
         "type": "text/javascript",
         "exec": [
           ""
@@ -839,14 +956,29 @@
   ],
   "variable": [
     {
-      "id": "282c35b0-40cf-4a8f-9e87-15c0225c88e5",
+      "id": "102038ff-236a-48ff-a3a7-4951f501f19d",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "95faa84d-806e-4864-ac88-b611c4ab7d52",
+      "id": "6ee617a1-cd5f-4c8c-b79b-947af769401f",
       "key": "port",
       "value": "8010"
+    },
+    {
+      "id": "c02fc074-97c8-40c3-964a-8cf66d8e0fcd",
+      "key": "username",
+      "value": "mwin@miu.edu"
+    },
+    {
+      "id": "ef3ec4a9-44f4-43d6-8809-306182b19cab",
+      "key": "password",
+      "value": "P@ssword"
+    },
+    {
+      "id": "b5a512b9-7d62-427c-85e3-d58e73f6ba68",
+      "key": "token",
+      "value": ""
     }
   ]
 }

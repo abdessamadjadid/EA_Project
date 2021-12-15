@@ -278,7 +278,21 @@
         },
         {
           "name": "Course Offering",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "cc35b0b1-e003-423d-8fa1-17784513149b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "c0ed9843-bf9f-4517-b119-3433167ac55b"
         }
       ],
@@ -316,12 +330,12 @@
   ],
   "variable": [
     {
-      "id": "a4bb0703-289e-4ff6-9378-4621af27e6d2",
+      "id": "d6578630-83d5-4fde-8239-0179ea7fb87c",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "37a6e41b-8fa5-49ea-a80b-53e24c8e4d35",
+      "id": "16604e01-2931-4445-bd07-3b19b53f0afe",
       "key": "port",
       "value": "8010"
     }

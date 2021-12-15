@@ -172,74 +172,8 @@
                   "body": "{\n    \"id\": 6,\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\",\n    \"audit\": {\n        \"createdDate\": \"2021-12-14T19:45:39.35681\",\n        \"modifiedDate\": \"2021-12-14T19:45:39.356824\"\n    }\n}"
                 },
                 {
-                  "id": "478e9ad6-fddb-4743-a242-e3556249a84f",
-                  "name": "Save Course",
-                  "originalRequest": {
-                    "method": "POST",
-                    "header": [],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": "http://{{baseURL}}:{{port}}/courses"
-                  },
-                  "status": "Bad Request",
-                  "code": 400,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "X-Content-Type-Options",
-                      "value": "nosniff"
-                    },
-                    {
-                      "key": "X-XSS-Protection",
-                      "value": "1; mode=block"
-                    },
-                    {
-                      "key": "Cache-Control",
-                      "value": "no-cache, no-store, max-age=0, must-revalidate"
-                    },
-                    {
-                      "key": "Pragma",
-                      "value": "no-cache"
-                    },
-                    {
-                      "key": "Expires",
-                      "value": "0"
-                    },
-                    {
-                      "key": "X-Frame-Options",
-                      "value": "DENY"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "Transfer-Encoding",
-                      "value": "chunked"
-                    },
-                    {
-                      "key": "Date",
-                      "value": "Wed, 15 Dec 2021 02:44:21 GMT"
-                    },
-                    {
-                      "key": "Connection",
-                      "value": "close"
-                    }
-                  ],
-                  "cookie": [],
-                  "responseTime": null,
-                  "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-14T20:44:21.225609\",\n    \"message\": \"400 BAD_REQUEST \\\"User is already Created\\\"\"\n}"
-                },
-                {
                   "id": "b2181d26-d997-4092-96c1-69efb0f904cb",
-                  "name": "Save Course",
+                  "name": "Course Already Created",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -344,12 +278,12 @@
   ],
   "variable": [
     {
-      "id": "db517d24-7808-4597-876f-d811927a808a",
+      "id": "fc75b12d-6c93-4b53-be2d-6f9c9299d5f2",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "8f79ef83-4b3e-430c-ba95-b0dc5bb96997",
+      "id": "175b6559-61ba-4c8e-9e11-3b6eb5102fd6",
       "key": "port",
       "value": "8010"
     }

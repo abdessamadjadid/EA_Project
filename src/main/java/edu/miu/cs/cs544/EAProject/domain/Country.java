@@ -1,4 +1,5 @@
 package edu.miu.cs.cs544.EAProject.domain;
+
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,19 +17,18 @@ public class Country {
     @GeneratedValue
     private int id;
 
-    @Column(name = "name",length = 255, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Embedded
     private Audit audit;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "stateprovinceId")
-    private List<StateProvince> stateprovince;
+    @JoinColumn(name = "stateProvinceId")
+    private List<StateProvince> stateProvinces;
 
-    public Country(String name ,List<StateProvince> stateprovince) {
+    public Country(String name, List<StateProvince> stateProvince) {
         this.name = name;
-        this.stateprovince = stateprovince;
+        this.stateProvinces = stateProvince;
     }
-
 }

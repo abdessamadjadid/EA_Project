@@ -10,15 +10,14 @@ import javax.persistence.*;
 @Data
 @Table(name = "RegistrationRequest")
 @NoArgsConstructor
-public class RegistrationRequest
-{
+public class RegistrationRequest {
 
     @Id
     @GeneratedValue
     private int id;
 
     @Column(name = "priority", nullable = false)
-    private  int priority;
+    private int priority;
 
     @Embedded
     private Audit audit;
@@ -42,7 +41,5 @@ public class RegistrationRequest
         this.registrationevent = registrationevent;
         this.courseoffering = courseoffering;
     }*/
-
-
 
 }

@@ -1,4 +1,5 @@
 package edu.miu.cs.cs544.EAProject.domain;
+
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,34 +12,30 @@ import java.util.List;
 @Table(name = "RegistrationGroup")
 @NoArgsConstructor
 
-public class RegistrationGroup
-{
+public class RegistrationGroup {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name",length = 255, nullable = false)
+    @Column(name = "name", length = 255, nullable = false)
     private String name;
 
     @Embedded
-    private Audit audit;
+    private Audit createdModifiedDate;
 
-    /*@ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "registrationeventId")
-    private List<RegistrationEvent> registrationevent;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "registrationEventId")
+    private RegistrationEvent registrationEvent;
 
-    //@ManyToMany(cascade = CascadeType.ALL, Mappedby="")
-    @JoinColumn(name = "blockRegistrationgroupid")
-    private List<BlockRegistrationGroup> blockRegistrationGroups;*/
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "blockRegistrationGroupId")
+    private List<BlockRegistrationGroup> blockRegistrationGroups;
 
 
-
-    public RegistrationGroup(String name , RegistrationEvent registrationevent, BlockRegistrationGroup blockRegistrationGroup) {
+    public RegistrationGroup(String name, RegistrationEvent registrationevent, BlockRegistrationGroup blockRegistrationGroup) {
         this.name = name;
-        //this.registrationevent = (List<RegistrationEvent>) registrationevent;
-        //this.blockRegistrationGroup = (List<BlockRegistrationGroup>) blockRegistrationGroup;
+        this.registrationEvent = registrationevent;
+        this.blockRegistrationGroups.add(blockRegistrationGroup);
     }
-
-
 }

@@ -10,8 +10,7 @@ import javax.persistence.*;
 @Data
 @Table(name = "Course")
 @NoArgsConstructor
-public class Course
-{
+public class Course {
     @Id
     @GeneratedValue
     private int id;

@@ -3,6 +3,7 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name",length = 255, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Embedded
@@ -31,6 +32,7 @@ public class City {
         this.name = name;
         this.addresses = addresses;
     }
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "stateprovinceId")
     private StateProvince stateprovince;

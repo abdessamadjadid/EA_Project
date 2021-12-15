@@ -2,7 +2,6 @@ package edu.miu.cs.cs544.EAProject.domain;
 
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
-
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -26,17 +25,11 @@ public class Address {
     @Embedded
     private Audit audit;
 
-
-    public Address(String street, String postalCode) {
-        this.street = street;
-        this.postalCode = postalCode;
-    }
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cityId")
     private City city;
 
-    public Address(String street, String postalCode ,City city) {
+    public Address(String street, String postalCode, City city) {
         this.street = street;
         this.postalCode = postalCode;
         this.city = city;

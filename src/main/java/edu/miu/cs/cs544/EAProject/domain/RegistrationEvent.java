@@ -1,4 +1,6 @@
 package edu.miu.cs.cs544.EAProject.domain;
+
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,17 +10,16 @@ import javax.persistence.*;
 @Data
 @Table(name = "RegistrationEvent")
 @NoArgsConstructor
-public class RegistrationEvent
-{
+public class RegistrationEvent {
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name",length = 255, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Embedded
-    private StartEndDate startEndDate;
+    private Audit startEndDate;
 
     /*@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "registrationgroupId")

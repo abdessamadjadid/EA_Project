@@ -1,11 +1,11 @@
 package edu.miu.cs.cs544.EAProject.domain;
+
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Data
@@ -38,13 +38,13 @@ public class CourseOffering {
     @JoinColumn(name = "courseId")
     private Collection<Course> course;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "academicblockId")
-    private  List<AcademicBlock> academicBlock;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "academicBlockId")
+    private AcademicBlock academicBlock;
 
 
-    public CourseOffering(String name, String code, String facultyInitials, int capacity ,List<AcademicBlock> academicBlock, Faculty faculty, Collection<Course> course) {
-        this.academicBlock = academicBlock;
+    public CourseOffering(String name, String code, String facultyInitials, int capacity,
+                          AcademicBlock academicBlock, Faculty faculty, Collection<Course> course) {
         this.facultyInitials = facultyInitials;
         this.capacity = capacity;
         this.academicBlock = academicBlock;
@@ -53,10 +53,8 @@ public class CourseOffering {
 
     }
 
-    public int getAvailableSeats()
-    {
+    public int getAvailableSeats() {
         return 0;
     }
-
 
 }

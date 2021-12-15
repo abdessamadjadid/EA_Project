@@ -18,14 +18,4 @@ public class BlockRegistrationGroup {
 
     @Embedded
     private Audit audit;
-
-    //@ManyToMany(cascade = CascadeType.ALL, mappedBy = "")
-   /* @JoinColumn(name = "blockregistrationgroupId")
-    private List<RegistrationGroup> registrationGroup;*/
-
-    /*public BlockRegistrationGroup(RegistrationGroup registrationGroup) {
-        this.registrationGroup = (List<RegistrationGroup>) registrationGroup;
-    }*/
-
-
 }

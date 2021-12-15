@@ -1,6 +1,6 @@
 package edu.miu.cs.cs544.EAProject.service;
 
-import edu.miu.cs.cs544.EAProject.domain.CountryRegion;
+import edu.miu.cs.cs544.EAProject.domain.Country;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -8,12 +8,12 @@ import java.util.List;
 
 public interface CountryService {
 
-    List<CountryRegion> saveCountries(List<CountryRegion> countryRegions);
+    List<Country> saveCountries(List<Country> countryRegions);
 
-    CountryRegion saveCountry(CountryRegion countryRegion);
+    Country saveCountry(Country countryRegion);
 
-    Page<CountryRegion> getCountries(Pageable pageable);
+    Page<Country> getCountries(Pageable pageable);
 
-    CountryRegion getCountryById(Integer id);
+    Country getCountryById(Integer id);
 
 }

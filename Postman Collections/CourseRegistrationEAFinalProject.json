@@ -2,27 +2,290 @@
   "info": {
     "_postman_id": "3357568d-c2c8-47d9-b699-944d0226b6e6",
     "name": "Course Management EA Final Project",
+    "description": "API Collection for MIU Enterprise Final Project API Collection",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
     {
-      "name": "Country API",
+      "name": "Admin",
       "item": [
         {
-          "name": "New Request",
-          "id": "d6a6b48c-7064-4be9-8393-7466f9fd5d87",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": null
-          },
-          "response": []
+          "name": "Country",
+          "item": [
+            {
+              "name": "Get Country With Paging",
+              "id": "d6a6b48c-7064-4be9-8393-7466f9fd5d87",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseURL}}:{{port}}/countries?page=1",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "port": "{{port}}",
+                  "path": [
+                    "countries"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "47d7424c-d2c7-4595-904a-b24266574285",
+          "description": "API collection which is related with Country."
+        },
+        {
+          "name": "Course",
+          "item": [
+            {
+              "name": "Get All Course",
+              "id": "2737c3d9-f1c5-4655-b588-d4e6c52b8e63",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseURL}}:{{port}}/courses?page=1",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "port": "{{port}}",
+                  "path": [
+                    "courses"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Save Course",
+              "id": "59fafacf-53c0-4ee0-adc7-676e56c9a5fd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/courses"
+              },
+              "response": [
+                {
+                  "id": "6f27432c-0d6c-4cfd-b56a-0b5c5e2e42aa",
+                  "name": "Success Response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/courses"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 01:45:39 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 6,\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\",\n    \"audit\": {\n        \"createdDate\": \"2021-12-14T19:45:39.35681\",\n        \"modifiedDate\": \"2021-12-14T19:45:39.356824\"\n    }\n}"
+                },
+                {
+                  "id": "b2181d26-d997-4092-96c1-69efb0f904cb",
+                  "name": "Course Already Created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"code\": \"CS390\",\n    \"name\": \"Fundamental Programming Practices\",\n    \"description\": \"This course provides a focused program for enhancing programming and analytical skills in five areas: problem solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs.\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/courses"
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 02:47:07 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-14T20:47:07.972505\",\n    \"message\": \"400 BAD_REQUEST \\\"Course is already Created\\\"\"\n}"
+                }
+              ]
+            }
+          ],
+          "id": "f4137316-f73a-4ff7-912f-a338e0097d04",
+          "description": "API Collection which is related with Course."
         }
       ],
-      "id": "47d7424c-d2c7-4595-904a-b24266574285"
+      "id": "4fe13d3f-00fe-4ef8-a3a8-2ab339b66c47",
+      "description": "API Collection which can only access by **Admin**"
+    },
+    {
+      "name": "Student",
+      "item": [],
+      "id": "dcdfa125-372c-481b-8c7b-f5f5b169d66f",
+      "description": "API Collection which can only access by **Student**"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "42a9cd5f-a4b8-4dab-a824-3ff5622e698f",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "7ae0782c-28a4-47a2-b3d7-2704319522d1",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "569dfdf4-4f48-4ea8-af94-a604b53371c8",
+      "key": "baseURL",
+      "value": "localhost"
+    },
+    {
+      "id": "7e34e035-c4a9-4591-8b8f-2f7d6daeeab1",
+      "key": "port",
+      "value": "8010"
     }
   ]
 }

@@ -1,5 +1,7 @@
 package edu.miu.cs.cs544.EAProject.config;
 
+import edu.miu.cs.cs544.EAProject.domain.Admin;
+import edu.miu.cs.cs544.EAProject.domain.User;
 import edu.miu.cs.cs544.EAProject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
@@ -7,6 +9,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.Collections;
 
 @Lazy
 @RequiredArgsConstructor
@@ -19,7 +23,7 @@ public class DataFeeder implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
 
-         if (userRepository.findByUsername("admin").isEmpty()) {
+        if (userRepository.findByUsername("admin").isEmpty()) {
 
             User admin = new User();
             admin.setUsername("admin");

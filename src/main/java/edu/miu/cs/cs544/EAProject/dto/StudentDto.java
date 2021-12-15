@@ -22,4 +22,9 @@ public class StudentDto extends RoleDto {
     @NotBlank(message = "{error.email.blank}")
     @Email(message = "{error.email.invalid}")
     private String email;
+
+    private Integer mailingAddressId;
+
+    private Integer homeAddressId;
+
 }

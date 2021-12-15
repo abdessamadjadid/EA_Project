@@ -362,7 +362,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
+                  "raw": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -373,14 +373,80 @@
               },
               "response": [
                 {
-                  "id": "8d5be7c4-e799-45d0-9695-86bb2a87b137",
-                  "name": "Success",
+                  "id": "bc5c2827-fb89-44d6-aebf-4e98a9f0b7b1",
+                  "name": "Something is wrong",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "body": {
                       "mode": "raw",
                       "raw": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/admins/students"
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 07:55:07 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-15T01:55:07.48881\",\n    \"message\": \"Something is wrong\"\n}"
+                },
+                {
+                  "id": "d91ecc79-374f-4db4-857c-ff2c781b3ca1",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -427,7 +493,7 @@
                     },
                     {
                       "key": "Date",
-                      "value": "Wed, 15 Dec 2021 04:12:06 GMT"
+                      "value": "Wed, 15 Dec 2021 08:10:46 GMT"
                     },
                     {
                       "key": "Keep-Alive",
@@ -440,7 +506,7 @@
                   ],
                   "cookie": [],
                   "responseTime": null,
-                  "body": "{\n    \"userId\": 1,\n    \"studentId\": \"645532\",\n    \"name\": \"Min Phone Nyunt Win\",\n    \"email\": \"mwin@miu.edu\"\n}"
+                  "body": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}"
                 }
               ]
             },
@@ -467,7 +533,7 @@
               "response": [
                 {
                   "id": "82efb2ef-5637-4344-a8d7-9fae27e4dd2e",
-                  "name": "Faculty Registration",
+                  "name": "Success",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
@@ -539,6 +605,204 @@
             }
           ],
           "id": "6b87a4b7-5a91-4018-92e3-9e08f8fcd918"
+        },
+        {
+          "name": "Academic Block",
+          "item": [
+            {
+              "name": "Save Academic Block",
+              "id": "091f8087-6b6b-4b9b-b8b3-d6095229fabd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"startDate\": \"2012-12-01\",\n    \"endDate\": \"2012-12-28\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/academic-blocks"
+              },
+              "response": [
+                {
+                  "id": "55620612-18a0-4187-9226-9249fd6d1715",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"startDate\": \"2012-12-01\",\n    \"endDate\": \"2012-12-28\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/academic-blocks"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 06:20:37 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 8,\n    \"code\": \"2012-12A-12D\",\n    \"name\": \"December 2012\",\n    \"semester\": \"WINTER\",\n    \"timespan\": {\n        \"createdDate\": \"2012-12-01T00:00:00\",\n        \"modifiedDate\": \"2012-12-28T00:00:00\"\n    },\n    \"audit\": {\n        \"createdDate\": \"2021-12-15T00:20:37.532481\",\n        \"modifiedDate\": \"2021-12-15T00:20:37.53247\"\n    },\n    \"registrationGroups\": null,\n    \"courseOfferings\": null\n}"
+                }
+              ]
+            }
+          ],
+          "id": "e9a60b65-a4c4-423d-978f-88cd55faf4f5"
+        },
+        {
+          "name": "Address",
+          "item": [
+            {
+              "name": "Save Address",
+              "id": "1e0a4930-241c-4ae0-a877-74ff072988dc",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "http://{{baseURL}}:{{port}}/addresses"
+              },
+              "response": [
+                {
+                  "id": "f3bcaa8c-c843-4c2a-9cfa-a85b6dc9c51b",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/addresses"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 08:08:47 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"id\": 9,\n    \"street\": \"1000 N 4th Street\",\n    \"postalCode\": \"52557\",\n    \"city\": null,\n    \"audit\": {\n        \"createdDate\": \"2021-12-15T02:08:47.730357\",\n        \"modifiedDate\": \"2021-12-15T02:08:47.730345\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "id": "23007f36-cd57-4c5c-b4c6-db0ed59669f5"
         }
       ],
       "id": "4fe13d3f-00fe-4ef8-a3a8-2ab339b66c47",
@@ -575,12 +839,12 @@
   ],
   "variable": [
     {
-      "id": "787d81c1-1ab4-441e-8917-a04bdca534f6",
+      "id": "282c35b0-40cf-4a8f-9e87-15c0225c88e5",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "a963fbb7-9350-4136-a9e5-0400da7c19a4",
+      "id": "95faa84d-806e-4864-ac88-b611c4ab7d52",
       "key": "port",
       "value": "8010"
     }

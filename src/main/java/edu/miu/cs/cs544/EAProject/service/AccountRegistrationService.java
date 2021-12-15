@@ -7,7 +7,7 @@ public interface AccountRegistrationService {
     /**
      * Validates and adds student role to an already existing user account
      */
-    UserDetailsDto registerStudent(int userId, String studentId, String name, String email);
+    UserDetailsDto registerStudent(int userId, String studentId, String name, String email, Integer mailingAddressId, Integer homeAddressId);
 
     /**
      * Validates and adds faculty role to an already existing user account

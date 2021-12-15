@@ -31,14 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
 
 ### Dev ###
 /src/main/resources/application-dev.yml
->>>>>>> main
-=======
-
-/src/main/resources/application-dev.yml
->>>>>>> Stashed changes

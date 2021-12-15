@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Collection;
 
 
@@ -59,4 +60,12 @@ public class AcademicBlock implements Auditable {
         this.registrationGroups = registrationGroups;
         this.courseOfferings = courseOfferings;
     }
+
+    public AcademicBlock(String code, String name, Semester semester, LocalDate startDate, LocalDate endDate) {
+        this.code = code;
+        this.name = name;
+        this.semester = semester;
+        this.timespan = new Audit(startDate.atStartOfDay(), endDate.atStartOfDay());
+    }
+
 }

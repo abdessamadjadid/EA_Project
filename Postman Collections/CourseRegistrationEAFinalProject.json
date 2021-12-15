@@ -926,11 +926,17 @@
       "description": "API Collection which can only access by **Student**"
     }
   ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "{{token}}"
+    }
+  },
   "event": [
     {
       "listen": "prerequest",
       "script": {
-        "id": "59529801-702f-45b1-94e5-ed57064ebe7f",
+        "id": "505d2a88-1376-4e2b-af45-237da4412ea5",
         "type": "text/javascript",
         "exec": [
           ""
@@ -940,7 +946,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "b5426b12-ffdf-4e06-b93b-4f6226cf38c3",
+        "id": "14b32f2e-b2b4-4e8d-b9c9-16b62484e678",
         "type": "text/javascript",
         "exec": [
           ""
@@ -950,27 +956,27 @@
   ],
   "variable": [
     {
-      "id": "a1836a8a-88bf-4704-bd6b-edc53e8971c4",
+      "id": "2fce6d56-210c-4d10-931a-9fb224619bcd",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "1e0da156-f26c-48fb-a088-be7d6a37ecff",
+      "id": "5dd94dae-72fe-4830-9fe5-bb6af29a06f4",
       "key": "port",
       "value": "8010"
     },
     {
-      "id": "fbc0f4ed-8b06-4dce-9ccf-f2bbbbf78f74",
+      "id": "cc46c19c-6ec2-4708-83ed-aa4373f22fcb",
       "key": "username",
       "value": "mwin@miu.edu"
     },
     {
-      "id": "4560a65b-fa7d-427a-ab6f-357c3f58a46f",
+      "id": "65e935e9-ab49-4d2b-bf66-91631d7c2454",
       "key": "password",
       "value": "P@ssword"
     },
     {
-      "id": "cf9e5e76-8661-40fd-bf16-a716b2e6d6e1",
+      "id": "f400f703-4093-4f11-88fa-be90af7e3199",
       "key": "token",
       "value": ""
     }

@@ -247,7 +247,7 @@
           "name": "Sign In/Up",
           "item": [
             {
-              "name": "New Request",
+              "name": "Sign In",
               "id": "12fac1e8-a621-483c-9521-7902f24ace7e",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -298,12 +298,12 @@
   ],
   "variable": [
     {
-      "id": "73bc90b5-1715-4661-b851-770e8777904e",
+      "id": "7c7895a3-0e41-408c-834b-cf7b99b7a6ca",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "7fb74973-a613-4921-a4be-be19edd1ca2b",
+      "id": "a525a27e-9757-4097-bd16-a3f8d9709885",
       "key": "port",
       "value": "8010"
     }

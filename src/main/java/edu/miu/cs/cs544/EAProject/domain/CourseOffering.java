@@ -11,7 +11,6 @@ import java.util.Collection;
 @Data
 @Table(name = "CourseOffering")
 @NoArgsConstructor
-
 public class CourseOffering {
 
     @Id

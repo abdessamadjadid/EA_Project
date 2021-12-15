@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Data
@@ -26,13 +27,12 @@ public class RegistrationRequest {
     //@JoinColumn(name = "studentId")
     //private Student student;
 
-    //@ManyToOne(cascade = CascadeType.ALL)
-    //@JoinColumn(name = "registrationeventId")
-    //private RegistrationEvent registrationevent;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    private Collection<RegistrationEvent> registrationEvent;
 
-    //@OneToMany(cascade = CascadeType.ALL)
-    //@JoinColumn(name = "courseofferingId")
-    //private CourseOffering courseoffering;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "courseOffering_id")
+    private Collection<CourseOffering> courseOffering;
 
     /*public RegistrationRequest(int priority, Student student, RegistrationEvent registrationevent, CourseOffering courseoffering)
     {

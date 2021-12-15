@@ -24,7 +24,7 @@ public class DataFeeder implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
 
-        /* if (userRepository.findByUsername("admin").isEmpty()) {
+         if (userRepository.findByUsername("admin").isEmpty()) {
 
             User admin = new User();
             admin.setUsername("admin");
@@ -32,6 +32,6 @@ public class DataFeeder implements ApplicationRunner {
             admin.setRoles(Collections.singletonList(new Admin()));
 
             userRepository.save(admin);
-        }*/
+        }
     }
 }

@@ -437,6 +437,76 @@
                   "cookie": [],
                   "responseTime": null,
                   "body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2021-12-15T01:55:07.48881\",\n    \"message\": \"Something is wrong\"\n}"
+                },
+                {
+                  "id": "d91ecc79-374f-4db4-857c-ff2c781b3ca1",
+                  "name": "Student Registration",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "http://{{baseURL}}:{{port}}/admins/students"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 15 Dec 2021 08:10:46 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"userId\": 10,\n    \"studentId\": \"645522\",\n    \"name\": \"La Min Tun\",\n    \"email\": \"ltun@miu.edu\",\n    \"mailingAddressId\": 9,\n    \"homeAddressId\": 9\n}"
                 }
               ]
             },
@@ -769,12 +839,12 @@
   ],
   "variable": [
     {
-      "id": "425abef0-7f4b-4d39-8131-32daedd84288",
+      "id": "f109a53e-2693-46ee-a440-2b4fd689fd69",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "8ae587fa-eb18-4935-bc1e-370abd54168b",
+      "id": "39f11d0b-91f0-4ea3-9f92-9e82ee5c9d76",
       "key": "port",
       "value": "8010"
     }

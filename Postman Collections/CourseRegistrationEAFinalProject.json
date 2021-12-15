@@ -453,7 +453,7 @@
               "request": {
                 "method": "POST",
                 "header": [],
-                "url": null
+                "url": "http://{{lbaseURL}}:{{port}}/admins/faculties"
               },
               "response": []
             }
@@ -495,12 +495,12 @@
   ],
   "variable": [
     {
-      "id": "973c916d-8cdd-467d-843d-e1ceb61108ad",
+      "id": "f84782d5-1723-43df-8314-9641780c020d",
       "key": "baseURL",
       "value": "localhost"
     },
     {
-      "id": "eecd529f-528d-4f9a-94ca-f2d6ff8906fe",
+      "id": "f1d0ba3f-abd5-4446-b67a-f07d3c1192a6",
       "key": "port",
       "value": "8010"
     }

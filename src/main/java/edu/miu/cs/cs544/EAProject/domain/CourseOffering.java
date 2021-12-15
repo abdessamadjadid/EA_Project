@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Data
@@ -34,9 +33,9 @@ public class CourseOffering {
     @JoinColumn(name = "facultyId")
     private Faculty faculty;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "courseId")
-    private Collection<Course> course;
+    private Course course;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "academicBlockId")
@@ -44,7 +43,7 @@ public class CourseOffering {
 
 
     public CourseOffering(String name, String code, String facultyInitials, int capacity,
-                          AcademicBlock academicBlock, Faculty faculty, Collection<Course> course) {
+                          AcademicBlock academicBlock, Faculty faculty, Course course) {
         this.facultyInitials = facultyInitials;
         this.capacity = capacity;
         this.academicBlock = academicBlock;

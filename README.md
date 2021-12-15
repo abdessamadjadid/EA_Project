@@ -10,6 +10,12 @@
 
 ___
 
+### Postman Collection
+
+[API Collection](https://go.postman.co/workspace/Team-Workspace~f4e1610e-b4fd-4240-8c01-8c3eb7c8f95d/collection/9739530-3357568d-c2c8-47d9-b699-944d0226b6e6)
+
+---
+
 ### Project Overall Features
 
 - Used different `application.yml` files for **Production and Development Environment**

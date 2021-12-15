@@ -1,7 +1,9 @@
 package edu.miu.cs.cs544.EAProject.service.impl;
 
-import edu.miu.cs.cs544.EAProject.domain.CountryRegion;
+import edu.miu.cs.cs544.EAProject.domain.Country;
+import edu.miu.cs.cs544.EAProject.repository.CountryRepository;
 import edu.miu.cs.cs544.EAProject.service.CountryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -10,23 +12,27 @@ import java.util.List;
 
 @Service
 public class CountryServiceImpl implements CountryService {
+
+    @Autowired
+    private CountryRepository repository;
+
     @Override
-    public List<CountryRegion> saveCountries(List<CountryRegion> countryRegions) {
-        return null;
+    public List<Country> saveCountries(List<Country> countryRegions) {
+        return repository.saveAll(countryRegions);
     }
 
     @Override
-    public CountryRegion saveCountry(CountryRegion countryRegion) {
-        return null;
+    public Country saveCountry(Country countryRegion) {
+        return repository.save(countryRegion);
     }
 
     @Override
-    public Page<CountryRegion> getCountries(Pageable pageable) {
-        return null;
+    public Page<Country> getCountries(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     @Override
-    public CountryRegion getCountryById(Integer id) {
-        return null;
+    public Country getCountryById(Integer id) {
+        return repository.getById(id.toString());
     }
 }

@@ -19,7 +19,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
-@Entity @NoArgsConstructor
+@Entity
+@NoArgsConstructor
 @Table(name = "`User`")
 @EntityListeners(AuditListener.class)
 public class User implements UserDetails, Auditable {

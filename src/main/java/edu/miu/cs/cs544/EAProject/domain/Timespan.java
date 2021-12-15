@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StartEndDate
-{
+public class Timespan {
+
     @Column(name = "StartDate")
-    private LocalDateTime startdate;
+    private LocalDateTime startDate;
 
     @Column(name = "EndDate")
-    private LocalDateTime enddate;
+    private LocalDateTime endDate;
 
 }

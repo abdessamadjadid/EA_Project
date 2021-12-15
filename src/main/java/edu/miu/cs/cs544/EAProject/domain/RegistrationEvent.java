@@ -1,33 +1,38 @@
 package edu.miu.cs.cs544.EAProject.domain;
+
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
+import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
+import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Data
-@Table(name = "RegistrationEvent")
 @NoArgsConstructor
-public class RegistrationEvent
-{
+@EntityListeners(AuditListener.class)
+public class RegistrationEvent implements Auditable {
+
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "name",length = 255, nullable = false)
     private String name;
 
     @Embedded
-    private StartEndDate startEndDate;
+    private Timespan timespan;
 
-    /*@OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "registrationgroupId")
-    private RegistrationGroup registrationgroup;
+    @Embedded
+    private Audit audit;
 
-    public RegistrationEvent(String name , RegistrationGroup registrationgroup) {
+    @OneToMany(mappedBy = "registrationEvent")
+    private Collection<RegistrationGroup> registrationGroups;
+
+    public RegistrationEvent(String name, Timespan timespan, Collection<RegistrationGroup> registrationGroups) {
         this.name = name;
-        this.registrationgroup = registrationgroup;
+        this.timespan = timespan;
+        this.registrationGroups = registrationGroups;
     }
-    */
-
 }

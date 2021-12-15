@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class FacultyDto extends RoleDto{
+public class FacultyDto extends RoleDto {
 
     @NotBlank(message = "{error.name.blank}")
     private String name;

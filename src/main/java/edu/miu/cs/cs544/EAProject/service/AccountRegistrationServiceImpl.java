@@ -89,9 +89,9 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
 
                     RoleDto roleDto;
 
-                    if (role instanceof Student) roleDto =  modelMapper.map(role, StudentDto.class);
+                    if (role instanceof Student) roleDto = modelMapper.map(role, StudentDto.class);
                     else if (role instanceof Faculty) roleDto = modelMapper.map(role, FacultyDto.class);
-                    else if (role instanceof Admin) roleDto =  modelMapper.map(role, AdminDto.class);
+                    else if (role instanceof Admin) roleDto = modelMapper.map(role, AdminDto.class);
                     else throw new RuntimeException(messages.getMessage("error.user.notFound"));
 
                     roleDto.setUserId(user.getId());

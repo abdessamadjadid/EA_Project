@@ -12,7 +12,7 @@ countrystatecity:
 
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: ea-course-registration
   datasource:
@@ -39,7 +39,3 @@ security:
   jwt:
     secretkey: secret-key
     timeout-millis: 360000000 #1 hr
-
-java:
-  runtime:
-    version: 11.0.13

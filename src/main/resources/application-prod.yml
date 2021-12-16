@@ -6,7 +6,7 @@ spring:
   application:
     name: EA Final Project
   datasource:
-    url: jdbc:mysql://be4721dffdca39:b31cad21@us-cdbr-east-05.cleardb.net/heroku_1ca686ea640d958
+    url: jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_1ca686ea640d958
     username: be4721dffdca39
     password: b31cad21
     hikari:

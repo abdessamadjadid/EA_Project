@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("registration-events")
 @Tag(name = "Registration Event", description="The event API")
@@ -24,11 +26,6 @@ public class EventController {
     public Page<RegistrationEvent> all(Pageable pageable) {
         return eventService.getAllEvents(pageable);
     }
-
-//    @GetMapping("/{id}")
-//    public RegistrationEvent one(@PathVariable(name = "id") Integer id) {
-//        return eventService.getEventById(id);
-//    }
 
     @PostMapping
     public RegistrationEvent create(@RequestBody RegistrationEvent event) {
@@ -50,13 +47,14 @@ public class EventController {
          eventService.deleteEvent(id);
     }
 
-    @GetMapping("/{latest}")
-    public RegistrationEvent latest() {
-        return eventService.getLatestEvent();
+    @GetMapping("/{id}")
+    public void processRegistration(@PathVariable(name = "id") Integer id, @RequestParam String processed) {
+        if(processed.equalsIgnoreCase("true"))
+                adminService.processRegistration(id);
     }
 
-    @GetMapping("/{id}?processed=true")
-    public void processRegistration(@PathVariable(name = "id") Integer id) {
-        adminService.processRegistration(id);
+    @GetMapping("/latest")
+    public RegistrationEvent latest() {
+        return eventService.getLatestEvent();
     }
 }

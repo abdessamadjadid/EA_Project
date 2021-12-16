@@ -4,8 +4,9 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,8 +15,9 @@ import java.util.Collection;
 
 @EntityListeners(AuditListener.class)
 @NoArgsConstructor
-@Data
 @Entity
+@Setter
+@Getter
 public class AcademicBlock implements Auditable {
 
     @Id
@@ -71,5 +73,4 @@ public class AcademicBlock implements Auditable {
         this.semester = semester;
         this.timespan = new Audit(startDate.atStartOfDay(), endDate.atStartOfDay());
     }
-
 }

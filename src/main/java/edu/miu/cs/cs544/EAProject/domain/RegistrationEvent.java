@@ -3,8 +3,9 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,7 +13,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 
 @Entity
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @EntityListeners(AuditListener.class)
 public class RegistrationEvent implements Auditable {
@@ -63,8 +65,23 @@ public class RegistrationEvent implements Auditable {
       return this.status;
     }
 
-
    public Boolean isEventOpen(){
        return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) > 0 ? true: false;
    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStartEndDate(Audit startEndDate) {
+        this.startEndDate = startEndDate;
+    }
+
+    public void setRegistrationGroups(Collection<RegistrationGroup> registrationGroups) {
+        this.registrationGroups = registrationGroups;
+    }
+
+    public void setRegistrationRequests(Collection<RegistrationRequest> registrationRequests) {
+        this.registrationRequests = registrationRequests;
+    }
 }

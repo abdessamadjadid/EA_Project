@@ -1,6 +1,6 @@
 package edu.miu.cs.cs544.EAProject.service;
 
-import edu.miu.cs.cs544.EAProject.advice.EventNotFoundException;
+import edu.miu.cs.cs544.EAProject.error.EventNotFoundException;
 import edu.miu.cs.cs544.EAProject.domain.AcademicBlock;
 import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
 import edu.miu.cs.cs544.EAProject.repository.EventRepository;

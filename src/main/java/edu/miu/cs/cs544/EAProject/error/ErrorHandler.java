@@ -3,6 +3,7 @@ package edu.miu.cs.cs544.EAProject.error;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
@@ -33,6 +34,14 @@ public class ErrorHandler {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         var message = new ErrorMessage(status.value(), LocalDateTime.now(), ex.getMessage());
         return new ResponseEntity<>(message, status);
+    }
+
+    @ResponseBody
+    @ExceptionHandler(EventNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorMessage handleEventNotFoundException(EventNotFoundException ex) {
+
+        return new ErrorMessage(HttpStatus.NO_CONTENT.value(), LocalDateTime.now(), ex.getMessage());
     }
 
     @ExceptionHandler(RuntimeException.class)

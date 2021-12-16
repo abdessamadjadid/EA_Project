@@ -1,13 +1,20 @@
 server:
   port: 8010
-countrystatecity:
-  forceUpdate: false
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+    include-exception: false
+
 spring:
-  application:
-    name: EA Final Project (Dev)
   datasource:
-    url: jdbc:mysql://localhost:3306/cs544
-    username: ray
+    url: 'jdbc:mysql://localhost:3306/cs544'
+    username: 'ray'
     password:
+    hikari:
+      maximum-pool-size: 5
+
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: create-drop

@@ -33,37 +33,39 @@ public class RegistrationEvent implements Auditable {
     @Embedded
     private Audit audit;
 
-   @OneToMany(cascade = CascadeType.ALL)
-   @JoinColumn(name="group_id")
-   private Collection<RegistrationGroup> registrationGroups;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "group_id")
+    private Collection<RegistrationGroup> registrationGroups;
 
-   @OneToMany(cascade = CascadeType.ALL)
-   @JoinColumn(name="request_id")
-   private Collection<RegistrationRequest> registrationRequests;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "request_id")
+    private Collection<RegistrationRequest> registrationRequests;
 
-   @Transient
-   EventStatus status = EventStatus.CLOSED;
+    @Transient
+    EventStatus status = EventStatus.CLOSED;
 
-   public void addGroup(RegistrationGroup group){
-       if(group != null){
-           registrationGroups.add(group);
-       }
-   }
+    public void addGroup(RegistrationGroup group) {
+        if (group != null) {
+            registrationGroups.add(group);
+        }
+    }
 
-   public void addRequest(RegistrationRequest request){
-       if(request != null){
-           registrationRequests.add(request);
-       }
-   }
+    public void addRequest(RegistrationRequest request) {
+        if (request != null) {
+            registrationRequests.add(request);
+        }
+    }
 
-   public EventStatus getStatus(){
-      return this.status = switch(isEventOpen()){
-           case 1 -> EventStatus.OPEN;
-           default -> EventStatus.CLOSED;
-       };
-   }
+    public EventStatus getStatus() {
+      if(isEventOpen()){
+          this.status = EventStatus.OPEN;
+      }
 
-   public int isEventOpen(){
-       return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) > 0 ? 1: 0;
+      return this.status;
+    }
+
+
+   public Boolean isEventOpen(){
+       return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) > 0 ? true: false;
    }
 }

@@ -21,7 +21,7 @@ spring:
     username: bdec61cbf0420f
     password: d13dd415
     hikari:
-      maximumPoolSize: 10
+      maximumPoolSize: 11
   jpa:
     show-sql: false
     hibernate:

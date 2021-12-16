@@ -1,5 +1,5 @@
 server:
-  port: 8011
+  port: ${PORT:8011}
 
   error:
     include-message: always

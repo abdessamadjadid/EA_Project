@@ -11,10 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -66,7 +63,7 @@ public class AdminServiceTest {
                 new RegistrationGroup("MPP"),
         };
         //
-        Collection<AcademicBlock> academicBlocks = new ArrayList<>();
+        Set<AcademicBlock> academicBlocks = new HashSet<>();
         for(int i =0; i < 8; i++){
             AcademicBlock block =   new AcademicBlock("Code" + i, "Block" + i);
             academicBlocks.add(block);
@@ -77,21 +74,22 @@ public class AdminServiceTest {
                 groups[i].setAcademicBlocks(academicBlocks);
         }
 
-        Collection<Student> studentgroup1 = new ArrayList<>();
-        Collection<Student> studentgroup2 = new ArrayList<>();
+        Set<Student> studentGroup1 = new HashSet<>();
+        Set<Student> studentGroup2 = new HashSet<>();
         for(int i = 0; i < 40; i ++){
             if(i % 2 == 0){
-                studentgroup1.add(new Student("student" + i, "name" + i, "stu@miu.edu"));
+                studentGroup1.add(new Student(
+                        "student" + i, "name" + i, "stu@miu.edu"));
             }else{
-                studentgroup2.add(new Student("student" + i, "name" + i, "stu@miu.edu"));
+                studentGroup2.add(new Student("student" + i, "name" + i, "stu@miu.edu"));
             }
         }
-        groups[0].setStudents(studentgroup1);
-        groups[1].setStudents(studentgroup2);
+        groups[0].setStudents(studentGroup1);
+        groups[1].setStudents(studentGroup2);
         //
 
-       var list1 = studentgroup1.stream().collect(Collectors.toList());
-       var list2 = studentgroup2.stream().collect(Collectors.toList());
+       var list1 = studentGroup1.stream().collect(Collectors.toList());
+       var list2 = studentGroup2.stream().collect(Collectors.toList());
 
 
 

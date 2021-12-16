@@ -23,7 +23,7 @@ public class EAProjectApplication {
 //    private static Boolean isForceUpdate;
 
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(EAProjectApplication.class, args);
+         SpringApplication.run(EAProjectApplication.class, args);
     }
 
 //    @Value("${countrystatecity.forceUpdate}")

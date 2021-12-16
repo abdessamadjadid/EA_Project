@@ -8,13 +8,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Optional;
 import java.util.StringJoiner;
 
 
 @Entity
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @EntityListeners(AuditListener.class)
 public class CourseOffering implements Auditable {
@@ -32,11 +34,11 @@ public class CourseOffering implements Auditable {
     @Column(nullable = false)
     private int capacity;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "facultyId")
     private Faculty faculty;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "courseId")
     private Course course;
 
@@ -44,11 +46,26 @@ public class CourseOffering implements Auditable {
     @JoinColumn(name = "academicBlockId")
     private AcademicBlock academicBlock;
 
+    @OneToMany(mappedBy = "courseOffering", cascade = CascadeType.ALL)
+    private Collection<RegistrationRequest> registrationRequests = new ArrayList<>();
+
     @OneToMany(mappedBy = "courseOffering")
-    private Collection<RegistrationRequest> registrationRequests;
+    private Collection<Registration> registrations = new ArrayList<>();
 
     @Embedded
     private Audit audit;
+
+    public CourseOffering(int capacity, Faculty faculty, Course course, AcademicBlock academicBlock, Collection<RegistrationRequest> registrationRequests) {
+        this.capacity = capacity;
+        this.faculty = faculty;
+        this.course = course;
+        this.academicBlock = academicBlock;
+        this.facultyInitials = faculty.getInitials();
+        this.code = String.format("%s-%s-%s", course.getCode(), academicBlock.getCode(), faculty.getInitials());
+
+        Optional.ofNullable(registrationRequests)
+                .ifPresent(requests -> requests.forEach(this::addRegistrationRequest));
+    }
 
     public CourseOffering(String code, String facultyInitials, int capacity, Faculty faculty,
                           Course course, AcademicBlock academicBlock, Collection<RegistrationRequest> registrationRequests) {
@@ -78,10 +95,19 @@ public class CourseOffering implements Auditable {
     }
 
     public void setCode(String code) {
-        this.code = getCode();
+        this.code = code;
     }
 
     public int getAvailableSeats() {
-        return 0;
+        return capacity - registrations.size();
+    }
+
+    public void addRegistrationRequest(RegistrationRequest request) {
+        this.registrationRequests.add(request);
+        request.setCourseOffering(this);
+    }
+
+    public void addRegistration(Registration registration) {
+        this.registrations.add(registration);
     }
 }

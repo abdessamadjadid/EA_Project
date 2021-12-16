@@ -33,4 +33,15 @@ public class RegistrationRequest implements Auditable {
 
     @Embedded
     private Audit audit;
+
+    public RegistrationRequest(Student student, CourseOffering courseOffering, int priority) {
+        this.student = student;
+        this.courseOffering = courseOffering;
+        this.priority = priority;
+    }
+
+    public RegistrationRequest(Student student, int priority) {
+        this.student = student;
+        this.priority = priority;
+    }
 }

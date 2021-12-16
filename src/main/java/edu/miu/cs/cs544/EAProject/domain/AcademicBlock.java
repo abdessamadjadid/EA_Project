@@ -10,8 +10,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
-
 
 @EntityListeners(AuditListener.class)
 @NoArgsConstructor
@@ -43,14 +43,14 @@ public class AcademicBlock implements Auditable {
     @Embedded
     private Audit audit;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "BlockRegistrationGroup",
             joinColumns = @JoinColumn(name = "academicBlock"),
             inverseJoinColumns = @JoinColumn(name = "registrationGroup"))
-    private Collection<RegistrationGroup> registrationGroups;
+    private Collection<RegistrationGroup> registrationGroups = new ArrayList<>();
 
-    @OneToMany(mappedBy = "academicBlock", cascade = CascadeType.ALL)
-    private Collection<CourseOffering> courseOfferings;
+    @OneToMany(mappedBy = "academicBlock")
+    private Collection<CourseOffering> courseOfferings = new ArrayList<>();
 
     public AcademicBlock(String code, String name){
         this.code = code;
@@ -72,5 +72,9 @@ public class AcademicBlock implements Auditable {
         this.name = name;
         this.semester = semester;
         this.timespan = new Audit(startDate.atStartOfDay(), endDate.atStartOfDay());
+    }
+
+    public void addRegistrationGroup(RegistrationGroup registrationGroup) {
+        this.registrationGroups.add(registrationGroup);
     }
 }

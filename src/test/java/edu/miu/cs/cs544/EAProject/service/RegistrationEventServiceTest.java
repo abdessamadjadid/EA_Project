@@ -11,10 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -93,7 +90,7 @@ public class RegistrationEventServiceTest {
            eventService.createEvent(new RegistrationEvent());
         }
 
-        assertThat(eventService.getAllEvents(Pageable.ofSize(20)).getTotalElements(), is(size));
+        assertThat(eventService.getAllEvents(Pageable.ofSize(20)).getTotalElements(), is(size+1));
 
     }
 
@@ -172,7 +169,7 @@ public class RegistrationEventServiceTest {
 
         eventService.deleteEvent(event.getId());
 
-        assertThat(eventService.getAllEvents(Pageable.ofSize(20)).getTotalElements(), is(2L));
+        assertThat(eventService.getAllEvents(Pageable.ofSize(20)).getTotalElements(), is(3L));
 
 
     }
@@ -187,7 +184,7 @@ public class RegistrationEventServiceTest {
         group.setName("FPP");
 
         int size = 8;
-        Collection<AcademicBlock> blocks = new ArrayList<>();
+        Set<AcademicBlock> blocks = new HashSet<>();
         for(int i =0; i < size; i++){
            blocks.add(new AcademicBlock());
         }

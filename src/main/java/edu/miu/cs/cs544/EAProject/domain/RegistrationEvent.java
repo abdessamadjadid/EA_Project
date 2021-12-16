@@ -3,6 +3,7 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,11 +11,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
-@Setter
 @Getter
+@Setter
+@EqualsAndHashCode(exclude = {"registrationGroups", "registrationRequests"})
 @NoArgsConstructor
 @EntityListeners(AuditListener.class)
 public class RegistrationEvent implements Auditable {
@@ -35,27 +38,25 @@ public class RegistrationEvent implements Auditable {
     @Embedded
     private Audit audit;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_id")
-    private Collection<RegistrationGroup> registrationGroups;
+    @OneToMany(mappedBy = "registrationEvent", cascade = CascadeType.ALL)
+    private Collection<RegistrationGroup> registrationGroups = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "request_id")
-    private Collection<RegistrationRequest> registrationRequests;
+    @JoinColumn(name = "registrationRequestId")
+    private Collection<RegistrationRequest> registrationRequests = new ArrayList<>();
+
+    private boolean isProcessed = false;
 
     @Transient
     EventStatus status = EventStatus.CLOSED;
 
     public void addGroup(RegistrationGroup group) {
-        if (group != null) {
-            registrationGroups.add(group);
-        }
+        registrationGroups.add(group);
+        group.setRegistrationEvent(this);
     }
 
     public void addRequest(RegistrationRequest request) {
-        if (request != null) {
-            registrationRequests.add(request);
-        }
+        registrationRequests.add(request);
     }
 
     public EventStatus getStatus() {
@@ -83,5 +84,10 @@ public class RegistrationEvent implements Auditable {
 
     public void setRegistrationRequests(Collection<RegistrationRequest> registrationRequests) {
         this.registrationRequests = registrationRequests;
+    }
+
+    public RegistrationEvent(String name, Audit startEndDate) {
+        this.name = name;
+        this.startEndDate = startEndDate;
     }
 }

@@ -10,8 +10,8 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @EntityListeners(AuditListener.class)
 public class StateProvince implements Auditable {

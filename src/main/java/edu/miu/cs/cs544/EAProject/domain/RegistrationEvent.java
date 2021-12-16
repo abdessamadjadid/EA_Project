@@ -64,6 +64,6 @@ public class RegistrationEvent implements Auditable {
    }
 
    public int isEventOpen(){
-       return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) == -1 ? 1: 0;
+       return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) > 0 ? 1: 0;
    }
 }

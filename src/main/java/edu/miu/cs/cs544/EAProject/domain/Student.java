@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @EqualsAndHashCode(callSuper = true)
@@ -30,7 +31,7 @@ public class Student extends Role {
     private Address mailingAddress;
 
     @OneToMany(mappedBy = "student")
-    private Collection<RegistrationRequest> registrationRequests;
+    private Collection<RegistrationRequest> registrationRequests = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "Registration",
@@ -69,5 +70,10 @@ public class Student extends Role {
             return true;
         }
         return false;
+    }
+
+    public void addRequest(RegistrationRequest request){
+        if(request != null)
+            registrationRequests.add(request);
     }
 }

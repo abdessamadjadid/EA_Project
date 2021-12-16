@@ -1,12 +1,12 @@
-#server:
-#  port: 8011
-#countrystatecity:
-#  forceUpdate: false
+server:
+  port: 8011
+countrystatecity:
+  forceUpdate: false
 spring:
   application:
     name: EA Final Project
   datasource:
-    url: jdbc:mysql://be4721dffdca39:b31cad21@us-cdbr-east-05.cleardb.net/heroku_1ca686ea640d958?reconnect=true
+    url: mysql://be4721dffdca39:b31cad21@us-cdbr-east-05.cleardb.net/heroku_1ca686ea640d958?reconnect=true
     username: be4721dffdca39
     password: b31cad21
     hikari:

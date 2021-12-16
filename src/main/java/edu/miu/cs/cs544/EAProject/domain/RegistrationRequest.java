@@ -33,9 +33,4 @@ public class RegistrationRequest implements Auditable {
 
     @Embedded
     private Audit audit;
-
-    @Override
-    public void setAudit(Audit audit) {
-        this.audit = audit;
-    }
 }

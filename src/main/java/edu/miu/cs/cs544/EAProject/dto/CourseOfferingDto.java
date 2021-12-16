@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class CourseOfferingDto {
 
     private String courseOfferingCode;
+    private Integer courseOfferingId;
     private Integer capacity;
     private String facultyInitials;
     private Integer academicBlockId;

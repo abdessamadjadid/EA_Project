@@ -3,11 +3,10 @@ package edu.miu.cs.cs544.EAProject.service.impl;
 import edu.miu.cs.cs544.EAProject.domain.*;
 import edu.miu.cs.cs544.EAProject.dto.*;
 import edu.miu.cs.cs544.EAProject.repository.StudentRegistrationRepository;
-import edu.miu.cs.cs544.EAProject.service.AcademicBlockService;
-import edu.miu.cs.cs544.EAProject.service.CourseService;
-import edu.miu.cs.cs544.EAProject.service.FacultyService;
-import edu.miu.cs.cs544.EAProject.service.StudentRegistrationService;
+import edu.miu.cs.cs544.EAProject.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +25,10 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
     private CourseService courseService;
     @Autowired
     private AcademicBlockService blockService;
+    @Autowired
+    private RegistrationRequestService registrationRequestService;
+    @Autowired
+    private CourseOfferingService courseOfferingService;
 
     @Override
     public List<StudentRegistrationDto> getRegistrationListByStudentId(Integer id) {
@@ -53,6 +56,34 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
         dto.setRegistrationGroupDtos(convertRegistrationGroupDto(student.getRegistrationGroups().stream().toList()));
 
         return dto;
+    }
+
+    @Override
+    public ResponseEntity<String> saveRegistrationRequest(List<RegistrationRequestDto> requestDtos) {
+        int priority = 1;
+        List<RegistrationRequest> requests = new ArrayList<>();
+        for (RegistrationRequestDto dto : requestDtos) {
+            RegistrationRequest registrationRequest =
+                    registrationRequestService.getRegistrationRequestsByStudentIdEventIdOfferingId(
+                            dto.getStudentId(), dto.getRegistrationEventId(), dto.getCourseOfferingId()
+                    );
+
+            RegistrationRequest request = new RegistrationRequest();
+            request.setPriority(priority++);
+
+            Student student = repository.getById(dto.getStudentId());
+            request.setStudent(student);
+
+            CourseOffering offering = courseOfferingService.getCourseOfferingById(dto.getCourseOfferingId());
+            request.setCourseOffering(offering);
+
+
+            if (registrationRequest != null) request.setId(registrationRequest.getId());
+
+            requests.add(request);
+        }
+        registrationRequestService.saveRegistrationRequest(requests);
+        return ResponseEntity.status(HttpStatus.OK).body("Successfully submit Registration Request");
     }
 
     private List<RegistrationGroupDto> convertRegistrationGroupDto(List<RegistrationGroup> groups) {
@@ -94,6 +125,7 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
 
             CourseOfferingDto courseOfferingDto = new CourseOfferingDto();
             courseOfferingDto.setCourseOfferingCode(offering.getCode());
+            courseOfferingDto.setCourseOfferingId(offering.getId());
             courseOfferingDto.setCapacity(offering.getCapacity());
             courseOfferingDto.setFacultyInitials(offering.getFacultyInitials());
             courseOfferingDto.setCourseId(course.getId());

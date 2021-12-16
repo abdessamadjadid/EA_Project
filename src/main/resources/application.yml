@@ -12,7 +12,7 @@ countrystatecity:
 
 spring:
   profiles:
-    active: dev
+    active: prod
   application:
     name: ea-course-registration
   datasource:

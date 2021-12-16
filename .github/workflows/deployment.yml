@@ -22,12 +22,12 @@ jobs:
       - name: Build with maven
         run: mvn clean install
 
-      - name: Build & Push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: devminphone/ea_final_project
-          tages: v1
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+#      - name: Build & Push Docker image
+#        uses: mr-smithers-excellent/docker-build-push@v5
+#        with:
+#          image: devminphone/ea_final_project
+#          tages: v1
+#          registry: docker.io
+#          dockerfile: Dockerfile
+#          username: ${{ secrets.DOCKER_USERNAME }}
+#          password: ${{ secrets.DOCKER_PASSWORD }}

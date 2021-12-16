@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.StringJoiner;
 
 @Entity
 @Setter
@@ -65,6 +66,13 @@ public class CourseOffering implements Auditable {
         this.faculty = faculty;
         this.course = course;
         this.academicBlock = academicBlock;
+        this.code = generateCode();
+    }
+
+    private String generateCode() {
+        StringJoiner stringJoiner = new StringJoiner("-");
+        stringJoiner.add(course.getCode()).add(academicBlock.getCode()).add(facultyInitials);
+        return stringJoiner.toString();
     }
 
     public int getAvailableSeats() {

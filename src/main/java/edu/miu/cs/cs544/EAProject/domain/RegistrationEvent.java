@@ -9,7 +9,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 
 @Entity
@@ -47,6 +46,7 @@ public class RegistrationEvent implements Auditable {
     public RegistrationEvent(String name, Audit startEndDate) {
         this.name = name;
         this.startEndDate = startEndDate;
+        status = getStatus();
     }
 
     public void addGroup(RegistrationGroup group) {
@@ -69,7 +69,10 @@ public class RegistrationEvent implements Auditable {
     }
 
     public int isEventOpen() {
-        return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) == -1 ? 1 : 0;
+        if (LocalDateTime.now().toLocalDate().compareTo(startEndDate.getModifiedDate().toLocalDate()) > 0 ||
+                LocalDateTime.now().toLocalDate().compareTo(startEndDate.getCreatedDate().toLocalDate()) < 0) {
+            return 0;
+        } else return 1;
     }
 
     public void setName(String name) {

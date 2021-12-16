@@ -2,6 +2,7 @@ package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.*;
 import edu.miu.cs.cs544.EAProject.dto.*;
+import edu.miu.cs.cs544.EAProject.error.ClientException;
 import edu.miu.cs.cs544.EAProject.repository.StudentRegistrationRepository;
 import edu.miu.cs.cs544.EAProject.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,8 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
     private RegistrationRequestService registrationRequestService;
     @Autowired
     private CourseOfferingService courseOfferingService;
+    @Autowired
+    private EventService eventService;
 
     @Override
     public List<StudentRegistrationDto> getRegistrationListByStudentId(Integer id) {
@@ -70,6 +74,12 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
 
             RegistrationRequest request = new RegistrationRequest();
             request.setPriority(priority++);
+
+            RegistrationEvent event = eventService.getEventById(dto.getRegistrationEventId());
+            if (LocalDateTime.now().toLocalDate().compareTo(event.getStartEndDate().getModifiedDate().toLocalDate()) > 0 ||
+                    LocalDateTime.now().toLocalDate().compareTo(event.getStartEndDate().getCreatedDate().toLocalDate()) < 0) {
+                throw new ClientException("error.registration.close");
+            }
 
             Student student = repository.getById(dto.getStudentId());
             request.setStudent(student);

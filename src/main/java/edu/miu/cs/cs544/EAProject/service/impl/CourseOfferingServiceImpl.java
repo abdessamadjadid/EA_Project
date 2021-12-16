@@ -4,6 +4,7 @@ import edu.miu.cs.cs544.EAProject.domain.AcademicBlock;
 import edu.miu.cs.cs544.EAProject.domain.Course;
 import edu.miu.cs.cs544.EAProject.domain.CourseOffering;
 import edu.miu.cs.cs544.EAProject.domain.Faculty;
+import edu.miu.cs.cs544.EAProject.dto.CourseOfferingResponseDto;
 import edu.miu.cs.cs544.EAProject.error.ClientException;
 import edu.miu.cs.cs544.EAProject.repository.CourseOfferingRepository;
 import edu.miu.cs.cs544.EAProject.service.AcademicBlockService;
@@ -40,8 +41,8 @@ public class CourseOfferingServiceImpl implements CourseOfferingService {
     }
 
     @Override
-    public CourseOffering saveCourseOffering(Integer capacity, String facultyInitials, Integer academicBlockId,
-                                             Integer courseId, Integer facultyId) {
+    public CourseOfferingResponseDto saveCourseOffering(Integer capacity, String facultyInitials, Integer academicBlockId,
+                                                        Integer courseId, Integer facultyId) {
         try {
             AcademicBlock block = blockService.getAcademicBlockById(academicBlockId);
             Faculty faculty = facultyService.getFaultyById(facultyId);
@@ -49,7 +50,7 @@ public class CourseOfferingServiceImpl implements CourseOfferingService {
             if (block.getCode() == null || faculty.getRoleName() == null || course.getCode() == null)
                 throw new ClientException("error.generic.message");
             CourseOffering offering = new CourseOffering(facultyInitials, capacity, faculty, course, block);
-            return repository.save(offering);
+            return convertOfferingResponseDto(repository.save(offering));
         } catch (Exception e) {
             throw new ClientException("error.generic.message");
         }
@@ -68,5 +69,11 @@ public class CourseOfferingServiceImpl implements CourseOfferingService {
         } catch (EntityNotFoundException e) {
             throw new ClientException("error.courseOfferingId.noRecord");
         }
+    }
+
+    private CourseOfferingResponseDto convertOfferingResponseDto(CourseOffering offering) {
+        return new CourseOfferingResponseDto(offering.getId(), offering.getCode(),
+                offering.getFacultyInitials(), offering.getCapacity(), offering.getFaculty().getName(),
+                offering.getFaculty().getEmail(), offering.getFaculty().getTitle());
     }
 }

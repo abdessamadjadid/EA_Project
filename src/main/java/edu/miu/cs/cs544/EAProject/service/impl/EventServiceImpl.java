@@ -36,8 +36,9 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public RegistrationEvent createEvent(String name, LocalDateTime startDate, LocalDateTime endDate) {
-        RegistrationEvent event = new RegistrationEvent(name, new Audit(startDate, endDate));
-        return repository.save(event);
+        RegistrationEvent event = repository.save(new RegistrationEvent(name, new Audit(startDate, endDate)));
+        event.setStatus(event.getStatus());
+        return event;
     }
 
     @Override

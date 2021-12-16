@@ -1,5 +1,6 @@
 package edu.miu.cs.cs544.EAProject.service;
 
+import edu.miu.cs.cs544.EAProject.dto.StudentDto;
 import edu.miu.cs.cs544.EAProject.dto.UserDetailsDto;
 
 public interface AccountRegistrationService {
@@ -23,4 +24,5 @@ public interface AccountRegistrationService {
      * Finds user by its id
      */
     UserDetailsDto findUserById(int userId);
+
 }

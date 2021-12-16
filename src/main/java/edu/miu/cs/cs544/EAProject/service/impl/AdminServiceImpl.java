@@ -1,7 +1,7 @@
 package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.*;
-import edu.miu.cs.cs544.EAProject.repository.StudentRepository;
+import edu.miu.cs.cs544.EAProject.repository.StudentRegistrationRepository;
 import edu.miu.cs.cs544.EAProject.service.AcademicBlockService;
 import edu.miu.cs.cs544.EAProject.service.AdminService;
 import edu.miu.cs.cs544.EAProject.service.EventService;
@@ -23,7 +23,7 @@ public class AdminServiceImpl implements AdminService {
     AcademicBlockService academicBlockService;
 
     @Autowired
-    StudentRepository studentRepository;
+    StudentRegistrationRepository studentRegistrationRepository;
 
     @Override
     public void processRegistration() {
@@ -60,7 +60,7 @@ public class AdminServiceImpl implements AdminService {
     private void registerStudent(RegistrationRequest request) {
         Student student = request.getStudent();
         if(student.addCourse(request.getCourseOffering())){
-            studentRepository.flush();
+            studentRegistrationRepository.flush();
         }
     }
 

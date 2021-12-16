@@ -33,7 +33,7 @@ public class Student extends Role {
     private Address mailingAddress;
 
     @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
-    private Collection<RegistrationRequest> registrationRequests;
+    private Collection<RegistrationRequest> registrationRequests = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "studentRegistrationGroup",

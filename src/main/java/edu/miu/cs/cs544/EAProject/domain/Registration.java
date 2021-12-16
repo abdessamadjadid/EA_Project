@@ -34,7 +34,7 @@ public class Registration implements Auditable {
 
     public Registration(Student student, CourseOffering courseOffering) {
         setStudent(student);
-        this.courseOffering = courseOffering;
+        setCourseOffering(courseOffering);
     }
 
     public void setStudent(Student student) {

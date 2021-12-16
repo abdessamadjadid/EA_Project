@@ -8,10 +8,9 @@ server:
 
 spring:
   datasource:
-    url: 'jdbc:postgresql://localhost:5432/cs544'
-    username: 'root'
-    password: 'CS544-EA'
-    driver-class-name: org.postgresql.Driver
+    url: 'jdbc:mysql://localhost:3306/cs544'
+    username: 'ray'
+    password:
     hikari:
       maximum-pool-size: 5
 

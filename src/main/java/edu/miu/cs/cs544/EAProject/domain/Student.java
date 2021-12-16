@@ -1,7 +1,9 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.*;
-
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,13 +33,16 @@ public class Student extends Role {
     private Address mailingAddress;
 
     @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
-    private Collection<RegistrationRequest> registrationRequests;
+    private Collection<RegistrationRequest> registrationRequests = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "studentRegistrationGroup",
             joinColumns = @JoinColumn(name = "studentId"),
             inverseJoinColumns = @JoinColumn(name = "registrationGroupId"))
     private Collection<RegistrationGroup> registrationGroups = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Collection<CourseOffering> courseOfferings;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private Collection<Registration> registrations;
@@ -68,6 +73,7 @@ public class Student extends Role {
         this.registrationGroups = registrationGroups;
     }
 
+
     public void addRegistrationGroup(RegistrationGroup registrationGroup) {
         this.registrationGroups.add(registrationGroup);
         registrationGroup.addStudent(this);
@@ -75,5 +81,10 @@ public class Student extends Role {
 
     public void addRegistration(Registration registration) {
         this.registrations.add(registration);
+    }
+
+    public void addRequest(RegistrationRequest request){
+        if(request != null)
+            registrationRequests.add(request);
     }
 }

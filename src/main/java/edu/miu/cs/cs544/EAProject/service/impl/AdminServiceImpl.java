@@ -1,6 +1,7 @@
 package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.*;
+
 import edu.miu.cs.cs544.EAProject.error.ClientException;
 import edu.miu.cs.cs544.EAProject.i18n.DefaultMessageSource;
 import edu.miu.cs.cs544.EAProject.repository.EventRepository;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 public class AdminServiceImpl implements AdminService {
 
     private final EventService eventService;
+
     private final EventRepository eventRepository;
     private final RegistrationRepository registrationRepository;
     private final static MessageSourceAccessor messages = DefaultMessageSource.getAccessor();
@@ -69,11 +71,13 @@ public class AdminServiceImpl implements AdminService {
                 // Based on priority and no of available set, assign course of this block to this student
                 assignCourseOffering(block, student);
             }
+
         }
 
         event.setProcessed(true);
         eventRepository.save(event);
     }
+
 
     private void assignCourseOffering(AcademicBlock block, Student student) {
 

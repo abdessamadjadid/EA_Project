@@ -3,7 +3,10 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -57,15 +60,30 @@ public class RegistrationEvent implements Auditable {
     }
 
     public EventStatus getStatus() {
-//      return this.status = switch(isEventOpen()){
-//           case 1 -> EventStatus.OPEN;
-//           default -> EventStatus.CLOSED;
-//       };
-        return EventStatus.CLOSED;
+      if(isEventOpen()){
+          this.status = EventStatus.OPEN;
+      }
+      return this.status;
     }
 
-    public int isEventOpen() {
-        return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) == -1 ? 1 : 0;
+   public Boolean isEventOpen(){
+       return ChronoUnit.NANOS.between(LocalDateTime.now(), this.startEndDate.getModifiedDate()) > 0 ? true: false;
+   }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStartEndDate(Audit startEndDate) {
+        this.startEndDate = startEndDate;
+    }
+
+    public void setRegistrationGroups(Collection<RegistrationGroup> registrationGroups) {
+        this.registrationGroups = registrationGroups;
+    }
+
+    public void setRegistrationRequests(Collection<RegistrationRequest> registrationRequests) {
+        this.registrationRequests = registrationRequests;
     }
 
     public RegistrationEvent(String name, Audit startEndDate) {

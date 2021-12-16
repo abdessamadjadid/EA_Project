@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -26,7 +25,7 @@ public class DataFeeder implements ApplicationRunner {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final EventRepository eventRepository;
-    private final StudentRepository studentRepository;
+    private final StudentRegistrationRepository studentRepository;
     private final AcademicBlockRepository academicBlockRepository;
     private final CourseOfferingRepository courseOfferingRepository;
 

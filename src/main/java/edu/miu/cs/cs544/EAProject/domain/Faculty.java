@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 @EqualsAndHashCode(callSuper = true)
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @Entity
 public class Faculty extends Role {

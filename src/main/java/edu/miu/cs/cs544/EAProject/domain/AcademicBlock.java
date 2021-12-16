@@ -4,7 +4,6 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,8 +15,9 @@ import java.util.Collection;
 
 @EntityListeners(AuditListener.class)
 @NoArgsConstructor
-@Getter @Setter
 @Entity
+@Setter
+@Getter
 public class AcademicBlock implements Auditable {
 
     @Id
@@ -52,6 +52,10 @@ public class AcademicBlock implements Auditable {
     @OneToMany(mappedBy = "academicBlock")
     private Collection<CourseOffering> courseOfferings = new ArrayList<>();
 
+    public AcademicBlock(String code, String name){
+        this.code = code;
+        this.name = name;
+    }
 
     public AcademicBlock(String code, String name, Semester semester, Audit timespan,
                          Collection<RegistrationGroup> registrationGroups, Collection<CourseOffering> courseOfferings) {

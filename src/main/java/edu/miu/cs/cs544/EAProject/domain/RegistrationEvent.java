@@ -60,7 +60,6 @@ public class RegistrationEvent implements Auditable {
       if(isEventOpen()){
           this.status = EventStatus.OPEN;
       }
-
       return this.status;
     }
 

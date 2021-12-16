@@ -50,6 +50,10 @@ public class AcademicBlock implements Auditable {
     @OneToMany(mappedBy = "academicBlock", cascade = CascadeType.ALL)
     private Collection<CourseOffering> courseOfferings;
 
+    public AcademicBlock(String code, String name){
+        this.code = code;
+        this.name = name;
+    }
 
     public AcademicBlock(String code, String name, Semester semester, Audit timespan,
                          Collection<RegistrationGroup> registrationGroups, Collection<CourseOffering> courseOfferings) {

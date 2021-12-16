@@ -36,6 +36,10 @@ public class RegistrationGroup implements Auditable {
     @Embedded
     private Audit audit;
 
+    public RegistrationGroup(String name){
+        this.name = name;
+    }
+
     public RegistrationGroup(String name, Collection<AcademicBlock> academicBlocks, Collection<Student> students, RegistrationEvent registrationEvent) {
         this.name = name;
         this.academicBlocks = academicBlocks;

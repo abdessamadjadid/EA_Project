@@ -2,6 +2,7 @@ package edu.miu.cs.cs544.EAProject.controller;
 
 import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
 import edu.miu.cs.cs544.EAProject.service.EventService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("registration-events")
+@Tag(name = "Registration Event", description="The event API")
 public class EventController {
 
     @Autowired

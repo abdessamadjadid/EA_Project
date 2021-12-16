@@ -82,7 +82,6 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void assignStudentCourse(Student student, CourseOffering courseOffering) {
-
         student.addCourse(courseOffering);
         studentRepository.flush();
     }

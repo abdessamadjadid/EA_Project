@@ -1,1 +1,1 @@
-web: java -Dserver.port=8011
+web: java -Dserver.port=$PORT

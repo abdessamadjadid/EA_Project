@@ -4,8 +4,8 @@ import edu.miu.cs.cs544.EAProject.domain.RegistrationGroup;
 import edu.miu.cs.cs544.EAProject.service.RegistrationGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,8 +16,9 @@ public class RegistrationGroupController {
     private RegistrationGroupService service;
 
     @PostMapping
-    private RegistrationGroup create(@RequestBody RegistrationGroup group){
-        return service.createGroup(group);
+    private RegistrationGroup create(@RequestParam(name = "name") String name,
+                                     @RequestParam(name = "eventId") Integer eventId) {
+        return service.createGroup(name, eventId);
     }
 
 }

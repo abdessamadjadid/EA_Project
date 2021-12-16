@@ -43,4 +43,9 @@ public class RegistrationGroup implements Auditable {
         this.students = students;
         this.registrationEvent = registrationEvent;
     }
+
+    public RegistrationGroup(String name, RegistrationEvent event) {
+        this.name = name;
+        this.registrationEvent = event;
+    }
 }

@@ -10,8 +10,7 @@ import java.util.List;
 @Repository
 public interface CourseOfferingRepository extends JpaRepository<CourseOffering, Integer> {
 
-    @Query(value = "Select * from CourseOffering Where facultyId = :facultyId and courseId = :courseId and academicBlockId = :blockId",
-            nativeQuery = true)
+    @Query(value = "from CourseOffering co Where co.faculty.id = :facultyId and co.course.id = :courseId and co.academicBlock.id = :blockId")
     List<CourseOffering> findByFacultyIdCourseIdBlockId(Integer facultyId, Integer courseId, Integer blockId);
 
 }

@@ -6,6 +6,7 @@ spring:
   application:
     name: EA Final Project
   datasource:
+    driverClassName: org.postgresql.Driver
     url: jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_1ca686ea640d958
     username: be4721dffdca39
     password: b31cad21

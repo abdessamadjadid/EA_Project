@@ -1,1 +1,0 @@
-web java -Dspring.datasource.url=jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_1ca686ea640d958 $JAVA_OPTS -jar target/ea_final_project.jar

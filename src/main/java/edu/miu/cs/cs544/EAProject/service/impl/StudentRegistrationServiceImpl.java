@@ -94,7 +94,7 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
             groupDto.setId(group.getId());
             RegistrationEvent event = group.getRegistrationEvent();
             groupDto.setRegistrationEventDto(new RegistrationEventDto(event.getId(), event.getName(),
-                    event.getStartEndDate().getCreatedDate(), event.getStartEndDate().getModifiedDate()));
+                    event.getStartEndDate().getCreatedDate().toLocalDate(), event.getStartEndDate().getModifiedDate().toLocalDate()));
             groupDto.setAcademicBlockDtos(convertAcademicBlockDto(group.getAcademicBlocks().stream().toList()));
             groupDtos.add(groupDto);
         }

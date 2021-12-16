@@ -39,12 +39,16 @@ public class RegistrationEvent implements Auditable {
     @JoinColumn(name = "group_id")
     private Collection<RegistrationGroup> registrationGroups;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "request_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
     private Collection<RegistrationRequest> registrationRequests;
 
     @Transient
     EventStatus status = EventStatus.CLOSED;
+
+    public RegistrationEvent(String name, Audit startEndDate) {
+        this.name = name;
+        this.startEndDate = startEndDate;
+    }
 
     public void addGroup(RegistrationGroup group) {
         if (group != null) {

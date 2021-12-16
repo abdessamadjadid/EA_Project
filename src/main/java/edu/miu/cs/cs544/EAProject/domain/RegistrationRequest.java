@@ -31,6 +31,10 @@ public class RegistrationRequest implements Auditable {
     @Column(nullable = false)
     private int priority;
 
+    @ManyToOne
+    @JoinColumn(name = "eventId")
+    private RegistrationEvent event;
+
     @Embedded
     private Audit audit;
 }

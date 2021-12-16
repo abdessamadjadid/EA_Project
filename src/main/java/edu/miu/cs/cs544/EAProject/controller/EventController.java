@@ -1,6 +1,7 @@
 package edu.miu.cs.cs544.EAProject.controller;
 
 import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
+import edu.miu.cs.cs544.EAProject.dto.RegistrationEventDto;
 import edu.miu.cs.cs544.EAProject.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,8 +26,8 @@ public class EventController {
 //    }
 
     @PostMapping
-    public RegistrationEvent create(@RequestBody RegistrationEvent event) {
-        return eventService.createEvent(event);
+    public RegistrationEvent create(@RequestBody RegistrationEventDto event) {
+        return eventService.createEvent(event.getName(), event.getStartDate().atStartOfDay(), event.getEndDate().atStartOfDay());
     }
 
     @PutMapping

@@ -3,6 +3,7 @@ package edu.miu.cs.cs544.EAProject.service.impl;
 import edu.miu.cs.cs544.EAProject.advice.EventNotFoundException;
 import edu.miu.cs.cs544.EAProject.domain.AcademicBlock;
 import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
+import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.repository.EventRepository;
 import edu.miu.cs.cs544.EAProject.service.EventService;
 import edu.miu.cs.cs544.EAProject.utils.FunctionUtil;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 
@@ -33,19 +35,20 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public RegistrationEvent createEvent(RegistrationEvent event) {
+    public RegistrationEvent createEvent(String name, LocalDateTime startDate, LocalDateTime endDate) {
+        RegistrationEvent event = new RegistrationEvent(name, new Audit(startDate, endDate));
         return repository.save(event);
     }
 
     @Override
     public RegistrationEvent updateEvent(RegistrationEvent event) {
-       RegistrationEvent registrationEvent = getEventById(event.getId());
-       registrationEvent.setRegistrationRequests(event.getRegistrationRequests());
-       registrationEvent.setRegistrationGroups(event.getRegistrationGroups());
-       registrationEvent.setName(event.getName());
-       registrationEvent.setStartEndDate(event.getStartEndDate());
+        RegistrationEvent registrationEvent = getEventById(event.getId());
+        registrationEvent.setRegistrationRequests(event.getRegistrationRequests());
+        registrationEvent.setRegistrationGroups(event.getRegistrationGroups());
+        registrationEvent.setName(event.getName());
+        registrationEvent.setStartEndDate(event.getStartEndDate());
 
-       return  repository.save(registrationEvent);
+        return repository.save(registrationEvent);
     }
 
     @Override

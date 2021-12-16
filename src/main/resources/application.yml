@@ -17,7 +17,7 @@ spring:
     name: ea-course-registration
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_16699266ca49cba
+    url: jdbc:mysql://be4721dffdca39:b31cad21@us-cdbr-east-05.cleardb.net/heroku_1ca686ea640d958?reconnect=true
     username: bdec61cbf0420f
     password: d13dd415
     hikari:

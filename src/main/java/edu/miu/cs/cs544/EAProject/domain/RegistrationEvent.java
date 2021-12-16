@@ -35,8 +35,7 @@ public class RegistrationEvent implements Auditable {
     @Embedded
     private Audit audit;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "registrationEvent")
     private Collection<RegistrationGroup> registrationGroups;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
@@ -63,11 +62,10 @@ public class RegistrationEvent implements Auditable {
     }
 
     public EventStatus getStatus() {
-//      return this.status = switch(isEventOpen()){
-//           case 1 -> EventStatus.OPEN;
-//           default -> EventStatus.CLOSED;
-//       };
-        return EventStatus.CLOSED;
+        return this.status = switch (isEventOpen()) {
+            case 1 -> EventStatus.OPEN;
+            default -> EventStatus.CLOSED;
+        };
     }
 
     public int isEventOpen() {

@@ -1,6 +1,7 @@
 package edu.miu.cs.cs544.EAProject.controller;
 
 import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
+import edu.miu.cs.cs544.EAProject.service.AdminService;
 import edu.miu.cs.cs544.EAProject.service.EventService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class EventController {
 
     @Autowired
     EventService eventService;
+
+    @Autowired
+    AdminService adminService;
 
     @GetMapping
     public Page<RegistrationEvent> all(Pageable pageable) {
@@ -49,5 +53,10 @@ public class EventController {
     @GetMapping("/{latest}")
     public RegistrationEvent latest() {
         return eventService.getLatestEvent();
+    }
+
+    @GetMapping("/{id}?processed=true")
+    public void processRegistration(@PathVariable(name = "id") Integer id) {
+        adminService.processRegistration(id);
     }
 }

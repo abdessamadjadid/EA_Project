@@ -54,7 +54,7 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
         StudentRegistrationEventGroupDto dto = new StudentRegistrationEventGroupDto();
         dto.setStudentName(student.getName());
         dto.setEmail(student.getEmail());
-        dto.setRegistrationGroupDtos(convertRegistrationGroupDto(student.getRegistrationGroups().stream().toList()));
+        dto.setRegistrationGroupDtos(convertRegistrationGroupDto(student.getRegistrationGroups().stream().collect(Collectors.toList())));
 
         return dto;
     }
@@ -96,7 +96,7 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
             RegistrationEvent event = group.getRegistrationEvent();
             groupDto.setRegistrationEventDto(new RegistrationEventDto(event.getId(), event.getName(),
                     event.getStartEndDate().getCreatedDate(), event.getStartEndDate().getModifiedDate()));
-            groupDto.setAcademicBlockDtos(convertAcademicBlockDto(group.getAcademicBlocks().stream().toList()));
+            groupDto.setAcademicBlockDtos(convertAcademicBlockDto(group.getAcademicBlocks().stream().collect(Collectors.toList())));
             groupDtos.add(groupDto);
         }
         return groupDtos;
@@ -112,7 +112,7 @@ public class StudentRegistrationServiceImpl implements StudentRegistrationServic
             blockDto.setSemester(block.getSemester());
             blockDto.setStartDate(block.getAudit().getCreatedDate());
             blockDto.setEndDate(block.getAudit().getModifiedDate());
-            blockDto.setCourseOfferingDtos(convertCourseOfferingDto(block.getCourseOfferings().stream().toList(), block.getId()));
+            blockDto.setCourseOfferingDtos(convertCourseOfferingDto(block.getCourseOfferings().stream().collect(Collectors.toList()), block.getId()));
             blockDtos.add(blockDto);
         }
         return blockDtos;

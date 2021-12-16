@@ -1,14 +1,15 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 public class Faculty extends Role {
@@ -25,5 +26,11 @@ public class Faculty extends Role {
         this.name = name;
         this.email = email;
         this.title = title;
+    }
+
+    public String getInitials() {
+        return Arrays.stream(name.split(" "))
+                .map(n -> n.substring(0, 1))
+                .collect(Collectors.joining(""));
     }
 }

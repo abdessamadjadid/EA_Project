@@ -5,16 +5,18 @@ import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
-
 
 @EntityListeners(AuditListener.class)
 @NoArgsConstructor
-@Data
+@Getter @Setter
 @Entity
 public class AcademicBlock implements Auditable {
 
@@ -41,14 +43,14 @@ public class AcademicBlock implements Auditable {
     @Embedded
     private Audit audit;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "BlockRegistrationGroup",
             joinColumns = @JoinColumn(name = "academicBlock"),
             inverseJoinColumns = @JoinColumn(name = "registrationGroup"))
-    private Collection<RegistrationGroup> registrationGroups;
+    private Collection<RegistrationGroup> registrationGroups = new ArrayList<>();
 
-    @OneToMany(mappedBy = "academicBlock", cascade = CascadeType.ALL)
-    private Collection<CourseOffering> courseOfferings;
+    @OneToMany(mappedBy = "academicBlock")
+    private Collection<CourseOffering> courseOfferings = new ArrayList<>();
 
 
     public AcademicBlock(String code, String name, Semester semester, Audit timespan,
@@ -68,4 +70,7 @@ public class AcademicBlock implements Auditable {
         this.timespan = new Audit(startDate.atStartOfDay(), endDate.atStartOfDay());
     }
 
+    public void addRegistrationGroup(RegistrationGroup registrationGroup) {
+        this.registrationGroups.add(registrationGroup);
+    }
 }

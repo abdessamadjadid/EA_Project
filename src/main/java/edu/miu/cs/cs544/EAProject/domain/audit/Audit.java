@@ -11,7 +11,7 @@ import javax.persistence.Embeddable;
 import java.time.LocalDateTime;
 
 @Embeddable
-@Data
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Audit {

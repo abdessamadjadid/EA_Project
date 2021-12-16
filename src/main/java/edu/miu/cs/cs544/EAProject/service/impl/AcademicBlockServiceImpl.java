@@ -1,31 +1,38 @@
 package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.AcademicBlock;
+import edu.miu.cs.cs544.EAProject.domain.CourseOffering;
 import edu.miu.cs.cs544.EAProject.domain.Semester;
 import edu.miu.cs.cs544.EAProject.repository.AcademicBlockRepository;
 import edu.miu.cs.cs544.EAProject.service.AcademicBlockService;
+import edu.miu.cs.cs544.EAProject.utils.FunctionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Transactional
 @Service
 public class AcademicBlockServiceImpl implements AcademicBlockService {
 
     @Autowired
     private AcademicBlockRepository repository;
 
+    @Transactional(readOnly = true)
     @Override
     public List<AcademicBlock> getAcademicBlockByStartDate(LocalDateTime startDate) {
         return repository.getByStartDate(startDate);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<AcademicBlock> getAcademicBlockByStartDateSemester(LocalDateTime startDate, Semester semester) {
         return repository.getByStartDateSemester(startDate, semester);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public AcademicBlock getAcademicBlockById(Integer id) {
         return repository.getById(id);
@@ -39,5 +46,17 @@ public class AcademicBlockServiceImpl implements AcademicBlockService {
     @Override
     public AcademicBlock updateAcademicBlock(AcademicBlock block) {
         return repository.save(block);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<AcademicBlock> getAllAcademicBlock() {
+        return repository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<CourseOffering> getCourseOfferingMoreCapacity(AcademicBlock block) {
+        return FunctionUtil.getCourseOfferingMoreCapacity.apply(block);
     }
 }

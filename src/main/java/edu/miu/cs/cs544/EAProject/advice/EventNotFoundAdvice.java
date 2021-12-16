@@ -12,7 +12,7 @@ public class EventNotFoundAdvice {
     @ResponseBody
     @ExceptionHandler(EventNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String countryNotFoundHandler(EventNotFoundException ex) {
+    String eventNotFoundHandler(EventNotFoundException ex) {
         return ex.getMessage();
     }
 }

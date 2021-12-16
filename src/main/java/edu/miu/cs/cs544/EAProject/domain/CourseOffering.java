@@ -3,17 +3,17 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.StringJoiner;
 
 @Entity
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
-
 @EntityListeners(AuditListener.class)
 public class CourseOffering implements Auditable {
 
@@ -22,7 +22,6 @@ public class CourseOffering implements Auditable {
     private int id;
 
     @Column(nullable = false)
-    @Access(AccessType.PROPERTY)
     private String code;
 
     @Column(nullable = false)
@@ -66,16 +65,6 @@ public class CourseOffering implements Auditable {
         this.faculty = faculty;
         this.course = course;
         this.academicBlock = academicBlock;
-    }
-
-    public String getCode() {
-        StringJoiner joiner = new StringJoiner("-");
-        joiner.add(course.getCode()).add(academicBlock.getCode()).add(facultyInitials);
-        return joiner.toString();
-    }
-
-    public void setCode(String code) {
-        this.code = getCode();
     }
 
     public int getAvailableSeats() {

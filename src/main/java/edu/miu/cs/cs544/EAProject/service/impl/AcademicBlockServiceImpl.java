@@ -2,8 +2,6 @@ package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.AcademicBlock;
 import edu.miu.cs.cs544.EAProject.domain.CourseOffering;
-import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
-import edu.miu.cs.cs544.EAProject.repository.AcademicBlockRepository;
 import edu.miu.cs.cs544.EAProject.domain.Semester;
 import edu.miu.cs.cs544.EAProject.repository.AcademicBlockRepository;
 import edu.miu.cs.cs544.EAProject.service.AcademicBlockService;
@@ -12,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
 import java.util.List;
 
 @Service

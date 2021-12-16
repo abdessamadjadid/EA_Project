@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.StringJoiner;
 
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -22,7 +23,6 @@ public class CourseOffering implements Auditable {
     private int id;
 
     @Column(nullable = false)
-    @Access(AccessType.PROPERTY)
     private String code;
 
     @Column(nullable = false)

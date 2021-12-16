@@ -6,9 +6,9 @@ spring:
   application:
     name: EA Final Project
   datasource:
-    url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_16699266ca49cba
-    username: bdec61cbf0420f
-    password: d13dd415
+    url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_1ca686ea640d958
+    username: be4721dffdca39
+    password: b31cad21
     hikari:
       maximumPoolSize: 100
   jpa:

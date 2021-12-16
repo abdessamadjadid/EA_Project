@@ -38,4 +38,8 @@ spring:
 security:
   jwt:
     secretkey: secret-key
-    timeout-millis: 3600000 #1 hr
+    timeout-millis: 360000000 #1 hr
+
+java:
+  runtime:
+    version: 11.0.13

@@ -1,17 +1,16 @@
 package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.domain.*;
-import edu.miu.cs.cs544.EAProject.error.ClientException;
-import edu.miu.cs.cs544.EAProject.repository.StudentRepository;
-import edu.miu.cs.cs544.EAProject.service.AcademicBlockService;
+import edu.miu.cs.cs544.EAProject.repository.StudentRegistrationRepository;
 import edu.miu.cs.cs544.EAProject.service.AdminService;
 import edu.miu.cs.cs544.EAProject.service.EventService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.*;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
@@ -21,7 +20,8 @@ import java.util.stream.Collectors;
 public class AdminServiceImpl implements AdminService {
 
     private final EventService eventService;
-    private final StudentRepository studentRepository;
+    private final StudentRegistrationRepository studentRepository;
+
 
     @Override
     public void processLatestEventRegistration() {
@@ -76,6 +76,7 @@ public class AdminServiceImpl implements AdminService {
                     }
                 }
             }
+
         }
     }
 

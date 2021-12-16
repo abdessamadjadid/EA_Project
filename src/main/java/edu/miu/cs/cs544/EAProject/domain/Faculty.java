@@ -1,14 +1,13 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @Entity
 public class Faculty extends Role {

@@ -1,9 +1,10 @@
-package edu.miu.cs.cs544.EAProject.service;
+package edu.miu.cs.cs544.EAProject.service.impl;
 
 import edu.miu.cs.cs544.EAProject.advice.EventNotFoundException;
 import edu.miu.cs.cs544.EAProject.domain.AcademicBlock;
 import edu.miu.cs.cs544.EAProject.domain.RegistrationEvent;
 import edu.miu.cs.cs544.EAProject.repository.EventRepository;
+import edu.miu.cs.cs544.EAProject.service.EventService;
 import edu.miu.cs.cs544.EAProject.utils.FunctionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,7 +17,7 @@ import java.util.List;
 
 @Transactional
 @Service
-public class EventServiceImpl implements EventService{
+public class EventServiceImpl implements EventService {
 
     @Autowired
     EventRepository repository;

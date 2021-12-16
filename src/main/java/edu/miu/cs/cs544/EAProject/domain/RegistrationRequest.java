@@ -3,14 +3,15 @@ package edu.miu.cs.cs544.EAProject.domain;
 import edu.miu.cs.cs544.EAProject.domain.audit.Audit;
 import edu.miu.cs.cs544.EAProject.domain.audit.AuditListener;
 import edu.miu.cs.cs544.EAProject.domain.audit.Auditable;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @EntityListeners(AuditListener.class)
 public class RegistrationRequest implements Auditable {
@@ -32,4 +33,9 @@ public class RegistrationRequest implements Auditable {
 
     @Embedded
     private Audit audit;
+
+    @Override
+    public void setAudit(Audit audit) {
+        this.audit = audit;
+    }
 }

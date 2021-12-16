@@ -1,14 +1,16 @@
 package edu.miu.cs.cs544.EAProject.domain;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Collection;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @Entity
 public class Student extends Role {
@@ -72,8 +74,8 @@ public class Student extends Role {
         this.registrationGroups = registrationGroups;
     }
 
-    public Boolean addCourse(CourseOffering courseOffering){
-        if(!this.courseOfferings.contains(courseOffering)){
+    public Boolean addCourse(CourseOffering courseOffering) {
+        if (!this.courseOfferings.contains(courseOffering)) {
             this.courseOfferings.add(courseOffering);
             return true;
         }
